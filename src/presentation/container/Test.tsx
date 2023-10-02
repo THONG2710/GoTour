@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const Test = () => {
   return (
     <View>
-      <Text>Test</Text>
+      <Text>ForgotPass</Text>
     </View>
   )
 }
