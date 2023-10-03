@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
 
 
 const ForgotPass = () => {
@@ -16,9 +17,12 @@ const ForgotPass = () => {
        <TextInput style={styles.textinput}>
           <Text style={{}}>Nhập email của bạn</Text>
         </TextInput>
+        <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={["#FD9448",'#FB8631','#D75D04']} style={styles.linearGradient}>
         <Pressable style={styles.button}>
           <Text style={styles.textbtn}>Xác nhận</Text>
         </Pressable>
+        </LinearGradient>
+        
         <Text style={styles.text2}>Không thể lấy lại được mật khẩu?</Text>
         <View style={{ flexDirection: 'row', justifyContent: "space-between", display: "flex", marginLeft: 20, marginRight: 20 }}>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginRight: 20,
     borderRadius: 30,
-    height: 299,
+    height: 309,
     backgroundColor: 'grey',
     position: 'relative',
     elevation: 100000,
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
   },
   textinput: {
     marginLeft: 20,
-    marginTop: 15,
+    marginTop: 20,
     backgroundColor: '#F2F2F2',
     marginRight: 20,
     borderRadius: 10,
@@ -92,20 +96,27 @@ const styles = StyleSheet.create({
 
   },
   textbtn: {
-    backgroundColor: '#FD9448',
+    
     textAlign: 'center',
     borderRadius: 20,
     padding: 10,
     color: "#fff",
     fontWeight: 'bold',
     fontSize: 20,
-    marginTop: 10,
+    marginTop: 5,
+    marginBottom: 5,
 
   },
   button: {
     width: 180,
-
+   
+  },
+  linearGradient: {
+    borderRadius: 20,
+    marginTop: 15,
+    width: 180,
     alignSelf: 'center',
+    elevation: 5,
   },
   text2: {
     textAlign: 'center',
@@ -132,7 +143,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderTopLeftRadius: 100,
     borderBottomRightRadius: 40,
-    marginTop: 20,
+    marginTop: 10,
   },
   div3: {
     backgroundColor: "#F7DEC6",
