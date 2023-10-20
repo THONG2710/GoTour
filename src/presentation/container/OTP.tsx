@@ -10,9 +10,7 @@ const OTP = () => {
     const thirdInput = useRef();
     const fourthInput = useRef();
 
-    const handleOtpChange = (value) => {
-        setOtp(value);
-    };
+
 
     const nextInput = (index) => {
         if (index === 1) {
