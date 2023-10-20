@@ -5,9 +5,10 @@ import Profile from './src/presentation/container/Profile';
 import Deals from './src/presentation/container/Deals';
 import OTP from './src/presentation/container/OTP';
 import ResetPass from './src/presentation/container/ResetPass';
+import News from './src/presentation/container/News';
 function App(): JSX.Element {
   return (
-    <ResetPass/>
+    <News/>
   );
 }
 

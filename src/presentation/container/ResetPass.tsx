@@ -81,8 +81,9 @@ const styles = StyleSheet.create({
         marginTop: 20,
     },
     txtInput: {
-        textAlign: 'center',
-        marginLeft: 5
+        textAlign: 'left',
+        marginLeft: 5,
+        width:'100%'
 
     },
     linearGradient: {
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     },
     div1: {
         backgroundColor: "#F1AF72",
-        borderTopRightRadius: 150,
+        borderTopRightRadius: 10,
         borderBottomRightRadius: 30,
         height: 300,
         width: 200,
