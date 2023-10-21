@@ -30,11 +30,13 @@ import SplashThree from './src/presentation/container/SplashThree';
 import MyFavourite from './src/presentation/container/MyFavourite';
 import ItemMyFavourite from './src/presentation/container/ItemTypeOfTravelMyFavourite';
 import ItemExploreMyFavourite from './src/presentation/container/ItemExploreMyFavourite';
+import ListShare from './src/presentation/container/ListShare';
+import Profile from './src/presentation/container/Profile';
 
 
 const App = (): JSX.Element => {
   return (
-    <MyFavourite></MyFavourite>
+    <Profile></Profile>
   );
 };
 export default App;
