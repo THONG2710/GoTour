@@ -1,6 +1,7 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
+import { TEST } from '../../resource/assets/String';
 
 const SplashOne = () => {
     return (
@@ -9,10 +10,10 @@ const SplashOne = () => {
 
                 <View style={styles.footer}>
                     <Image style={styles.imgNextFooter} source={require('../resource/assets/images/imgNext.png')}></Image>
-                    <Text style={styles.textTitle}>Chào mừng bạn đến với {`\n`}GoTour</Text>
+                    <Text style={styles.textTitle}>{TEST}</Text>
                     <Text style={styles.textContent}>Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu {`\n`} lưu thú vị trên tất cả các vùng miền</Text>
                     <Ripple>
-                        <Image source={require('../resource/assets/images/btnNext.png')}></Image>
+                        <Image source={require('../resource/assets/images/btnNext.png')}></Image> 
                     </Ripple>
                 </View>
             </ImageBackground>
