@@ -8,7 +8,7 @@ import ResetPass from './src/presentation/container/ResetPass';
 import News from './src/presentation/container/News';
 function App(): JSX.Element {
   return (
-    <News/>
+    <OTP/>
   );
 }
 
