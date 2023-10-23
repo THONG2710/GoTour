@@ -11,7 +11,7 @@ const SplashThree = () => {
                     <Image style={styles.imgNextFooter} source={require('../resource/assets/images/imgNext.png')}></Image>
                     <Text style={styles.textTitle}>Được thiết kế dành riêng {`\n`} cho bạn</Text>
                     <Text style={styles.textContent}>Ứng dụng của chúng tôi tùy chỉnh thiết kế {`\n`} các đề xuất du lịch dựa trên sở thích và {`\n`} sở thích của bạn.</Text>
-                    <Ripple>
+                    <Ripple rippleDuration={1000} rippleContainerBorderRadius={150}>
                         <Image source={require('../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>
