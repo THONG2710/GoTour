@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import Ripple from 'react-native-material-ripple';
 interface ItemListShareProps {
     item: { image: any, title: string, name: string, time: string, day: string, turn: string, namePlace: string }
 
@@ -20,7 +21,10 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                         </View>
                     </View>
                 </View>
-                <Image source={require('../resource/assets/images/menu.png')}></Image>
+                <TouchableOpacity>
+
+                    <Image source={require('../resource/assets/images/menu.png')}></Image>
+                </TouchableOpacity>
             </View>
 
             <View style={styles.center}>
@@ -35,8 +39,12 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                     </View>
                 </View>
                 <View style={styles.footer}>
-                    <Image source={require('../resource/assets/images/like.png')}></Image>
-                    <Image source={require('../resource/assets/images/comment.png')}></Image>
+                    <TouchableOpacity>
+                        <Image source={require('../resource/assets/images/like.png')}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Image source={require('../resource/assets/images/comment.png')}></Image>
+                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -52,7 +60,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginBottom: 40,
         width: '95%',
-        height:550,
+        height: 550,
         borderRadius: 20,
         backgroundColor: '#fff',
         borderWidth: 1
