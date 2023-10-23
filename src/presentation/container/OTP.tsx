@@ -1,40 +1,47 @@
 import React, { useRef, useState } from "react";
-import { Image, Pressable, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native"
+import { Alert, Image, Pressable, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native"
 import LinearGradient from "react-native-linear-gradient";
 
 
 const OTP = () => {
     const [otp, setOtp] = useState(["", "", "", ""]);
-    const firstInput = useRef();
-    const secondInput = useRef();
-    const thirdInput = useRef();
-    const fourthInput = useRef();
+    const firstInput = useRef<TextInput>(null);
+    const secondInput = useRef<TextInput>(null);
+    const thirdInput = useRef<TextInput>(null);
+    const fourthInput = useRef<TextInput>(null);
 
 
 
-    const nextInput = (index) => {
+    const nextInput = (index: number) => {
         if (index === 0) {
             if (otp[1] === "") {
-                secondInput.current.focus();
+
+                secondInput.current?.focus();
+
             } else {
                 nextInput(1);
             }
 
         } else if (index === 1) {
             if (otp[2] === "") {
-                thirdInput.current.focus();
+                thirdInput.current?.focus();
             } else {
                 nextInput(2);
             }
         } else if (index === 2) {
-            fourthInput.current.focus();
+            fourthInput.current?.focus();
         }
     }
-    const confirmOTP=()=>{
+    const confirmOTP = () => {
         const otpcode = otp.join("");
         if (otpcode.length !== 4) {
-            ToastAndroid.show("Vui lòng nhập đầy đủ mã OTP", ToastAndroid.SHORT);
+            ToastAndroid.show("Vui lòng nhập đủ 4 số", ToastAndroid.SHORT);
         }
+        console.log(otpcode);
+        console.log(otp);
+        
+        
+
     }
     return (
 
@@ -65,7 +72,7 @@ const OTP = () => {
                         keyboardType="numeric"
                         maxLength={1}
                         onChangeText={(text) => {
-                            setOtp([otp[0], text,otp[2], otp[3]]);
+                            setOtp([otp[0], text, otp[2], otp[3]]);
                             text && nextInput(1);
                         }}
                     />
@@ -92,10 +99,10 @@ const OTP = () => {
                 </View>
             </View>
             <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={['#FD9448', '#FB8632', "#FF6B00"]} style={styles.linearGradient}>
-                    <Pressable style={styles.btnConfirm} onPress={confirmOTP}>
-                        <Text style={styles.txtBtnConfirm}>Xác nhận</Text>
-                    </Pressable>
-                </LinearGradient>
+                <Pressable style={styles.btnConfirm} onPress={confirmOTP}>
+                    <Text style={styles.txtBtnConfirm}>Xác nhận</Text>
+                </Pressable>
+            </LinearGradient>
         </View>
 
     )
@@ -149,7 +156,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 5,
         fontWeight: 'bold',
-        marginBottom:10
+        marginBottom: 10
     },
     otpInput: {
         elevation: 10,

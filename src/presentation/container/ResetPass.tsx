@@ -1,10 +1,31 @@
-import React from "react";
-import { Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import React, { useState } from "react";
+import { Button, Image, Pressable, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 
 
 const ResetPass = () => {
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+   
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    };
+    const submit = () => {
+        // Handle password submission
+        console.log('Password:', password, 'confirmPassword:', confirmPassword);
+        if(password!==confirmPassword){
+            ToastAndroid.show("Mật khẩu không khớp", ToastAndroid.SHORT);
+        }
+    };
+
     return (
         <View>
             <Image style={styles.logo} source={require("../resource/images/logo.png")} />
@@ -19,8 +40,20 @@ const ResetPass = () => {
                     <TextInput
                         style={styles.txtInput}
                         placeholder="Mật khẩu mới"
-                    ></TextInput>
+                        secureTextEntry={!showPassword}
+                        value={password}
+                        onChangeText={setPassword}
+                    >
+
+                    </TextInput>
+                    <Pressable onPress={togglePasswordVisibility}>
+                        <Image
+                            source={showPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                            style={{ width: 25, height: 25, opacity: 0.5 }}
+                        />
+                    </Pressable>
                 </View>
+
                 <View style={styles.boxInput}>
                     <Image
                         source={require("../resource/images/lock.png")}
@@ -28,18 +61,27 @@ const ResetPass = () => {
                     />
                     <TextInput
                         style={styles.txtInput}
-                        placeholder=" Nhập lại mật khẩu mới" />
+                        placeholder=" Nhập lại mật khẩu mới" 
+                        secureTextEntry={!showConfirmPassword}
+                        value={confirmPassword}
+                        onChangeText={setConfirmPassword}/>
+                    <Pressable onPress={toggleConfirmPasswordVisibility}>
+                        <Image
+                            source={showConfirmPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                            style={{ width: 25, height: 25, opacity: 0.5 }}
+                        />
+                    </Pressable>
                 </View>
                 <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={['#FD9448', '#FB8632', "#FF6B00"]} style={styles.linearGradient}>
-                    <Pressable style={styles.btnConfirm}>
+                    <Pressable style={styles.btnConfirm} onPress={submit}>
                         <Text style={styles.txtBtnConfirm}>Xác nhận</Text>
                     </Pressable>
                 </LinearGradient>
             </View>
-            <View style={{height:200}}>
-                    <View style={styles.div1}></View>
-                    <View style={styles.div2}></View>
-                </View>
+            <View style={{ height: 200 }}>
+                <View style={styles.div1}></View>
+                <View style={styles.div2}></View>
+            </View>
         </View >
     )
 
@@ -83,7 +125,7 @@ const styles = StyleSheet.create({
     txtInput: {
         textAlign: 'left',
         marginLeft: 5,
-        width:'100%'
+        width: '78%'
 
     },
     linearGradient: {
@@ -115,23 +157,23 @@ const styles = StyleSheet.create({
         elevation: -2,
         position: 'absolute',
         left: 0,
-        marginTop:-50,
+        marginTop: -50,
 
     },
     div2: {
         backgroundColor: "#EBA05A",
-        borderTopLeftRadius:100,
-        borderBottomLeftRadius:100,
-        borderTopRightRadius:100,
+        borderTopLeftRadius: 100,
+        borderBottomLeftRadius: 100,
+        borderTopRightRadius: 100,
         height: 100,
         width: 300,
         elevation: -1,
         position: 'absolute',
         right: 0,
-        justifyContent:'flex-end',
-        alignSelf:'flex-end',
-        bottom:0,
-        
-        
+        justifyContent: 'flex-end',
+        alignSelf: 'flex-end',
+        bottom: 0,
+
+
     },
 })

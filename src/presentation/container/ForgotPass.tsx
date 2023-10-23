@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 
 const ForgotPass = () => {
+  const [email, setEmail] = useState('')
+
+const submit = () => {
+  console.log('Email:', email);
+  
+}
+  
+
+
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row", display: 'flex', justifyContent: 'space-between' }}>
@@ -14,15 +23,21 @@ const ForgotPass = () => {
         <Text style={styles.text}>QUÊN MẬT KHẨU</Text>
       </View>
       <View style={styles.main}>
-       <TextInput style={styles.textinput}>
-          <Text style={{}}>Nhập email của bạn</Text>
+        <TextInput style={styles.textinput}
+          placeholder="Nhập email của bạn"
+          onChangeText={setEmail}
+          value={email}
+          keyboardType="email-address"
+        >
+
+
         </TextInput>
-        <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} colors={["#FD9448",'#FB8631','#D75D04']} style={styles.linearGradient}>
-        <Pressable style={styles.button}>
-          <Text style={styles.textbtn}>Xác nhận</Text>
-        </Pressable>
+        <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={["#FD9448", '#FB8631', '#D75D04']} style={styles.linearGradient}>
+          <Pressable style={styles.button} onPress={submit}>
+            <Text style={styles.textbtn}>Xác nhận</Text>
+          </Pressable>
         </LinearGradient>
-        
+
         <Text style={styles.text2}>Không thể lấy lại được mật khẩu?</Text>
         <View style={{ flexDirection: 'row', justifyContent: "space-between", display: "flex", marginLeft: 20, marginRight: 20 }}>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
@@ -34,7 +49,7 @@ const ForgotPass = () => {
           <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Trở lại đăng nhập</Text>
         </Pressable>
       </View>
-      <View style={{ flexDirection: 'row',elevation:0 }}>
+      <View style={{ flexDirection: 'row', elevation: 0 }}>
         <View style={styles.div3}></View>
         <View style={styles.div4}></View>
       </View>
@@ -75,14 +90,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   main: {
-    marginLeft: 20,
-    marginRight: 20,
+    alignSelf: 'center',
+    width: '90%',
+    backgroundColor: 'white',
     borderRadius: 30,
-    height: 309,
-    backgroundColor: 'grey',
-    position: 'relative',
-    elevation: 100000,
-    
+    elevation: 10,
+    shadowColor: '#000',
+
 
   },
   textinput: {
@@ -96,7 +110,7 @@ const styles = StyleSheet.create({
 
   },
   textbtn: {
-    
+
     textAlign: 'center',
     borderRadius: 20,
     padding: 10,
@@ -109,7 +123,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 180,
-   
+
   },
   linearGradient: {
     borderRadius: 20,
@@ -152,7 +166,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 100,
     borderBottomRightRadius: 100,
     marginTop: -30,
-    elevation:1,
+    elevation: 1,
 
   },
   div4: {
