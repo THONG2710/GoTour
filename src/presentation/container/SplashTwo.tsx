@@ -11,7 +11,7 @@ const SplashTwo = () => {
                     <Image style={styles.imgNextFooter} source={require('../resource/assets/images/imgNext.png')}></Image>
                     <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
                     <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
-                    <Ripple rippleDuration={1000} rippleContainerBorderRadius={150}>
+                    <Ripple rippleCentered={true} rippleDuration={1000} rippleContainerBorderRadius={150}>
                         <Image source={require('../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>

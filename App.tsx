@@ -36,7 +36,7 @@ import Profile from './src/presentation/container/Profile';
 
 const App = (): JSX.Element => {
   return (
-    <SplashThree></SplashThree>
+    <Profile></Profile>
   );
 };
 export default App;

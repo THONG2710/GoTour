@@ -11,7 +11,7 @@ const SplashOne = () => {
                     <Image style={styles.imgNextFooter} source={require('../resource/assets/images/imgNext.png')}></Image>
                     <Text style={styles.textTitle}>Chào mừng bạn đến với {`\n`}GoTour</Text>
                     <Text style={styles.textContent}>Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu {`\n`} lưu thú vị trên tất cả các vùng miền</Text>
-                    <Ripple rippleDuration={1000} rippleContainerBorderRadius={150}>
+                    <Ripple rippleCentered={true} rippleDuration={1000} rippleContainerBorderRadius={150}>
                         <Image source={require('../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>

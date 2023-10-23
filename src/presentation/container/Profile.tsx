@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Ripple from 'react-native-material-ripple'
 import { Shadow } from 'react-native-shadow-2'
 
 const Profile = () => {
@@ -19,7 +18,10 @@ const Profile = () => {
                             </View>
                         </View>
                     </View>
-                    <Image source={require('../resource/assets/images/setting.png')}></Image>
+                    <TouchableOpacity>
+
+                        <Image source={require('../resource/assets/images/setting.png')}></Image>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.grText}>
                     <Text style={styles.text}>Xin Chào </Text>
@@ -32,7 +34,7 @@ const Profile = () => {
             </View>
 
             <View style={styles.center}>
-                <Ripple>
+                <TouchableOpacity>
                     <View style={{ height: 60, width: '100%', backgroundColor: '#6A9C89', borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                         <Image style={{ marginLeft: 10 }} source={require('../resource/assets/images/voucher.png')}></Image>
                         <View style={{ marginLeft: 10 }}>
@@ -46,11 +48,11 @@ const Profile = () => {
                         <Image style={{ marginRight: 10 }} source={require('../resource/assets/images/next.png')}></Image>
 
                     </View>
-                </Ripple>
+                </TouchableOpacity>
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
 
-                    <Ripple>
+                    <TouchableOpacity>
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
@@ -58,10 +60,10 @@ const Profile = () => {
                                 <Text style={{ marginTop: 10 }}>Lịch sử</Text>
                             </View>
                         </Shadow>
-                    </Ripple>
+                    </TouchableOpacity>
 
 
-                    <Ripple>
+                    <TouchableOpacity>
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
@@ -70,9 +72,9 @@ const Profile = () => {
                             </View>
                         </Shadow>
 
-                    </Ripple>
+                    </TouchableOpacity>
 
-                    <Ripple>
+                    <TouchableOpacity>
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
@@ -81,33 +83,33 @@ const Profile = () => {
                             </View>
                         </Shadow>
 
-                    </Ripple>
+                    </TouchableOpacity>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between',marginRight:20 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginRight: 20 }}>
                     <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
                         <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: '100%', height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'space-around' }}>
-                            <Ripple>
+                            <TouchableOpacity>
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Image source={require('../resource/assets/images/evalute.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Đang chờ{`\n`} đánh giá</Text>
                                 </View>
-                            </Ripple>
-                            <Ripple>
+                            </TouchableOpacity>
+                            <TouchableOpacity>
 
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Image source={require('../resource/assets/images/introduce.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Giới thiệu về {`\n`} Gotour</Text>
                                 </View>
-                            </Ripple>
+                            </TouchableOpacity>
 
-                            <Ripple>
+                            <TouchableOpacity>
 
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Image source={require('../resource/assets/images/contact.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Chăm sóc {`\n`} khách hàng</Text>
                                 </View>
-                            </Ripple>
+                            </TouchableOpacity>
 
                         </View>
                     </Shadow>
@@ -119,11 +121,11 @@ const Profile = () => {
                     <Image style={{ position: 'relative', top: -20 }} source={require('../resource/assets/images/logo.png')}></Image>
                     <Text style={{ position: 'absolute', color: '#000', bottom: 20 }}>Dịch vụ mà bạn có thể tin cậy</Text>
                 </View>
-                <Ripple>
+                <TouchableOpacity>
                     <View style={{ width: '100%', height: 46, backgroundColor: '#6A9C89', justifyContent: 'center', alignItems: 'center', borderRadius: 10 }}>
                         <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#C1D8C3' }}>Đăng xuất</Text>
                     </View>
-                </Ripple>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -135,7 +137,7 @@ const styles = StyleSheet.create({
     container:
     {
         flex: 1,
-        marginHorizontal:10
+        marginHorizontal: 10
     },
 
     header:
