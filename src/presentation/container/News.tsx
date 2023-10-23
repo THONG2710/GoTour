@@ -6,54 +6,54 @@ const News = () => {
 
         <View style={{ flex: 1 }}>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={{ height: 150 }}>
-                <Image style={styles.imgTittle} source={require("../resource/images/new1.webp")} />
-                <Image style={styles.imgLogo} source={require("../resource/images/logo.png")} />
-                <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
-                <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
-                <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
-
-            </View>
-            <View style={styles.boxSearch}>
-                <TextInput
-                    placeholder="Tìm kiếm"
-                    style={styles.txtInputSearch}
-                />
-                <Image style={styles.imgSearch} source={require("../resource/images/search.png")} />
-            </View>
-            <Text style={styles.txtNews}>Tin tức mới nhất</Text>
-            <View>
-                <FlatList
-                    data={images}
-                    renderItem={({ item }) => (
-                        <View style={styles.viewSlide}>
-                            <Image style={styles.imgSlide} source={item.img} />
-                            <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
-                            <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
-                        </View>
-                    )}
-                    horizontal={true}
-                    keyExtractor={(item) => item.id.toString()}
-                    showsHorizontalScrollIndicator={false}
-                    style={{  }}
-                />
-
-            </View>
-            <Text style={styles.txtNews}>Gần đây</Text>
-                
-            
-            {images.map((item) => {
-                return(
-                    <View style={[styles.viewSlide, { flexDirection: 'row', width: 250, marginBottom: 10 }]}>
-                    <Image style={[styles.imgSlide, { width: 100, height: 100 }]} source={item.img} />
-                    <View style={{ marginLeft: 10 }}>
-                        <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
-                        <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
-                    </View>
+                <View style={{ height: 150 }}>
+                    <Image style={styles.imgTittle} source={require("../resource/images/new1.webp")} />
+                    <Image style={styles.imgLogo} source={require("../resource/images/logo.png")} />
+                    <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
+                    <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
+                    <Image style={styles.imgBell} source={require("../resource/images/bell.png")} />
 
                 </View>
-                )
-            })}
+                <View style={styles.boxSearch}>
+                    <TextInput
+                        placeholder="Tìm kiếm"
+                        style={styles.txtInputSearch}
+                    />
+                    <Image style={styles.imgSearch} source={require("../resource/images/search.png")} />
+                </View>
+                <Text style={styles.txtNews}>Tin tức mới nhất</Text>
+                <View>
+                    <FlatList
+                        data={images}
+                        renderItem={({ item }) => (
+                            <View style={styles.viewSlide}>
+                                <Image style={styles.imgSlide} source={item.img} />
+                                <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
+                                <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
+                            </View>
+                        )}
+                        horizontal={true}
+                        keyExtractor={(item) => item.id.toString()}
+                        showsHorizontalScrollIndicator={false}
+                        style={{}}
+                    />
+
+                </View>
+                <Text style={styles.txtNews}>Gần đây</Text>
+
+
+                {images.map((item) => {
+                    return (
+                        <View key={item.id} style={[styles.viewSlide, { flexDirection: 'row', width: 250, marginBottom: 10 }]}>
+                            <Image style={[styles.imgSlide, { width: 100, height: 100 }]} source={item.img} />
+                            <View style={{ marginLeft: 10 }}>
+                                <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
+                                <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
+                            </View>
+                            
+                        </View>
+                    )
+                })}
             </ScrollView>
         </View>
     )
@@ -131,13 +131,13 @@ const styles = StyleSheet.create({
         height: 150,
         borderRadius: 15,
         marginBottom: 10,
-       
+
     },
     viewSlide: {
         marginLeft: 10,
         width: 300,
         marginRight: 10,
-        
+
     },
     txtSlideTittle: {
         fontSize: 16,
