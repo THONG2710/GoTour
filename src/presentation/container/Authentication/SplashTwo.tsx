@@ -5,14 +5,14 @@ import Ripple from 'react-native-material-ripple';
 const SplashTwo = () => {
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.imgSplash} source={require('../resource/assets/images/splashTwo.png')}>
+            <ImageBackground style={styles.imgSplash} source={require('../../resource/assets/images/splashTwo.png')}>
 
                 <View style={styles.footer}>
-                    <Image style={styles.imgNextFooter} source={require('../resource/assets/images/imgNext.png')}></Image>
+                    <Image style={styles.imgNextFooter} source={require('../../resource/assets/images/imgNext.png')}></Image>
                     <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
                     <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
                     <Ripple>
-                        <Image source={require('../resource/assets/images/btnNext.png')}></Image>
+                        <Image source={require('../../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>
             </ImageBackground>

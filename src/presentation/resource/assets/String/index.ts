@@ -1,1 +1,1 @@
-export const TEST =  'Chào mừng bạn đến với {`\n`}GoTour'   
+export const TEST =  'Chào mừng bạn đến với GoTour'   
