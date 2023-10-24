@@ -1,24 +1,15 @@
-import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, FlatList } from 'react-native'
 import React from 'react'
+import ItemListHotel from './ItemListHotel'
 
-const Train = () => {
+const Hotel = () => {
+    const render = ({ item }: { item: (typeof DATA)[0] }) => (
+        <ItemListHotel {...item} />
+
+    )
     return (
         <View style={styles.container}>
-            <Image style={styles.img} source={require('../img/background.png')} />
-            <View style={styles.header}>
-                <Image source={require('../img/logo.png')} />
-                <Image style={{ marginStart: 250, marginTop: 20 }} source={require('../img/bell.png')} />
-
-            </View>
-            <View style={styles.search}>
-                <Text>Tìm kiếm...</Text>
-                <Image source={require('../img/search.png')} />
-            </View>
-            <View style={styles.tab}>
-                <Text style={styles.textChoose}>Khách Sạn</Text>
-                <Text style={styles.text}>Chuyến bay</Text>
-                <Text style={styles.text}>Vé tàu</Text>
-            </View>
+            {/* <Image style={styles.img} source={require('../img/background.png')} /> */}
             <View style={styles.book}>
                 <View style={styles.item1}>
                     <Image source={require('../img/marker.png')} />
@@ -51,111 +42,35 @@ const Train = () => {
                 </TouchableOpacity>
 
             </View>
-            <View style={{ flexDirection: 'row', marginHorizontal: 10, marginTop: 100 }}>
-                <Image style={{ marginTop: 20 }} source={require('../img/hotel1.png')} />
-                <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 10, marginTop: 20 }}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
+            <View style={{ flexDirection: 'row', paddingHorizontal:15 }}>
+                <Image source={require('../img/hotel1.png')} />
+                <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
             </View>
-            <View style={styles.list}>
-                <View style={styles.item3}>
-                    <Image source={require('../img/hotel2.png')} />
-                    <View style={{ margin: 'auto', marginHorizontal: 10 }}>
-                        <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 15 }}>Seashell Hotel & Spa Phú Quốc</Text>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Image source={require('../img/rating.png')} />
-                            <Text style={{marginLeft:75}}>233 đánh giá</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', width: '80%' }}>
-                            <Image source={require('../img/maker1.png')} />
-                            <Text style={{marginLeft:5}}>253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam</Text>
-                        </View>
-                        <View style={{ marginStart:150}}>
-                            <Text style={{ color: 'blue', fontSize: 18 }}>2.326.500 đ</Text>
-                        </View>
-
-                    </View>
-                </View>
-                <View style={styles.item3}>
-                    <Image source={require('../img/hotel2.png')} />
-                    <View style={{ margin: 'auto', marginHorizontal: 10 }}>
-                        <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 15 }}>Seashell Hotel & Spa Phú Quốc</Text>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Image source={require('../img/rating.png')} />
-                            <Text style={{marginLeft:75}}>233 đánh giá</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', width: '80%' }}>
-                            <Image source={require('../img/maker1.png')} />
-                            <Text style={{marginLeft:5}}>253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam</Text>
-                        </View>
-                        <View style={{ marginStart:150}}>
-                            <Text style={{ color: 'blue', fontSize: 18 }}>2.326.500 đ</Text>
-                        </View>
-
-                    </View>
-                </View>
+            <View style={{ height: 300 }}>
+                <FlatList
+                    data={DATA}
+                    renderItem={render}
+                    keyExtractor={item => item.id}
+                    showsVerticalScrollIndicator={false}
+                />
             </View>
         </View>
     )
 }
 
-export default Train
+export default Hotel
 
 const styles = StyleSheet.create({
     container: {
-
-    },
-    img: {
-        height: '50%',
-
-    },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        position: 'absolute'
-    },
-    search: {
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        position: 'absolute',
-        justifyContent: 'space-between',
-        width: '90%',
-        padding: 8,
-        borderRadius: 10,
-        marginVertical: 65,
-        marginStart: 20
-    },
-    tab: {
-        flexDirection: 'row',
-        paddingHorizontal: 30,
-        justifyContent: 'space-between',
-        marginTop: 120,
-        backgroundColor: 'white',
-        height: 40,
-        borderBottomWidth: 3,
-        borderColor: '#FFBC7F',
-        position: 'absolute',
-        width: '100%'
-    },
-    text: {
-        alignSelf: 'center',
-        fontSize: 15,
-        color: 'black',
-
-    },
-    textChoose: {
-        alignSelf: 'center',
-        fontSize: 15,
-        color: '#FFBC7F',
-
-
+        backgroundColor: 'white'
     },
     book: {
         backgroundColor: 'white',
         marginHorizontal: 10,
         height: 'auto',
-        marginVertical: 180,
+        marginVertical: 10,
         borderRadius: 20,
         padding: 13,
-        position: 'absolute',
         width: '95%',
 
     },
@@ -182,12 +97,21 @@ const styles = StyleSheet.create({
         height: 'auto',
         flexDirection: 'row',
         paddingRight: 10,
-        margin:5
+        margin: 5
     },
     list: {
         marginTop: 450,
-        position: 'absolute',
+
         width: '100%',
 
     }
 })
+const DATA = [
+    { id: '1', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 233, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "4.462.000" },
+    { id: '2', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 244, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "5.462.000" },
+    { id: '3', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 255, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "6.462.000" },
+
+    
+    
+
+]

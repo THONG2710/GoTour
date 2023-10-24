@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import Test from './src/presentation/container/Test';
-import Train from './src/presentation/container/screens/Train';
+
 import Plane from './src/presentation/container/screens/Plane';
 import Hotel from './src/presentation/container/screens/Hotel';
+import ItemListTrain from './src/presentation/container/screens/ItemListTrain';
+import { Text } from '@rneui/base';
+import Train from './src/presentation/container/screens/Train';
+import Booking from './src/presentation/container/screens/Booking';
 
 
 
-function App(): JSX.Element {
+const App: FunctionComponent = ()=> {
   return (
-      // <Train/>
-      // <Test/>
-      // <Plane/>
-      <Hotel/>
+    
+    <Booking/>
+   
+     
   );
-}
+};
 
 export default App;
