@@ -6,11 +6,19 @@ import LinearGradient from "react-native-linear-gradient";
 const ForgotPass = () => {
   const [email, setEmail] = useState('')
 
-const submit = () => {
-  console.log('Email:', email);
-  
-}
-  
+  const submit = () => {
+    console.log('Email:', email);
+
+  }
+  const register = () => {
+    console.log('register');
+  }
+  const backToSignIn = () => {
+    console.log('backToSignIn');
+  }
+  const cantResetPass = () => {
+    console.log('cantResetPass');
+  }
 
 
   return (
@@ -37,15 +45,20 @@ const submit = () => {
             <Text style={styles.textbtn}>Xác nhận</Text>
           </Pressable>
         </LinearGradient>
+        <Pressable onPress={cantResetPass}>
+          <Text style={styles.text2}>Không thể lấy lại được mật khẩu?</Text>
 
-        <Text style={styles.text2}>Không thể lấy lại được mật khẩu?</Text>
+        </Pressable>
         <View style={{ flexDirection: 'row', justifyContent: "space-between", display: "flex", marginLeft: 20, marginRight: 20 }}>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
           <Text >Hoặc</Text>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
         </View>
-        <Text style={styles.text3}>Đăng kí tài khoản mới</Text>
-        <Pressable style={styles.button2}>
+        <Pressable onPress={register}>
+          <Text style={styles.text3}>Đăng kí tài khoản mới</Text>
+        </Pressable>
+
+        <Pressable style={styles.button2} onPress={backToSignIn}>
           <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Trở lại đăng nhập</Text>
         </Pressable>
       </View>
