@@ -9,11 +9,12 @@ import ItemExploreMyFavourite from './ItemExploreMyFavourite';
 const SLIDE_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = SLIDE_WIDTH * 0.6;
 
-const MyFavourite = () => {
-    interface Props {
-        item: { image: any, name: string, turn: string, price: string, time: string }
-        index: number
-    }
+interface Props {
+    item: { image: any, name: string, turn: string, price: string, time: string }
+    index: number
+}
+const MyFavourite: React.FC<Props> = () => {
+  
 
     function carouselCardItem({ item, index }: Props) {
         return (
@@ -38,68 +39,66 @@ const MyFavourite = () => {
         )
     }
     return (
-        <ScrollView>
 
-            <View style={styles.container}>
-                <View style={styles.header}>
-                    <Image style={styles.imgHeader} source={require('../resource/assets/images/imgFVR.png')}></Image>
-                    <View style={styles.iconHeader}>
-                        <Ripple>
-                            <Image source={require('../resource/assets/images/back.png')}></Image>
-                        </Ripple>
-                        <Ripple>
-                            <Image source={require('../resource/assets/images/bell.png')}></Image>
-                        </Ripple>
-                    </View>
-                    <Text style={styles.textHeader}>Lựa chọn chuyến đi phù hợp {`\n`}cho bạn nào !!!</Text>
-                    <View style={styles.menuMyFVT}>
-                        <Shadow distance={1} endColor={'#ff00ff10'} offset={[20, 1]} style={styles.findMyFavourite}>
-                            <TextInput placeholder='Tìm kiếm ...'></TextInput>
-                        </Shadow>
-                        <Image style={styles.find} source={require('../resource/assets/images/find.png')}></Image>
-                        <Image style={styles.imgMenu} source={require('../resource/assets/images/menuMyFVR.png')}></Image>
-                    </View>
-                    <FlatList
-                        style={{ marginTop: 180, marginRight: 15 }}
-                        data={data}
-                        renderItem={({ item }) => <ItemMyFavourite item={item} />}
-                        showsVerticalScrollIndicator={false}
-                        keyExtractor={item => item._id}
-                        horizontal
-                    />
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <Image style={styles.imgHeader} source={require('../resource/assets/images/imgFVR.png')}></Image>
+                <View style={styles.iconHeader}>
+                    <Ripple>
+                        <Image source={require('../resource/assets/images/back.png')}></Image>
+                    </Ripple>
+                    <Ripple>
+                        <Image source={require('../resource/assets/images/bell.png')}></Image>
+                    </Ripple>
                 </View>
-
-
-                <View style={styles.center}>
-                    <View style={styles.titleCenter}>
-                        <Text style={styles.textTitle}>Điểm đến yêu thích</Text>
-                        <Image source={require('../resource/assets/images/fire.png')}></Image>
-                    </View>
-                    <Carousel
-                        data={dataSlide}
-                        renderItem={carouselCardItem}
-                        sliderWidth={SLIDE_WIDTH}
-                        itemWidth={ITEM_WIDTH}
-                        useScrollView={true}
-                    >
-                        <Text style={{ color: 'green', backgroundColor: 'red' }}>Trường đẹp trai</Text>
-                    </Carousel>
+                <Text style={styles.textHeader}>Lựa chọn chuyến đi phù hợp {`\n`}cho bạn nào !!!</Text>
+                <View style={styles.menuMyFVT}>
+                    <Shadow distance={1} endColor={'#ff00ff10'} offset={[20, 1]} style={styles.findMyFavourite}>
+                        <TextInput placeholder='Tìm kiếm ...'></TextInput>
+                    </Shadow>
+                    <Image style={styles.find} source={require('../resource/assets/images/find.png')}></Image>
+                    <Image style={styles.imgMenu} source={require('../resource/assets/images/menuMyFVR.png')}></Image>
                 </View>
-
-                <View style={styles.footer}>
-                    <View style={styles.titleCenter}>
-                        <Text style={styles.textTitle}>Khám phá thêm</Text>
-                        <Image source={require('../resource/assets/images/explore.png')}></Image>
-                    </View>
-                    <FlatList
-                        data={dataExplore}
-                        renderItem={({ item }) => <ItemExploreMyFavourite item={item} />}
-                        showsVerticalScrollIndicator={false}
-                        keyExtractor={item => item._id}
-                    />
-                </View>
+                <FlatList
+                    style={{ marginTop: 180, marginRight: 15 }}
+                    data={data}
+                    renderItem={({ item }) => <ItemMyFavourite item={item} />}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={item => item._id}
+                    horizontal
+                />
             </View>
-        </ScrollView>
+
+
+            <View style={styles.center}>
+                <View style={styles.titleCenter}>
+                    <Text style={styles.textTitle}>Điểm đến yêu thích</Text>
+                    <Image source={require('../resource/assets/images/fire.png')}></Image>
+                </View>
+                <Carousel
+                    data={dataSlide}
+                    renderItem={carouselCardItem}
+                    sliderWidth={SLIDE_WIDTH}
+                    itemWidth={ITEM_WIDTH}
+                    useScrollView={true}
+                >
+                    <Text style={{ color: 'green', backgroundColor: 'red' }}>Trường đẹp trai</Text>
+                </Carousel>
+            </View>
+
+            <View style={styles.footer}>
+                <View style={styles.titleCenter}>
+                    <Text style={styles.textTitle}>Khám phá thêm</Text>
+                    <Image source={require('../resource/assets/images/explore.png')}></Image>
+                </View>
+                <FlatList
+                    data={dataExplore}
+                    renderItem={({ item }) => <ItemExploreMyFavourite item={item} />}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={item => item._id}
+                />
+            </View>
+        </View>
     )
 }
 
