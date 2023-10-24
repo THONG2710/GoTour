@@ -1,18 +1,25 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
-import { TEST } from '../../resource/assets/String';
+import { TEST } from '../../../../resource/assets/String';
+import { SplashOneProp } from './type';
 
-const SplashOne = () => {
+const SplashOne: React.FC<SplashOneProp> = (props) => {
+    const {navigation} = props;
+
+    const onNext = () => {
+        navigation.navigate('splashTwo');
+    }
+
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.imgSplash} source={require('../../resource/assets/images/splashOne.png')}>
+            <ImageBackground style={styles.imgSplash} source={require('../../../../resource/assets/images/splashOne.png')}>
                 <View style={styles.footer}>
-                    <Image style={styles.imgNextFooter} source={require('../../resource/assets/images/imgNext.png')}></Image>
+                    <Image style={styles.imgNextFooter} source={require('../../../../resource/assets/images/imgNext.png')}></Image>
                     <Text style={styles.textTitle}>{TEST}</Text>
                     <Text style={styles.textContent}>Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu {`\n`} lưu thú vị trên tất cả các vùng miền</Text>
-                    <Ripple>
-                        <Image source={require('../../resource/assets/images/btnNext.png')}></Image> 
+                    <Ripple onPress={onNext}>
+                        <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image> 
                     </Ripple>
                 </View>
             </ImageBackground>
@@ -27,8 +34,6 @@ const styles = StyleSheet.create({
     {
         flex: 1
     },
-
-
 
     footer:
     {
@@ -51,7 +56,6 @@ const styles = StyleSheet.create({
     {
         position: 'absolute',
         bottom: 60,
-
     },
 
     textTitle:
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     textContent:
     {
         textAlign: 'center',
-        fontSize: 14,
+        fontSize: 14,   
         color: 'white',
         marginVertical:10
 
