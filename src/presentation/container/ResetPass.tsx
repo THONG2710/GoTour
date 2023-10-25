@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         left: 0,
         marginTop: -50,
+        pointerEvents: 'none',
 
     },
     div2: {
@@ -173,6 +174,8 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignSelf: 'flex-end',
         bottom: 0,
+        pointerEvents: 'none',
+
 
 
     },
