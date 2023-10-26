@@ -1,24 +1,20 @@
-import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { FlatList, Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
+import ItemListTrain from './ItemListTrain';
+import TabViewItem from '../components/custom/TabViewItem';
+import Plane from './Plane';
+import Hotel from './Hotel';
 
-const Train = () => {
+const Train: React.FC = () => {
+    const render = ({ item }: { item: (typeof DATA)[0] }) => (
+        <ItemListTrain {...item} />
+
+    )
+
     return (
         <View style={styles.container}>
-            <Image style={styles.img} source={require('../img/background.png')} />
-            <View style={styles.header}>
-                <Image source={require('../img/logo.png')} />
-                <Image style={{ marginStart: 250, marginTop: 20 }} source={require('../img/bell.png')} />
-
-            </View>
-            <View style={styles.search}>
-                <Text>Tìm kiếm...</Text>
-                <Image source={require('../img/search.png')} />
-            </View>
-            <View style={styles.tab}>
-                <Text style={styles.text}>Khách Sạn</Text>
-                <Text style={styles.text}>Chuyến bay</Text>
-                <Text style={styles.textChoose}>Vé tàu</Text>
-            </View>
+            {/* <Image style={styles.img} source={require('../img/background.png')} /> */} 
+            
             <View style={styles.book}>
                 <View style={styles.item}>
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
@@ -36,137 +32,38 @@ const Train = () => {
                 </TouchableOpacity>
 
             </View>
-            <View style={{ flexDirection: 'row', marginHorizontal: 10, marginTop: 100 }}>
+            <View style={{ flexDirection: 'row', marginHorizontal: 10 }}>
                 <Image source={require('../img/train1.png')} />
                 <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
             </View>
-           <View style={styles.list}>   
-            <View style={styles.item2}>
-                <View>
-                    <View style={{flexDirection:'row',marginLeft:20}}>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>05:35</Text>
-                        <View style={{margin:10}}>
-                            <Image source={require('../img/line.png')} />
-                            <Text style={{textAlign:'center'}}>6h 40p</Text>
-                        </View>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>12:15</Text>
-                    </View>
-                    <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:-10}}>
-                        <Text style={{color:'black',fontSize:15}}>Tp.Hồ Chí Minh</Text>
-                        <Text style={{color:'black',fontSize:15}}>Hà Nội</Text>
-                    </View>
-
-                </View>
-                <View style={{alignSelf:'center'}}>
-                    <Text style={{ color: 'blue',fontSize:15,fontWeight:'bold' }}>4.462.000 đ</Text>
-                </View>
-            </View>
-            <View style={styles.item2}>
-                <View>
-                    <View style={{flexDirection:'row',marginLeft:20}}>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>05:35</Text>
-                        <View style={{margin:10}}>
-                            <Image source={require('../img/line.png')} />
-                            <Text style={{textAlign:'center'}}>6h 40p</Text>
-                        </View>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>12:15</Text>
-                    </View>
-                    <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:-10}}>
-                        <Text style={{color:'black',fontSize:15}}>Tp.Hồ Chí Minh</Text>
-                        <Text style={{color:'black',fontSize:15}}>Hà Nội</Text>
-                    </View>
-
-                </View>
-                <View style={{alignSelf:'center'}}>
-                    <Text style={{ color: 'blue',fontSize:15,fontWeight:'bold' }}>4.462.000 đ</Text>
-                </View>
-            </View>
-            <View style={styles.item2}>
-                <View>
-                    <View style={{flexDirection:'row',marginLeft:20}}>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>05:35</Text>
-                        <View style={{margin:10}}>
-                            <Image source={require('../img/line.png')} />
-                            <Text style={{textAlign:'center'}}>6h 40p</Text>
-                        </View>
-                        <Text style={{color:'black',fontSize:25,fontWeight:'bold'}}>12:15</Text>
-                    </View>
-                    <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:-10}}>
-                        <Text style={{color:'black',fontSize:15}}>Tp.Hồ Chí Minh</Text>
-                        <Text style={{color:'black',fontSize:15}}>Hà Nội</Text>
-                    </View>
-
-                </View>
-                <View style={{alignSelf:'center'}}>
-                    <Text style={{ color: 'blue',fontSize:15,fontWeight:'bold' }}>4.462.000 đ</Text>
-                </View>
-            </View>
+            <View style={{height:280}}>    
+            <FlatList 
+                data={DATA}
+                renderItem={render}
+                keyExtractor={item => item.id}
+                showsVerticalScrollIndicator={false}
+                 />
             </View>
         </View>
+
     )
+
 }
 
 export default Train
 
 const styles = StyleSheet.create({
     container: {
-
-    },
-    img: {
-        height: '50%',
-
-    },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        position: 'absolute'
-    },
-    search: {
-        flexDirection: 'row',
-        backgroundColor: 'white',
-        position: 'absolute',
-        justifyContent: 'space-between',
-        width: '90%',
-        padding: 8,
-        borderRadius: 10,
-        marginVertical: 65,
-        marginStart: 20
-    },
-    tab: {
-        flexDirection: 'row',
-        paddingHorizontal: 30,
-        justifyContent: 'space-between',
-        marginTop: 120,
-        backgroundColor: 'white',
-        height: 40,
-        borderBottomWidth: 3,
-        borderColor: '#FFBC7F',
-        position: 'absolute',
-        width: '100%'
-    },
-    text: {
-        alignSelf: 'center',
-        fontSize: 15,
-        color: 'black',
-
-    },
-    textChoose: {
-        alignSelf: 'center',
-        fontSize: 15,
-        color: '#FFBC7F',
-
-
+        backgroundColor:'white'
     },
     book: {
         backgroundColor: 'white',
         marginHorizontal: 10,
         height: 'auto',
-        marginVertical: 180,
+        marginVertical: 10,
         borderRadius: 20,
         padding: 13,
-        position: 'absolute',
         width: '95%',
-
     },
     item: {
         flexDirection: 'row',
@@ -182,23 +79,26 @@ const styles = StyleSheet.create({
         padding: 10,
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10
-
     },
     item2: {
         flexDirection: 'row',
-        marginTop:20,
+        marginTop: 20,
         marginHorizontal: 10,
         backgroundColor: '#8F8F8F',
         borderRadius: 10,
         height: 70,
-        justifyContent:'space-between',
-        paddingLeft:10,
-        paddingRight:10,
-      
+        justifyContent: 'space-between',
+        paddingLeft: 10,
+        paddingRight: 10,
     },
-    list:{
-        marginTop:410,
-        position:'absolute',
-        width:'100%'
-    }
 })
+const DATA = [
+    { id: '1', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },
+    { id: '2', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },
+    { id: '3', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },
+    { id: '4', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },
+    { id: '5', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },
+
+    
+
+]
