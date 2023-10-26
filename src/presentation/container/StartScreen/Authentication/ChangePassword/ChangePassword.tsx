@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import { ICON_HIDDENPASSWORD, ICON_LOCK, ICON_SHOWPASSWOR, LOGO_GOTOUR } from "../../../../resource/assets/images";
+import { ChangePasswordProp } from "./type";
 
 
 
-const ResetPass = () => {
+const ChangePassword: React.FC<ChangePasswordProp> = (props) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+    const {navigation} = props;
    
     
     const togglePasswordVisibility = () => {
@@ -24,17 +26,18 @@ const ResetPass = () => {
         if(password!==confirmPassword){
             ToastAndroid.show("Mật khẩu không khớp", ToastAndroid.SHORT);
         }
+        navigation.navigate('login');
     };
 
     return (
         <View>
-            <Image style={styles.logo} source={require("../resource/images/logo.png")} />
+            <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
             <Text style={styles.txtResetPass}>ĐẶT LẠI MẬT KHẨU</Text>
 
             <View style={styles.box}>
                 <View style={[styles.boxInput, { marginTop: 10 }]}>
                     <Image
-                        source={require("../resource/images/lock.png")}
+                        source={{uri: ICON_LOCK}}
                         style={{ width: 20, height: 20 }}
                     />
                     <TextInput
@@ -48,7 +51,7 @@ const ResetPass = () => {
                     </TextInput>
                     <Pressable onPress={togglePasswordVisibility}>
                         <Image
-                            source={showPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                            source={showPassword ? {uri: ICON_SHOWPASSWOR} : {uri: ICON_HIDDENPASSWORD}}
                             style={{ width: 25, height: 25, opacity: 0.5 }}
                         />
                     </Pressable>
@@ -56,7 +59,7 @@ const ResetPass = () => {
 
                 <View style={styles.boxInput}>
                     <Image
-                        source={require("../resource/images/lock.png")}
+                        source={{uri: ICON_LOCK}}
                         style={{ width: 20, height: 20 }}
                     />
                     <TextInput
@@ -67,7 +70,7 @@ const ResetPass = () => {
                         onChangeText={setConfirmPassword}/>
                     <Pressable onPress={toggleConfirmPasswordVisibility}>
                         <Image
-                            source={showConfirmPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                            source={showConfirmPassword ? {uri: ICON_SHOWPASSWOR} : {uri: ICON_HIDDENPASSWORD}}
                             style={{ width: 25, height: 25, opacity: 0.5 }}
                         />
                     </Pressable>
@@ -86,7 +89,7 @@ const ResetPass = () => {
     )
 
 }
-export default ResetPass;
+export default ChangePassword;
 const styles = StyleSheet.create({
     logo: {
         width: 200,

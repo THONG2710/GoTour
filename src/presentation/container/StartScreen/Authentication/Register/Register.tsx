@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { Button, Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import { ICON_HIDDENPASSWORD, ICON_LOCK, ICON_PHONE, ICON_SHOWPASSWOR, ICON_USER, LOGO_GOTOUR } from "../../../../resource/assets/images";
+import { RegisterProp } from "./type";
 
 
 
-const Login = () => {
+const Register: React.FC<RegisterProp> = (props) => {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setshowConfirmPassword] = useState(false)
-
+    const {navigation} = props;
 
 
 
@@ -22,7 +24,7 @@ const Login = () => {
         setshowConfirmPassword(!showConfirmPassword);
     };
     const login = () => {
-        console.log('login');
+        navigation.navigate('login');
     };
     const register = () => {
         console.log('name:',name ,"phone:",phone,'pass:',password,'confirmpass:', confirmPassword);
@@ -37,13 +39,13 @@ const Login = () => {
                     <View style={styles.div1}></View>
                     <View style={styles.div2}></View>
                 </View>
-                <Image style={styles.logo} source={require("../resource/images/logo.png")} />
+                <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
                 <Text style={styles.txtRegister}>ĐĂNG KÝ</Text>
 
                 <View style={styles.box}>
                     <View style={[styles.boxInput, { marginTop: 0 }]}>
                         <Image
-                            source={require("../resource/images/thongtinkhbutton.png")}
+                            source={{uri: ICON_USER}}
                             style={{ width: 20, height: 20, marginLeft: 5 }}
                         />
                         <TextInput
@@ -57,7 +59,7 @@ const Login = () => {
                     </View>
                     <View style={[styles.boxInput, { marginTop: 20 }]}>
                         <Image
-                            source={require("../resource/images/phone.png")}
+                            source={{uri: ICON_PHONE}}
                             style={{ width: 20, height: 20, marginLeft: 5 }}
                         />
                         <TextInput
@@ -73,7 +75,7 @@ const Login = () => {
 
                     <View style={styles.boxInput}>
                         <Image
-                            source={require("../resource/images/lock.png")}
+                            source={{uri: ICON_LOCK}}
                             style={{ width: 20, height: 20, marginLeft: 5 }}
                         />
                         <TextInput
@@ -84,7 +86,7 @@ const Login = () => {
                             onChangeText={setPassword} />
                         <Pressable onPress={togglePasswordVisibility}>
                             <Image
-                                source={showPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                                source={showPassword ? {uri: ICON_SHOWPASSWOR} : {uri: ICON_HIDDENPASSWORD}}
                                 style={{ width: 25, height: 25, opacity: 0.5 }}
                             />
                         </Pressable>
@@ -92,7 +94,7 @@ const Login = () => {
                     </View>
                     <View style={styles.boxInput}>
                         <Image
-                            source={require("../resource/images/lock.png")}
+                            source={{uri: ICON_LOCK}}
                             style={{ width: 20, height: 20, marginLeft: 5 }}
                         />
                         <TextInput
@@ -104,7 +106,7 @@ const Login = () => {
                             focusable />
                         <Pressable onPress={toggleConfirmPasswordVisibility}>
                             <Image
-                                source={showConfirmPassword ? require("../resource/images/eye.png") : require("../resource/images/hidden.png")}
+                                source={showConfirmPassword ?{uri: ICON_SHOWPASSWOR} : {uri: ICON_HIDDENPASSWORD}}
                                 style={{ width: 25, height: 25, opacity: 0.5 }}
                             />
                         </Pressable>
@@ -133,7 +135,7 @@ const Login = () => {
     )
 
 }
-export default Login;
+export default Register;
 const styles = StyleSheet.create({
     div1: {
 

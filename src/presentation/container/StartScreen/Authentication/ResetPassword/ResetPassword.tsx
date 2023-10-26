@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import { LOGO_GOTOUR } from "../../../../resource/assets/images";
+import { ResetPasswordProp } from "./type";
 
 
-const ForgotPass = () => {
+const ResetPassword: React.FC<ResetPasswordProp> = (props) => {
   const [phone, setPhone] = useState('')
+  const {navigation} = props;
 
   const submit = () => {
-    console.log('Phone:', phone);
-
+    navigation.navigate('sendOTP');
   }
   const register = () => {
-    console.log('register');
+    navigation.navigate('register');
   }
   const backToSignIn = () => {
-    console.log('backToSignIn');
+    navigation.navigate('login');
   }
   const cantResetPass = () => {
     console.log('cantResetPass');
@@ -24,7 +26,7 @@ const ForgotPass = () => {
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row", display: 'flex', justifyContent: 'space-between' }}>
-        <Image style={{ width: 150, height: 150 }} source={require("../resource/images/logo.png")} />
+        <Image style={{ width: 150, height: 150 }} source={{uri: LOGO_GOTOUR}} />
         <View style={styles.div1}></View>
       </View>
       <View style={styles.div2}>
@@ -71,7 +73,7 @@ const ForgotPass = () => {
 
   )
 }
-export default ForgotPass;
+export default ResetPassword;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

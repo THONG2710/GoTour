@@ -1,0 +1,1 @@
+export const TEST =  'Chào mừng bạn đến với GoTour'   

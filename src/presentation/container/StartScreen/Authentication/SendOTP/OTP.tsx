@@ -1,16 +1,17 @@
 import React, { useRef, useState } from "react";
 import { Alert, Image, Pressable, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native"
 import LinearGradient from "react-native-linear-gradient";
+import { LOGO_GOTOUR } from "../../../../resource/assets/images";
+import { SendOTPProp } from "./type";
 
 
-const OTP = () => {
+const OTP: React.FC<SendOTPProp> = (props) => {
     const [otp, setOtp] = useState(["", "", "", ""]);
     const firstInput = useRef<TextInput>(null);
     const secondInput = useRef<TextInput>(null);
     const thirdInput = useRef<TextInput>(null);
     const fourthInput = useRef<TextInput>(null);
-
-
+    const {navigation} = props;
 
     const nextInput = (index: number) => {
         if (index === 0) {
@@ -39,10 +40,9 @@ const OTP = () => {
         }
         console.log(otpcode);
         console.log(otp);
-        
-        
-
+        navigation.navigate('changePassword');
     }
+
     return (
 
         <View style={{ flex: 1, }}>
@@ -50,7 +50,7 @@ const OTP = () => {
                 <View style={styles.div2}></View>
                 <View style={styles.div1}></View>
             </View>
-            <Image style={styles.logo} source={require("../resource/images/logo.png")} />
+            <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
             <View>
                 <Text style={styles.txtOTP}>NHẬP OTP</Text>
                 <Text style={styles.txt}>Vui lòng nhập mã OTP được gửi đến số điện thoại </Text>
