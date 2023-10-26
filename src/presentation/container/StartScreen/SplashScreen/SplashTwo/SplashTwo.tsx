@@ -1,39 +1,40 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
-import { TEST } from '../../../../resource/assets/String';
-import { SplashOneProp } from './type';
+import { SplashTwoProp } from './type';
+import { SPLASH_TWO } from '../../../../resource/assets/images';
 
-const SplashOne: React.FC<SplashOneProp> = (props) => {
+const SplashTwo: React.FC<SplashTwoProp> = (props) => {
     const {navigation} = props;
 
     const onNext = () => {
-        navigation.navigate('splashTwo');
+        navigation.navigate('splashThree');
     }
 
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.imgSplash} source={require('../../../../resource/assets/images/splashOne.png')}>
+            <Image style={styles.imgSplash} source={{uri: SPLASH_TWO}}/>
                 <View style={styles.footer}>
                     <Image style={styles.imgNextFooter} source={require('../../../../resource/assets/images/imgNext.png')}></Image>
-                    <Text style={styles.textTitle}>{TEST}</Text>
-                    <Text style={styles.textContent}>Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu {`\n`} lưu thú vị trên tất cả các vùng miền</Text>
+                    <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
+                    <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
                     <Ripple onPress={onNext}>
-                        <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image> 
+                        <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>
-            </ImageBackground>
         </View>
     )
 }
 
-export default SplashOne
+export default SplashTwo
 
 const styles = StyleSheet.create({
     container:
     {
         flex: 1
     },
+
+
 
     footer:
     {
@@ -50,12 +51,15 @@ const styles = StyleSheet.create({
     {
         width: '100%',
         height: '100%',
+        position: 'absolute',
+        zIndex: -1,
     },
 
     imgNextFooter:
     {
         position: 'absolute',
         bottom: 60,
+
     },
 
     textTitle:
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
     textContent:
     {
         textAlign: 'center',
-        fontSize: 14,   
+        fontSize: 14,
         color: 'white',
         marginVertical:10
 

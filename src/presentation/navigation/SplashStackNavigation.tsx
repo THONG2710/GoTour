@@ -3,9 +3,9 @@ import React from 'react'
 import { SplashParamlist } from '../storyboard/SplashStoryBoard';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import SplashOne from '../container/Authentication/Splashs/SplashOne/SplashOne';
-import SplashTwo from '../container/Authentication/Splashs/SplashTwo/SplashTwo';
-import SplashThree from '../container/Authentication/Splashs/SplashThree/SplashThree';
+import SplashOne from '../container/StartScreen/SplashScreen/SplashOne/SplashOne';
+import SplashTwo from '../container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
+import SplashThree from '../container/StartScreen/SplashScreen/SplashThree/SplashThree';
 
 const Stack = createStackNavigator<SplashParamlist>();
 

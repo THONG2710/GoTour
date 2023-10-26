@@ -1,9 +1,10 @@
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
-import { SplashTwoProp } from './type';
+import { SplashThreeProp } from './type';
+import { SPLASH_THREE } from '../../../../resource/assets/images';
 
-const SplashTwo: React.FC<SplashTwoProp> = (props) => {
+const SplashThree: React.FC<SplashThreeProp> = (props) => {
     const {navigation} = props;
 
     const onNext = () => {
@@ -12,30 +13,26 @@ const SplashTwo: React.FC<SplashTwoProp> = (props) => {
 
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.imgSplash} source={require('../../../../resource/assets/images/splashTwo.png')}>
-
+            <Image style={styles.imgSplash} source={{uri: SPLASH_THREE}}/>
                 <View style={styles.footer}>
                     <Image style={styles.imgNextFooter} source={require('../../../../resource/assets/images/imgNext.png')}></Image>
-                    <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
-                    <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
+                    <Text style={styles.textTitle}>Được thiết kế dành riêng {`\n`} cho bạn</Text>
+                    <Text style={styles.textContent}>Ứng dụng của chúng tôi tùy chỉnh thiết kế {`\n`} các đề xuất du lịch dựa trên sở thích và {`\n`} sở thích của bạn.</Text>
                     <Ripple onPress={onNext}>
                         <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image>
                     </Ripple>
                 </View>
-            </ImageBackground>
         </View>
     )
 }
 
-export default SplashTwo
+export default SplashThree
 
 const styles = StyleSheet.create({
     container:
     {
         flex: 1
     },
-
-
 
     footer:
     {
@@ -52,6 +49,8 @@ const styles = StyleSheet.create({
     {
         width: '100%',
         height: '100%',
+        position: 'absolute',
+        zIndex: -1,
     },
 
     imgNextFooter:
