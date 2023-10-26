@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet, Text, TextInput, View, Image, FlatList } from 'react-native'
 import React from 'react'
-import ItemListShare from './ItemListShare'
+import ItemListShare from '../../component/items/ItemListShare'
+
 
 const ListShare = () => {
     interface Props {

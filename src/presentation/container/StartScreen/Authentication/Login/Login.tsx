@@ -9,9 +9,6 @@ const Login = () => {
     const [phone, setPhone] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-
-
-
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
@@ -54,9 +51,7 @@ const Login = () => {
                         onChangeText={setPhone}
                     >
                     </TextInput>
-
                 </View>
-
                 <View style={styles.boxInput}>
                     <Image
                         source={require("../resource/images/lock.png")}
@@ -217,7 +212,6 @@ const styles = StyleSheet.create({
 
     },
 
-
     div3: {
         backgroundColor: "#F1AF72",
         borderTopRightRadius: 10,
@@ -229,8 +223,7 @@ const styles = StyleSheet.create({
         left: 0,
         marginTop: -200,
         pointerEvents: 'none',
-
-
+        zIndex: -1,
     },
     div4: {
         backgroundColor: "#EBA05A",
@@ -243,9 +236,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         pointerEvents: 'none',
-
-
-
-
+        zIndex: -1,
     },
 })

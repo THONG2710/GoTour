@@ -3,7 +3,7 @@ import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from "rea
 import LinearGradient from "react-native-linear-gradient";
 
 
-const ForgotPass = () => {
+const ResetPassword = () => {
   const [phone, setPhone] = useState('')
 
   const submit = () => {
@@ -71,7 +71,7 @@ const ForgotPass = () => {
 
   )
 }
-export default ForgotPass;
+export default ResetPassword;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

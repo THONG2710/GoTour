@@ -4,7 +4,7 @@ import LinearGradient from "react-native-linear-gradient";
 
 
 
-const ResetPass = () => {
+const ChangePassword = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
@@ -86,7 +86,7 @@ const ResetPass = () => {
     )
 
 }
-export default ResetPass;
+export default ChangePassword;
 const styles = StyleSheet.create({
     logo: {
         width: 200,

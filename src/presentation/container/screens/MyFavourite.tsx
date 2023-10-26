@@ -2,9 +2,9 @@ import { Image, ImageBackground, StyleSheet, Text, TextInput, View, FlatList, Di
 import React, { useState, useRef } from 'react'
 import Ripple from 'react-native-material-ripple';
 import { Shadow } from 'react-native-shadow-2';
-import ItemMyFavourite from '../component/items/ItemTypeOfTravelMyFavourite';
+import ItemMyFavourite from '../../component/items/ItemTypeOfTravelMyFavourite';
 import Carousel from 'react-native-snap-carousel';
-import ItemExploreMyFavourite from '../component/items/ItemExploreMyFavourite';
+import ItemExploreMyFavourite from '../../component/items/ItemExploreMyFavourite';
 
 const SLIDE_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = SLIDE_WIDTH * 0.6;

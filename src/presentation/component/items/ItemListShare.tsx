@@ -23,7 +23,7 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                 </View>
                 <TouchableOpacity>
 
-                    <Image source={require('../resource/assets/images/menu.png')}></Image>
+                    <Image source={require('../../resource/assets/images/menu.png')}></Image>
                 </TouchableOpacity>
             </View>
 

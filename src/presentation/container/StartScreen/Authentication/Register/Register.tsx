@@ -4,7 +4,7 @@ import LinearGradient from "react-native-linear-gradient";
 
 
 
-const Login = () => {
+const Register = () => {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
     const [name, setName] = useState('')
@@ -133,7 +133,7 @@ const Login = () => {
     )
 
 }
-export default Login;
+export default Register;
 const styles = StyleSheet.create({
     div1: {
 
