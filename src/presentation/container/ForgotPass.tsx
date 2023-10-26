@@ -4,13 +4,21 @@ import LinearGradient from "react-native-linear-gradient";
 
 
 const ForgotPass = () => {
-  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
 
-const submit = () => {
-  console.log('Email:', email);
-  
-}
-  
+  const submit = () => {
+    console.log('Phone:', phone);
+
+  }
+  const register = () => {
+    console.log('register');
+  }
+  const backToSignIn = () => {
+    console.log('backToSignIn');
+  }
+  const cantResetPass = () => {
+    console.log('cantResetPass');
+  }
 
 
   return (
@@ -20,32 +28,37 @@ const submit = () => {
         <View style={styles.div1}></View>
       </View>
       <View style={styles.div2}>
-        <Text style={styles.text}>QUÊN MẬT KHẨU</Text>
+        <Text style={styles.txtForgotPass}>QUÊN MẬT KHẨU</Text>
       </View>
       <View style={styles.main}>
         <TextInput style={styles.textinput}
-          placeholder="Nhập email của bạn"
-          onChangeText={setEmail}
-          value={email}
-          keyboardType="email-address"
+          placeholder="Số điện thoại"
+          onChangeText={setPhone}
+          value={phone}
+          keyboardType="numeric"
         >
 
 
         </TextInput>
         <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={["#FD9448", '#FB8631', '#D75D04']} style={styles.linearGradient}>
-          <Pressable style={styles.button} onPress={submit}>
-            <Text style={styles.textbtn}>Xác nhận</Text>
+          <Pressable style={styles.btnSubmit} onPress={submit}>
+            <Text style={styles.txtSubmit}>Xác nhận</Text>
           </Pressable>
         </LinearGradient>
+        <Pressable onPress={cantResetPass}>
+          <Text style={styles.txtCantGetPass}>Không thể lấy lại được mật khẩu?</Text>
 
-        <Text style={styles.text2}>Không thể lấy lại được mật khẩu?</Text>
+        </Pressable>
         <View style={{ flexDirection: 'row', justifyContent: "space-between", display: "flex", marginLeft: 20, marginRight: 20 }}>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
           <Text >Hoặc</Text>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
         </View>
-        <Text style={styles.text3}>Đăng kí tài khoản mới</Text>
-        <Pressable style={styles.button2}>
+        <Pressable onPress={register}>
+          <Text style={styles.txtRegister}>Đăng kí tài khoản mới</Text>
+        </Pressable>
+
+        <Pressable style={styles.btnBackToSignIn} onPress={backToSignIn}>
           <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Trở lại đăng nhập</Text>
         </Pressable>
       </View>
@@ -83,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
   },
-  text: {
+  txtForgotPass: {
     fontSize: 25,
     fontWeight: 'bold',
     color: "#fff",
@@ -109,7 +122,7 @@ const styles = StyleSheet.create({
 
 
   },
-  textbtn: {
+  txtSubmit: {
 
     textAlign: 'center',
     borderRadius: 20,
@@ -121,7 +134,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
 
   },
-  button: {
+  btnSubmit: {
     width: 180,
 
   },
@@ -132,7 +145,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     elevation: 5,
   },
-  text2: {
+  txtCantGetPass: {
     textAlign: 'center',
     fontStyle: 'italic',
     color: 'grey',
@@ -140,15 +153,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 13,
   },
-  text3: {
+  txtRegister: {
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 15,
-    color: 'black',
+    color: '#FB8631',
     marginTop: 10,
     marginBottom: 10,
   },
-  button2: {
+  btnBackToSignIn: {
     alignSelf: 'flex-end',
     backgroundColor: '#D8A06D',
     width: 200,
@@ -167,6 +180,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 100,
     marginTop: -30,
     elevation: 1,
+    pointerEvents: 'none',
+
 
   },
   div4: {
@@ -178,6 +193,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 50,
     borderBottomLeftRadius: 50,
     borderTopRightRadius: 100,
+    pointerEvents: 'none',
+
 
   },
 });
