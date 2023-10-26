@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native";
+import { Button, Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, ToastAndroid, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 
@@ -31,7 +31,7 @@ const Login = () => {
 
     return (
         <ScrollView style={{flex:1}}>
-            <View >
+            <SafeAreaView >
 
                 <View >
                     <View style={styles.div1}></View>
@@ -127,7 +127,7 @@ const Login = () => {
                     <View style={styles.div3}></View>
                     <View style={styles.div4}></View>
                 </View>
-            </View >
+            </SafeAreaView>
         </ScrollView>
 
     )

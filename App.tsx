@@ -8,9 +8,11 @@ import ResetPass from './src/presentation/container/ResetPass';
 import News from './src/presentation/container/News';
 import Login from './src/presentation/container/Login';
 import Register from './src/presentation/container/Register';
+import NewsDetail from './src/presentation/container/NewsDetail';
+import HotelDetail from './src/presentation/container/HotelDetail';
 function App(): JSX.Element {
   return (
-    <Register/>
+    <HotelDetail/>
   );
 }
 
