@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import TabViewItem from '../components/custom/TabViewItem'
 import Plane from './Plane'
-import Hotel from './Hotel'
+import Hotel from '../../component/items/Hotel'
 import Train from './Train'
 
 const Booking: React.FC = () => {

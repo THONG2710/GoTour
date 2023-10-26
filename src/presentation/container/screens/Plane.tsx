@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native'
 import React, { useState } from 'react'
-import ItemListPlane from './ItemListPlane'
 import CheckBox from '@react-native-community/checkbox'
+import ItemListPlane from '../../component/items/ItemListPlane'
 
 
 

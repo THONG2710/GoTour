@@ -1,9 +1,20 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 import Ripple from 'react-native-material-ripple';
 import {TEST} from '../../../../resource/assets/String';
 import {SplashOneProp} from './type';
-import { SPLASH_ONE } from '../../../../resource/assets/images';
+import {
+  NEXT_BUTTON,
+  NEXT_FRAME,
+  SPLASH_ONE,
+} from '../../../../resource/assets/images';
 
 const SplashOne: React.FC<SplashOneProp> = props => {
   const {navigation} = props;
@@ -14,21 +25,20 @@ const SplashOne: React.FC<SplashOneProp> = props => {
 
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.imgSplash}
-        source={{uri: SPLASH_ONE}}/>
+      {/* IMAGE MAIN */}
+      <Image style={styles.imgSplash} source={{uri: SPLASH_ONE}} />
+      {/* FOOTER */}
       <View style={styles.footer}>
-        <Image
-          style={styles.imgNextFooter}
-          source={require('../../../../resource/assets/images/imgNext.png')}></Image>
+        <Image style={styles.imgNextFooter} source={{uri: NEXT_FRAME}}></Image>
         <Text style={styles.textTitle}>{TEST}</Text>
         <Text style={styles.textContent}>
           Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu{' '}
           {`\n`} lưu thú vị trên tất cả các vùng miền
         </Text>
-        <Ripple onPress={onNext}>   
+        <Ripple onPress={onNext}>
           <Image
-            source={require('../../../../resource/assets/images/btnNext.png')}></Image>
+            style={styles.btnImageNext}
+            source={{uri: NEXT_BUTTON}}></Image>
         </Ripple>
       </View>
     </View>
@@ -42,16 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  footer: {
-    width: '100%',
-    position: 'absolute',
-    zIndex: -1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    height: '100%',
-    bottom: 20,
-  },
-
+  // ============ IMAGE MAIN =================
   imgSplash: {
     width: '100%',
     height: '100%',
@@ -59,9 +60,21 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
 
+  // ============= FOOTER =================== 
+  footer: {
+    width: '100%',
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '50%',  
+    marginTop: Dimensions.get('screen').height/2,
+  },
+
   imgNextFooter: {
     position: 'absolute',
-    bottom: 60,
+    width: Dimensions.get('screen').width,
+    height: Dimensions.get('screen').height / 4,
+    resizeMode: 'contain',
   },
 
   textTitle: {
@@ -69,7 +82,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
-    marginBottom: 15,
   },
 
   textContent: {
@@ -77,5 +89,11 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'white',
     marginVertical: 10,
+  },
+
+  btnImageNext: {
+    width: 70,
+    height: 70,
+    resizeMode: 'contain',
   },
 });

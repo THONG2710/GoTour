@@ -1,5 +1,4 @@
 import React from 'react';
-import Test from './src/presentation/container/Test';
 import ForgotPass from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import Profile from './src/presentation/container/screens/Profile';
 import Deals from './src/presentation/container/screens/Deals';
@@ -10,14 +9,17 @@ import SplashOne from './src/presentation/container/StartScreen/SplashScreen/Spl
 import SplashTwo from './src/presentation/container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
 import SplashThree from './src/presentation/container/StartScreen/SplashScreen/SplashThree/SplashThree';
 import MyFavourite from './src/presentation/container/screens/MyFavourite';
-import Hotel from './src/presentation/container/screens/Hotel';
+import Hotel from './src/presentation/component/items/Hotel';
 import Plane from './src/presentation/container/screens/Plane';
-import Train from './src/presentation/container/screens/Hotel';
+import Train from './src/presentation/component/items/Hotel';
 import SplashStackNavigation from './src/presentation/navigation/SplashStackNavigation';
 import AuthenticationNavigation from './src/presentation/navigation/AuthenticationNavigation';
 import Login from './src/presentation/container/StartScreen/Authentication/Login/Login';
 import Register from './src/presentation/container/StartScreen/Authentication/Register/Register';
 import ListShare from './src/presentation/container/screens/ListShare';
+import Booking from './src/presentation/container/screens/Booking';
+import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
+import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -34,10 +36,14 @@ function App(): JSX.Element {
     // <Plane/>
     // <Train/>
     // <SplashStackNavigation/>
-    // <AuthenticationNavigation/>
+    <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
-    <ListShare/>
+    // <ListShare/>
+    // <Booking/>
+    // <ChangePassword/>
+    // <ResetPassword/>
+    // <OTP/>
   ); 
 }
 

@@ -2,7 +2,7 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
 import { SplashThreeProp } from './type';
-import { SPLASH_THREE } from '../../../../resource/assets/images';
+import { NEXT_BUTTON, NEXT_FRAME, SPLASH_THREE } from '../../../../resource/assets/images';
 
 const SplashThree: React.FC<SplashThreeProp> = (props) => {
     const {navigation} = props;
@@ -15,11 +15,11 @@ const SplashThree: React.FC<SplashThreeProp> = (props) => {
         <View style={styles.container}>
             <Image style={styles.imgSplash} source={{uri: SPLASH_THREE}}/>
                 <View style={styles.footer}>
-                    <Image style={styles.imgNextFooter} source={require('../../../../resource/assets/images/imgNext.png')}></Image>
+                    <Image style={styles.imgNextFooter} source={{uri: NEXT_FRAME}}></Image>
                     <Text style={styles.textTitle}>Được thiết kế dành riêng {`\n`} cho bạn</Text>
                     <Text style={styles.textContent}>Ứng dụng của chúng tôi tùy chỉnh thiết kế {`\n`} các đề xuất du lịch dựa trên sở thích và {`\n`} sở thích của bạn.</Text>
                     <Ripple onPress={onNext}>
-                        <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image>
+                        <Image source={{uri: NEXT_BUTTON}}></Image>
                     </Ripple>
                 </View>
         </View>

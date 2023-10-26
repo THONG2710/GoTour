@@ -1,9 +1,9 @@
 import { FlatList, Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import ItemListTrain from './ItemListTrain';
+import ItemListTrain from '../../component/items/ItemListTrain';
 import TabViewItem from '../components/custom/TabViewItem';
 import Plane from './Plane';
-import Hotel from './Hotel';
+import Hotel from '../../component/items/Hotel';
 
 const Train: React.FC = () => {
     const render = ({ item }: { item: (typeof DATA)[0] }) => (

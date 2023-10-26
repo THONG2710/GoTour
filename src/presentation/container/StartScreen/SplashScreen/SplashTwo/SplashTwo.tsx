@@ -2,7 +2,7 @@ import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
 import { SplashTwoProp } from './type';
-import { SPLASH_TWO } from '../../../../resource/assets/images';
+import { NEXT_BUTTON, NEXT_FRAME, SPLASH_TWO } from '../../../../resource/assets/images';
 
 const SplashTwo: React.FC<SplashTwoProp> = (props) => {
     const {navigation} = props;
@@ -15,11 +15,11 @@ const SplashTwo: React.FC<SplashTwoProp> = (props) => {
         <View style={styles.container}>
             <Image style={styles.imgSplash} source={{uri: SPLASH_TWO}}/>
                 <View style={styles.footer}>
-                    <Image style={styles.imgNextFooter} source={require('../../../../resource/assets/images/imgNext.png')}></Image>
+                    <Image style={styles.imgNextFooter} source={{uri: NEXT_FRAME}}></Image>
                     <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
                     <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
                     <Ripple onPress={onNext}>
-                        <Image source={require('../../../../resource/assets/images/btnNext.png')}></Image>
+                        <Image source={{uri: NEXT_BUTTON}}></Image>
                     </Ripple>
                 </View>
         </View>
