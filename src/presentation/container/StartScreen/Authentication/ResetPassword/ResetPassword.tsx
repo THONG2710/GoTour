@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     elevation: 10,
     shadowColor: '#000',
-
+    zIndex:10
 
   },
   //========boxInput======
