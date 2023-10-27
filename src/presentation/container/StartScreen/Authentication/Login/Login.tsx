@@ -40,17 +40,20 @@ const Login: React.FC<LoginProp> = (props) => {
 
   return (
     <View>
+      {/* //========header====== */}
       <View>
         <View style={styles.div1}></View>
         <View style={styles.div2}></View>
       </View>
+      {/* //========logo,tiitle====== */}
       <Image
         style={styles.logo}
         source={{uri: LOGO_GOTOUR}}
       />
       <Text style={styles.txtLogin}>ĐĂNG NHẬP</Text>
-
+      {/* //========box====== */}
       <View style={styles.box}>
+        {/* //========boxInput====== */}
         <View style={[styles.boxInput, {marginTop: 10}]}>
           <Image
             source={{uri: ICON_PHONE}}
@@ -86,10 +89,11 @@ const Login: React.FC<LoginProp> = (props) => {
             />
           </Pressable>
         </View>
+        {/* //========forgotPass====== */}
         <Pressable onPress={forgotPass}>
           <Text style={styles.txtforgotPass}>Quên mật khẩu?</Text>
         </Pressable>
-
+        {/* //========button====== */}
         <LinearGradient
           start={{x: 1, y: 0}}
           end={{x: 0, y: 0}}
@@ -99,7 +103,7 @@ const Login: React.FC<LoginProp> = (props) => {
             <Text style={styles.txtBtnLogin}>Đăng nhập</Text>
           </Pressable>
         </LinearGradient>
-
+        {/* //========or====== */}
         <View
           style={{
             flexDirection: 'row',
@@ -124,6 +128,7 @@ const Login: React.FC<LoginProp> = (props) => {
               marginTop: 10,
             }}></View>
         </View>
+        {/* //========login with google and facebook====== */}
         <View
           style={{flexDirection: 'row', justifyContent: 'center', zIndex: 1}}>
           <Pressable onPress={loginWithGoogle}>
@@ -139,6 +144,7 @@ const Login: React.FC<LoginProp> = (props) => {
             />
           </Pressable>
         </View>
+        {/* //========register====== */}
         <View
           style={{
             flexDirection: 'row',
@@ -156,6 +162,7 @@ const Login: React.FC<LoginProp> = (props) => {
           </Pressable>
         </View>
       </View>
+      {/* //========footer====== */}
       <View>
         <View style={styles.div3}></View>
         <View style={styles.div4}></View>
@@ -165,6 +172,7 @@ const Login: React.FC<LoginProp> = (props) => {
 };
 export default Login;
 const styles = StyleSheet.create({
+  //========header======
   div1: {
     backgroundColor: '#FFCD9E',
     borderBottomLeftRadius: 100,
@@ -186,6 +194,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
   },
+  //========logo,tiitle======
   logo: {
     width: 180,
     height: 180,
@@ -199,6 +208,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: -30,
   },
+  //========box======
   box: {
     alignSelf: 'center',
     marginTop: 30,
@@ -208,6 +218,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     padding: 30,
   },
+  //========boxInput======
   boxInput: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -223,6 +234,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     width: '78%',
   },
+  //========forgotPass======
   txtforgotPass: {
     textAlign: 'right',
     marginTop: 10,
@@ -231,6 +243,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
   },
+  //========button======
   linearGradient: {
     borderRadius: 20,
     marginTop: 20,
@@ -250,6 +263,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginBottom: 3,
   },
+  //========google,facebook======
   imgGoogle: {
     width: 35,
     height: 35,
@@ -257,7 +271,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10,
   },
-
+  //========footer======
   div3: {
     backgroundColor: '#F1AF72',
     borderTopRightRadius: 10,

@@ -1,4 +1,4 @@
-import React from 'react';
+
 // import News from './src/presentation/container/News';
 import React from 'react';
 import ForgotPass from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
@@ -22,6 +22,8 @@ import ListShare from './src/presentation/container/screens/ListShare';
 import Booking from './src/presentation/container/screens/Booking';
 import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
+import HotelDetail from './src/presentation/container/HotelDetail';
+import NewsDetail from './src/presentation/container/NewsDetail';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -46,6 +48,8 @@ function App(): JSX.Element {
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
+    // <HotelDetail/>
+    // <NewsDetail/>
   ); 
 }
 

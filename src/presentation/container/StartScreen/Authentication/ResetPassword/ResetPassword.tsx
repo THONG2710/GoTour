@@ -25,45 +25,51 @@ const ResetPassword: React.FC<ResetPasswordProp> = (props) => {
 
   return (
     <View style={styles.container}>
+      {/* //========header,logo====== */}
       <View style={{ flexDirection: "row", display: 'flex', justifyContent: 'space-between' }}>
         <Image style={{ width: 150, height: 150 }} source={{uri: LOGO_GOTOUR}} />
         <View style={styles.div1}></View>
       </View>
+      {/* //========tiitle====== */}
       <View style={styles.div2}>
         <Text style={styles.txtForgotPass}>QUÊN MẬT KHẨU</Text>
       </View>
+      {/* //========box====== */}
       <View style={styles.main}>
+        {/* //========boxInput====== */}
         <TextInput style={styles.textinput}
           placeholder="Số điện thoại"
           onChangeText={setPhone}
           value={phone}
           keyboardType="numeric"
         >
-
-
         </TextInput>
+        {/* //========button====== */}
         <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={["#FD9448", '#FB8631', '#D75D04']} style={styles.linearGradient}>
           <Pressable style={styles.btnSubmit} onPress={submit}>
             <Text style={styles.txtSubmit}>Xác nhận</Text>
           </Pressable>
         </LinearGradient>
+        {/* //========cantResetPass====== */}
         <Pressable onPress={cantResetPass}>
           <Text style={styles.txtCantGetPass}>Không thể lấy lại được mật khẩu?</Text>
-
         </Pressable>
+        {/* //========or====== */}
         <View style={{ flexDirection: 'row', justifyContent: "space-between", display: "flex", marginLeft: 20, marginRight: 20 }}>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
           <Text >Hoặc</Text>
           <View style={{ backgroundColor: 'black', width: 130, height: 1, marginTop: 10 }}></View>
         </View>
+        {/* //========register====== */}
         <Pressable onPress={register}>
           <Text style={styles.txtRegister}>Đăng kí tài khoản mới</Text>
         </Pressable>
-
+        {/* //========backToSignIn====== */}
         <Pressable style={styles.btnBackToSignIn} onPress={backToSignIn}>
           <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 17 }}>Trở lại đăng nhập</Text>
         </Pressable>
       </View>
+      {/* //========footer====== */}
       <View style={{ flexDirection: 'row', elevation: 0 }}>
         <View style={styles.div3}></View>
         <View style={styles.div4}></View>
@@ -79,6 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
+  //========header======
   div1: {
     backgroundColor: "#F4B276",
     borderTopLeftRadius: 100,
@@ -98,12 +105,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
   },
+  //========tiitle======
   txtForgotPass: {
     fontSize: 25,
     fontWeight: 'bold',
     color: "#fff",
     textAlign: 'center',
   },
+  //========box======
   main: {
     alignSelf: 'center',
     width: '90%',
@@ -114,6 +123,7 @@ const styles = StyleSheet.create({
 
 
   },
+  //========boxInput======
   textinput: {
     marginLeft: 20,
     marginTop: 20,
@@ -124,6 +134,7 @@ const styles = StyleSheet.create({
 
 
   },
+  //========button======
   txtSubmit: {
 
     textAlign: 'center',
@@ -147,6 +158,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     elevation: 5,
   },
+  //========cantResetPass======
   txtCantGetPass: {
     textAlign: 'center',
     fontStyle: 'italic',
@@ -155,6 +167,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 13,
   },
+  //========register======
   txtRegister: {
     textAlign: 'center',
     fontWeight: 'bold',
@@ -163,6 +176,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
   },
+  //========backToSignIn======
   btnBackToSignIn: {
     alignSelf: 'flex-end',
     backgroundColor: '#D8A06D',
@@ -174,6 +188,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 40,
     marginTop: 10,
   },
+  //========footer======
   div3: {
     backgroundColor: "#F7DEC6",
     width: 200,
@@ -181,8 +196,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 100,
     borderBottomRightRadius: 100,
     marginTop: -30,
-    elevation: 1,
+    elevation: -10,
     pointerEvents: 'none',
+    zIndex: -1,
 
 
   },

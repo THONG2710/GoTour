@@ -11,9 +11,12 @@ const HotelDetail = () => {
 
     return (
         <ScrollView >
+            {/* //========header====== */}
             <View style={styles.header}>
+                {/* //========imageHotel====== */}
                 <Image style={styles.image} source={dataHotel.image} />
-                <View style={styles.txtBoxHeader}>
+                {/* //========BoxHeader====== */}
+                <View style={styles.boxHeader}>
                     <Text style={styles.txtName}>{dataHotel.nameHotel}</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Image source={require("../resource/images/address.png")} style={styles.iconAddress} />
@@ -39,9 +42,11 @@ const HotelDetail = () => {
 
                 </View>
             </View>
+            {/* //========price====== */}
             <View style={styles.boxPrice}>
                 <Text style={styles.txtPrice}>{dataHotel.priceHotel} VNĐ</Text>
             </View>
+            {/* //========detail====== */}
             <View style={styles.divHotel}>
                 <Text style={styles.txtHotel}>Khách sạn</Text>
                 <Text style={styles.txtDetailHotel}
@@ -53,6 +58,7 @@ const HotelDetail = () => {
                     <Text style={styles.txtSeeMore}>{showFullText ? 'Ẩn' : 'Xem thêm'}</Text>
                 </Pressable>
             </View>
+            {/* //========amenities====== */}
             <View style={styles.divAmenities}>
                 <Text style={styles.txtAmenities}>Tiện Nghi</Text>
                 <FlatList
@@ -70,11 +76,9 @@ const HotelDetail = () => {
                             </View>
                         )
                     }}
-
                 ></FlatList>
-
-
             </View>
+            {/* //========comment====== */}
             <View style={styles.divComment}>
                 <View style={{ flexDirection: 'row' }}>
                     <Text style={styles.txtCommentTittle}>Nhận xét </Text>
@@ -169,18 +173,21 @@ const dataComment = [
     }
 ]
 const styles = StyleSheet.create({
+    //========header======
     header: {
         height: 250,
         width: '100%',
         justifyContent: 'flex-end',
     },
+    //========imageHotel======
     image: {
         height: 250,
         width: '100%',
         position: 'absolute',
         opacity: 0.9,
     },
-    txtBoxHeader: {
+    //========BoxHeader======
+    boxHeader: {
 
         width: '100%',
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -223,6 +230,7 @@ const styles = StyleSheet.create({
         width: 15,
         marginRight: 5,
     },
+    //========price======
     boxPrice: {
         alignItems: 'flex-end',
 
@@ -238,6 +246,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         maxWidth: '60%',
     },
+    //========detail======
     divHotel: {
         marginLeft: 20,
         marginRight: 20,
@@ -259,6 +268,7 @@ const styles = StyleSheet.create({
     txtSeeMore: {
         color: '#6A9C89',
     },
+    //========amenities======
     divAmenities: {
 
     },
@@ -269,6 +279,36 @@ const styles = StyleSheet.create({
         textAlign: 'justify',
         marginLeft: 20,
     },
+    itemAmenities: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#F2F2F2',
+        borderRadius: 20,
+        elevation: 5,
+        marginBottom: 10,
+        width: 80,
+        height: 80,
+        shadowColor: '#000',
+        marginRight: 5,
+        marginLeft: 5,
+
+    },
+    iconAmenities: {
+        width: 40,
+        height: 40,
+    },
+    txtItemAmenities: {
+        fontSize: 13,
+        color: 'black',
+        fontWeight: '500',
+        textAlign: 'center',
+    },
+    flatListAmenities: {
+       
+        
+        marginTop: 10,
+    },
+    //========comment======
     divComment: {
         marginLeft: 20,
         marginRight: 20,
@@ -314,33 +354,5 @@ const styles = StyleSheet.create({
         height: 15,
         marginTop: 3,
     },
-    itemAmenities: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#F2F2F2',
-        borderRadius: 20,
-        elevation: 5,
-        marginBottom: 10,
-        width: 80,
-        height: 80,
-        shadowColor: '#000',
-        marginRight: 5,
-        marginLeft: 5,
 
-    },
-    iconAmenities: {
-        width: 40,
-        height: 40,
-    },
-    txtItemAmenities: {
-        fontSize: 13,
-        color: 'black',
-        fontWeight: '500',
-        textAlign: 'center',
-    },
-    flatListAmenities: {
-       
-        
-        marginTop: 10,
-    }
 });
