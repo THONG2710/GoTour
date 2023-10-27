@@ -62,7 +62,7 @@ const Register: React.FC<RegisterProp> = (props) => {
                     <View style={[styles.boxInput, { marginTop: 20 }]}>
                         <Image
                             source={{uri: ICON_PHONE}}
-                            style={{ width: 20, height: 20, marginLeft: 5 }}
+                            style={{ width: 20, height: 20,objectFit:'contain', marginLeft: 5 }}
                         />
                         <TextInput
                             style={styles.txtInput}
