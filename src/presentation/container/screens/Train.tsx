@@ -42,6 +42,7 @@ const Train: React.FC = () => {
                 renderItem={render}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
+                
                  />
             </View>
         </View>

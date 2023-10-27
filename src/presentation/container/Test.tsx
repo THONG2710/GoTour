@@ -4,16 +4,7 @@ import React from 'react'
 const Test = () => {
   return (
     <View style={styles.container}>
-      <View>
-        <Image source={require('./img/tourplace.png')}/>
-        <Image style={styles.menu} source={require('./img/menu.png')}/>
-        <Image style={styles.bell} source={require('./img/bell.png')}/>
-        <Image style={styles.avatar} source={require('./img/avatar.png')}/>
-        <Image style={{ marginTop:65,marginLeft:80,position: 'absolute'}} source={require('./img/location.png')}/>
-        <Image style={{ marginTop:70,marginLeft:130,position: 'absolute'}} source={require('./img/GoTour.png')}/>
-        <Image style={{ marginTop:105,marginLeft:130,position: 'absolute'}} source={require('./img/title.png')}/>
-
-      </View>
+      
       <Text style={styles.search}>Tìm kiếm địa điểm...</Text>
       <Image style={{marginTop:-35, marginLeft:40,}} source={require('./img/search.png')}/>
       <View>

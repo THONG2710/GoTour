@@ -22,7 +22,9 @@
     "react-native-check-box": "^2.1.7",
     "react-native-safe-area-context": "^4.7.3",
     "react-native-screens": "^3.27.0",
-    "react-native-vector-icons": "^10.0.0"
+    "react-native-shadow-2": "^7.0.8",
+    "react-native-vector-icons": "^10.0.0",
+    "react-seat-picker": "^1.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
