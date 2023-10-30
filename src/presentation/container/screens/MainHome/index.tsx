@@ -36,6 +36,7 @@ const MainHome: React.FC = () => {
                         style={styles.input}
                         onChangeText={onChangeText}
                         value={text}
+                        placeholder='Tìm kiếm địa điểm'
                     />
                 </View>
                 {/* CATEGORY */}
