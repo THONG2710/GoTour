@@ -1,0 +1,1 @@
+export const TEXT_HEADER_USERPROFILE_VN = 'Yêu Thích'
