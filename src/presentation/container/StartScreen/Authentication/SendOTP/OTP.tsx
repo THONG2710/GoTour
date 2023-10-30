@@ -46,15 +46,20 @@ const OTP: React.FC<SendOTPProp> = (props) => {
     return (
 
         <View style={{ flex: 1, }}>
+            {/* //========header====== */}
             <View >
                 <View style={styles.div2}></View>
                 <View style={styles.div1}></View>
             </View>
+            {/* //========logo,tiitle====== */}
             <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
+            {/* //========main====== */}
             <View>
                 <Text style={styles.txtOTP}>NHẬP OTP</Text>
                 <Text style={styles.txt}>Vui lòng nhập mã OTP được gửi đến số điện thoại </Text>
+                {/* //=======phone====== */}
                 <Text style={styles.phone} id="phone">0123456789</Text>
+                {/* //=======otpInput====== */}
                 <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
                     <TextInput
                         ref={firstInput}
@@ -98,6 +103,7 @@ const OTP: React.FC<SendOTPProp> = (props) => {
                     />
                 </View>
             </View>
+            {/* //========button====== */}
             <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={['#FD9448', '#FB8632', "#FF6B00"]} style={styles.linearGradient}>
                 <Pressable style={styles.btnConfirm} onPress={confirmOTP}>
                     <Text style={styles.txtBtnConfirm}>Xác nhận</Text>
@@ -109,6 +115,7 @@ const OTP: React.FC<SendOTPProp> = (props) => {
 }
 export default OTP;
 const styles = StyleSheet.create({
+    //========header======
     div1: {
         backgroundColor: "#F7DEC6",
         borderBottomLeftRadius: 100,
@@ -131,12 +138,14 @@ const styles = StyleSheet.create({
         elevation: 0,
         position: 'absolute',
     },
+    //========logo======
     logo: {
         width: 200,
         height: 200,
         alignSelf: 'center',
         marginTop: 50
     },
+    //========tittle======
     txtOTP: {
         fontSize: 30,
         fontWeight: 'bold',
@@ -144,12 +153,14 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 10
     },
+    //========text======
     txt: {
         fontSize: 15,
         color: "#000",
         textAlign: 'center',
         marginTop: 10
     },
+    //========phone======
     phone: {
         fontSize: 18,
         color: "#FF6B00",
@@ -158,6 +169,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10
     },
+    //========otpInput======
     otpInput: {
         elevation: 10,
         backgroundColor: "#fff",
@@ -176,6 +188,7 @@ const styles = StyleSheet.create({
         shadowRadius: 16.00,
 
     },
+    //========button======
     linearGradient: {
         borderRadius: 20,
         marginTop: 30,

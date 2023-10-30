@@ -31,10 +31,12 @@ const ChangePassword: React.FC<ChangePasswordProp> = (props) => {
 
     return (
         <View>
+            {/* //========logo,tittle====== */}
             <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
             <Text style={styles.txtResetPass}>ĐẶT LẠI MẬT KHẨU</Text>
-
+            {/* //========box====== */}
             <View style={styles.box}>
+                {/* //========boxInput====== */}
                 <View style={[styles.boxInput, { marginTop: 10 }]}>
                     <Image
                         source={{uri: ICON_LOCK}}
@@ -47,7 +49,6 @@ const ChangePassword: React.FC<ChangePasswordProp> = (props) => {
                         value={password}
                         onChangeText={setPassword}
                     >
-
                     </TextInput>
                     <Pressable onPress={togglePasswordVisibility}>
                         <Image
@@ -75,12 +76,14 @@ const ChangePassword: React.FC<ChangePasswordProp> = (props) => {
                         />
                     </Pressable>
                 </View>
+                {/* //========button====== */}
                 <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={['#FD9448', '#FB8632', "#FF6B00"]} style={styles.linearGradient}>
                     <Pressable style={styles.btnConfirm} onPress={submit}>
                         <Text style={styles.txtBtnConfirm}>Xác nhận</Text>
                     </Pressable>
                 </LinearGradient>
             </View>
+            {/* //========footer====== */}
             <View style={{ height: 200 }}>
                 <View style={styles.div1}></View>
                 <View style={styles.div2}></View>
@@ -91,12 +94,14 @@ const ChangePassword: React.FC<ChangePasswordProp> = (props) => {
 }
 export default ChangePassword;
 const styles = StyleSheet.create({
+    //========logo======
     logo: {
         width: 200,
         height: 200,
         alignSelf: 'center',
         marginTop: 30,
     },
+    //========tittle======
     txtResetPass: {
         fontSize: 25,
         fontWeight: 'bold',
@@ -104,6 +109,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
 
     },
+    //========box======
     box: {
 
         alignSelf: 'center',
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
         padding: 30,
 
     },
+    //========boxInput======
     boxInput: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -131,6 +138,7 @@ const styles = StyleSheet.create({
         width: '78%'
 
     },
+    //========button======
     linearGradient: {
         borderRadius: 20,
         marginTop: 30,
@@ -151,17 +159,19 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 5,
     },
+    //========footer======
     div1: {
         backgroundColor: "#F1AF72",
         borderTopRightRadius: 10,
         borderBottomRightRadius: 30,
         height: 300,
         width: 200,
-        elevation: -2,
+        elevation: -10,
         position: 'absolute',
         left: 0,
         marginTop: -50,
         pointerEvents: 'none',
+        zIndex: -1,
 
     },
     div2: {
