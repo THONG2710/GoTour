@@ -23,8 +23,7 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                     </View>
                 </View>
                 <TouchableOpacity>
-
-                    <Image source={{uri: ICON_MENU_POINT}}></Image>
+                    <Image style={{width: 20, height: 20}} source={{uri: ICON_MENU_POINT}}></Image>
                 </TouchableOpacity>
             </View>
 
@@ -36,7 +35,7 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                     <Text>{item.turn}</Text>
                     <View style={{ flexDirection: 'row', marginLeft: 10, marginRight: 10 }}>
                         <Text>Chi tiết  </Text>
-                        <Image source={{uri: ICON_RIGHT}}></Image>
+                        <Image style={{}} source={{uri: ICON_RIGHT}}></Image>
                     </View>
                 </View>
                 <View style={styles.footer}>

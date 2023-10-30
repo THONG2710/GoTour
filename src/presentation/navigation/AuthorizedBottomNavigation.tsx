@@ -3,23 +3,23 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { AuthorizedParamList } from '../storyboard/AuthorizedStoryBoard';
 import { NavigationContainer } from '@react-navigation/native';
-import Home from '../container/screens/Home';
-import Social from '../container/screens/Social';
-import Deals from '../container/screens/Deals';
-import Booking from '../container/screens/Booking';
-import UserProfile from '../container/UserProfile/Screen/UserProfile';
+import Social from '../container/Authorized/Social/Social';
+import Deals from '../container/Authorized/Sale/Deals';
+import Booking from '../container/Authorized/Service/Booking';
+import Profile from '../container/Authorized/Account/Profile/Profile';
+import MainHome from '../container/Authorized/Home/MainHome';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
 const AuthorizedBottomNavigation = () => {
   return (
     <NavigationContainer>
-        <AuthorizedBottomTab.Navigator>
-            <AuthorizedBottomTab.Screen name='Home' component={Home}/>
+        <AuthorizedBottomTab.Navigator screenOptions={{headerShown: false}}>
+            <AuthorizedBottomTab.Screen name='Home' component={MainHome}/>
             <AuthorizedBottomTab.Screen name='Social' component={Social}/>
-            <AuthorizedBottomTab.Screen name='Sale' component={Deals}/>
             <AuthorizedBottomTab.Screen name='Service' component={Booking}/>
-            {/* <AuthorizedBottomTab.Screen name='account' component={Profile}/> */}
+            <AuthorizedBottomTab.Screen name='Sale' component={Deals}/>
+            <AuthorizedBottomTab.Screen name='account' component={Profile}/>
         </AuthorizedBottomTab.Navigator>
     </NavigationContainer>
   )
