@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, FlatList } from 'react-native'
 import React from 'react'
 import ItemListHotel from './ItemListHotel'
+import { ICON_COIN, ICON_HOTEL, ICON_MARKER2, ICON_USER2 } from '../../resource/assets/images'
 
 const Hotel = () => {
     const render = ({ item }: { item: (typeof DATA)[0] }) => (
@@ -12,11 +13,11 @@ const Hotel = () => {
             {/* <Image style={styles.img} source={require('../img/background.png')} /> */}
             <View style={styles.book}>
                 <View style={styles.item1}>
-                    <Image source={require('../img/marker.png')} />
+                    <Image source={{uri: ICON_MARKER2}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>Nhập/Chọn điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={require('../img/user.png')} />
+                    <Image source={{uri: ICON_USER2}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>
                         <Text style={{ fontWeight: 'bold', color: 'black' }}>1 </Text>
                         phòng
@@ -27,11 +28,11 @@ const Hotel = () => {
                     </Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={require('../img/star.png')} />
+                    <Image source={{uri: ICON_USER2}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}> 0 sao</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={require('../img/coin.png')} />
+                    <Image source={{uri: ICON_COIN}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>0đ </Text>
                 </View>
 
@@ -43,7 +44,7 @@ const Hotel = () => {
 
             </View>
             <View style={{ flexDirection: 'row', paddingHorizontal:15 }}>
-                <Image source={require('../img/hotel1.png')} />
+                <Image source={{uri: ICON_HOTEL}} />
                 <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
             </View>
             <View style={{ height: 300 }}>

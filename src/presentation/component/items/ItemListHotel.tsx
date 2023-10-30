@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
+import { FRAME_HOTEL, ICON_MARKER2, RATING } from '../../resource/assets/images';
 
 interface Item {
     nameHotel: string,
@@ -17,15 +18,15 @@ const ItemListHotel: React.FC<Item> = (props: any) => {
     return (
         <View style={styles.container}>
             <View style={styles.item}>
-                <Image source={require('../img/hotel2.png')} />
+                <Image source={{uri: FRAME_HOTEL}} />
                 <View style={styles.rightContent}>
                     <Text style={styles.nameHotel}>{nameHotel}</Text>
                     <View style={{ flexDirection: 'row'}}>
-                        <Image source={require('../img/rating.png')} />
+                        <Image source={{uri: RATING}} />
                         <Text style={{ marginLeft:60 }}>{countRating} đánh giá</Text>
                     </View>
                     <View style={{flexDirection:'row'}}>
-                        <Image source={require('../img/maker1.png')} />
+                        <Image source={{uri: ICON_MARKER2}} />
                         <Text style={{width:'75%',marginStart:5}}>{location}</Text>
                     </View>
                     <View style={{justifyContent:'flex-end'}}>

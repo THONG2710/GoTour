@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react
 import React, { useState } from 'react'
 import CheckBox from '@react-native-community/checkbox'
 import ItemListPlane from '../../component/items/ItemListPlane'
+import { ICON_CALENDAR, ICON_TRAIN, ICON_TRAIN2 } from '../../resource/assets/images'
 
 
 
@@ -20,11 +21,11 @@ const Plane: React.FC = () => {
             <View style={styles.book}>
                 <View style={styles.item}>
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
-                    <Image style={{ marginTop: -10 }} source={require('../img/train.png')} />
+                    <Image style={{ marginTop: -10 }} source={{uri: ICON_TRAIN}} />
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={require('../img/calendar.png')} />
+                    <Image source={{uri: ICON_CALENDAR}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>T6,20 thg10</Text>
                 </View>
                 <View style={styles.item1}>
@@ -44,7 +45,7 @@ const Plane: React.FC = () => {
 
             </View>
             <View style={{ flexDirection: 'row', marginHorizontal: 10 }}>
-                <Image source={require('../img/train1.png')} />
+                <Image source={{uri: ICON_TRAIN2}} />
                 <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
             </View>
             <View style={{ height: 300 ,marginBottom:40}}>

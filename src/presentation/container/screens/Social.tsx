@@ -1,20 +1,21 @@
 import { ImageBackground, StyleSheet, Text, TextInput, View, Image, FlatList } from 'react-native'
 import React from 'react'
 import ItemListShare from '../../component/items/ItemListShare'
+import { AVATAR, ICON_SEARCH_BLACK, SPLASH_THREE } from '../../resource/assets/images'
 
 
-const ListShare = () => {
+const Social = () => {
     interface Props {
         item: { image: any, title: string, name: string, time: string, day: string, turn: string,namePlace: string }
     }
     return (
-        <ImageBackground source={require('../resource/assets/images/splashThree.png')} style={styles.container}>
+        <ImageBackground source={{uri: SPLASH_THREE}} style={styles.container}>
             <View style={styles.containerHeader}>
                 <View style={styles.header}>
                     <TextInput placeholder='Tìm kiếm ...' style={styles.findHeader}></TextInput>
-                    <Image style={styles.imgHeader} source={require('../resource/assets/images/find.png')}></Image>
+                    <Image style={styles.imgHeader} source={{uri: ICON_SEARCH_BLACK}}></Image>
                 </View>
-                <Image style={styles.imgAvatar} source={require('../resource/assets/images/avatar.png')}></Image>
+                <Image style={styles.imgAvatar} source={{uri: AVATAR}}></Image>
             </View>
 
             <FlatList
@@ -28,7 +29,7 @@ const ListShare = () => {
     )
 }
 
-export default ListShare
+export default Social
 
 const styles = StyleSheet.create({
     container:
@@ -82,7 +83,7 @@ const dataListPoster = [
     {
 
         _id: "1",
-        image: require('../resource/assets/images/avtPoster.png'),
+        image: AVATAR,
         title: "Đêm yên ắng, đêm Hamburg, khác với sự ồn ào vốn có của một thành phố cảng, đêm Hamburg thật êm ả với một ít lữ  khách hoặc người đi làm về muộn.",
         name: 'Nguyễn Văn Thông',
         time: '23:28',
@@ -95,7 +96,7 @@ const dataListPoster = [
     {
 
         _id: "2",
-        image: require('../resource/assets/images/avatar.png'),
+        image: AVATAR,
         title: "Đêm yên ắng, đêm Hamburg, khác với sự ồn ào vốn có của một thành phố cảng, đêm Hamburg thật êm ả với một ít lữ  khách hoặc người đi làm về muộn.",
         name: 'Trường đẹp trai',
         time: '23:28',

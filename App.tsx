@@ -16,10 +16,11 @@ import SplashStackNavigation from './src/presentation/navigation/SplashStackNavi
 import AuthenticationNavigation from './src/presentation/navigation/AuthenticationNavigation';
 import Login from './src/presentation/container/StartScreen/Authentication/Login/Login';
 import Register from './src/presentation/container/StartScreen/Authentication/Register/Register';
-import ListShare from './src/presentation/container/screens/ListShare';
+import ListShare from './src/presentation/container/screens/Social';
 import Booking from './src/presentation/container/screens/Booking';
 import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
+import AuthorizedBottomNavigation from './src/presentation/navigation/AuthorizedBottomNavigation';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -36,7 +37,7 @@ function App(): JSX.Element {
     // <Plane/>
     // <Train/>
     // <SplashStackNavigation/>
-    <AuthenticationNavigation/>
+    // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
     // <ListShare/>
@@ -44,6 +45,7 @@ function App(): JSX.Element {
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
+    <AuthorizedBottomNavigation/>
   ); 
 }
 

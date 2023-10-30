@@ -4,6 +4,7 @@ import ItemListTrain from '../../component/items/ItemListTrain';
 import TabViewItem from '../components/custom/TabViewItem';
 import Plane from './Plane';
 import Hotel from '../../component/items/Hotel';
+import { ICON_CALENDAR, ICON_TRAIN2 } from '../../resource/assets/images';
 
 const Train: React.FC = () => {
     const render = ({ item }: { item: (typeof DATA)[0] }) => (
@@ -18,11 +19,11 @@ const Train: React.FC = () => {
             <View style={styles.book}>
                 <View style={styles.item}>
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
-                    <Image style={{ marginTop: -10 }} source={require('../img/train.png')} />
+                    <Image style={{ marginTop: -10 }} source={{uri: ICON_TRAIN2}} />
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={require('../img/calendar.png')} />
+                    <Image source={{uri: ICON_CALENDAR}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>T6,20 thg10</Text>
                 </View>
                 <TouchableOpacity style={styles.btn}>
@@ -33,7 +34,7 @@ const Train: React.FC = () => {
 
             </View>
             <View style={{ flexDirection: 'row', marginHorizontal: 10 }}>
-                <Image source={require('../img/train1.png')} />
+                <Image source={{uri: ICON_TRAIN2}} />
                 <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
             </View>
             <View style={{height:280}}>    

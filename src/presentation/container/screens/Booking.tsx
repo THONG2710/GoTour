@@ -4,18 +4,19 @@ import TabViewItem from '../components/custom/TabViewItem'
 import Plane from './Plane'
 import Hotel from '../../component/items/Hotel'
 import Train from './Train'
+import { BACKGROUND, ICON_BELL, ICON_SEARCH } from '../../resource/assets/images'
 
 const Booking: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={require('../img/background.png')} />
+      <Image style={styles.img} source={{uri: BACKGROUND}} />
       <View style={styles.header}>
         <Image source={require('../img/logo.png')} />
-        <Image style={{ marginStart: 250, marginTop: 20 }} source={require('../img/bell.png')} />
+        <Image style={{ marginStart: 250, marginTop: 20 }} source={{uri: ICON_BELL}} />
       </View>
       <View style={styles.search}>
                 <Text>Tìm kiếm...</Text>
-                <Image source={require('../img/search.png')} />
+                <Image source={{uri: ICON_SEARCH}} />
             </View>
 
    

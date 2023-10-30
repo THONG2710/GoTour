@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple';
+import { HOI_AN, ICON_COMMENT, ICON_LIKE, ICON_MENU_POINT, ICON_RIGHT } from '../../resource/assets/images';
 interface ItemListShareProps {
     item: { image: any, title: string, name: string, time: string, day: string, turn: string, namePlace: string }
 
@@ -12,7 +13,7 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <View style={styles.Poster}>
-                    <Image source={item.image}></Image>
+                    <Image source={{uri: item.image}}></Image>
                     <View>
                         <Text style={[styles.text, { fontSize: 16, }]}>{item.name}</Text>
                         <View style={styles.row}>
@@ -23,27 +24,27 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
                 </View>
                 <TouchableOpacity>
 
-                    <Image source={require('../../resource/assets/images/menu.png')}></Image>
+                    <Image source={{uri: ICON_MENU_POINT}}></Image>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.center}>
                 <Text numberOfLines={2} style={{ marginHorizontal: 10 }}>{item.title}</Text>
-                <Image style={styles.imgPoster} source={require('../resource/assets/images/imgPoster.png')}></Image>
+                <Image style={styles.imgPoster} source={{uri: HOI_AN}}></Image>
                 <View style={styles.groupText}>
                     <Text style={{ fontSize: 16, color: 'orange', fontWeight: 'bold', marginLeft: 10 }}>{item.namePlace}</Text>
                     <Text>{item.turn}</Text>
                     <View style={{ flexDirection: 'row', marginLeft: 10, marginRight: 10 }}>
                         <Text>Chi tiết  </Text>
-                        <Image source={require('../resource/assets/images/arrowRight.png')}></Image>
+                        <Image source={{uri: ICON_RIGHT}}></Image>
                     </View>
                 </View>
                 <View style={styles.footer}>
                     <TouchableOpacity>
-                        <Image source={require('../resource/assets/images/like.png')}></Image>
+                        <Image source={{uri: ICON_LIKE}}></Image>
                     </TouchableOpacity>
                     <TouchableOpacity>
-                        <Image source={require('../resource/assets/images/comment.png')}></Image>
+                        <Image source={{uri: ICON_COMMENT}}></Image>
                     </TouchableOpacity>
                 </View>
             </View>

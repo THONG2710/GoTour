@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
+import { LINE, VIETJET } from '../../resource/assets/images';
 
 interface Item {
     nameFrom: string,
@@ -23,7 +24,7 @@ const ItemListPlane: React.FC<Item> = (props: any) => {
                     <View style={{ flexDirection: 'row', marginLeft: 20 }}>
                         <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeFrom}</Text>
                         <View style={{ margin: 10 }}>
-                            <Image source={require('../img/line.png')} />
+                            <Image source={{uri: LINE}} />
                             <Text style={{ textAlign: 'center' }}>{timecount}</Text>
                         </View>
                         <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeTo}</Text>
@@ -40,7 +41,7 @@ const ItemListPlane: React.FC<Item> = (props: any) => {
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15, marginVertical: 5 }}>
                 <View style={{flexDirection:'row'}}>
-                    <Image source={require('../img/vietjet.png')} />
+                    <Image source={{uri: VIETJET}} />
                     <Text style={{marginStart:10}}>Vietjet</Text>
                 </View>
 
