@@ -8,7 +8,7 @@ const SplashThree: React.FC<SplashThreeProp> = (props) => {
     const {navigation} = props;
 
     const onNext = () => {
-        navigation.navigate('splashThree');
+        navigation.navigate('authentication');
     }
 
     return (
@@ -19,7 +19,7 @@ const SplashThree: React.FC<SplashThreeProp> = (props) => {
                     <Text style={styles.textTitle}>Được thiết kế dành riêng {`\n`} cho bạn</Text>
                     <Text style={styles.textContent}>Ứng dụng của chúng tôi tùy chỉnh thiết kế {`\n`} các đề xuất du lịch dựa trên sở thích và {`\n`} sở thích của bạn.</Text>
                     <Ripple onPress={onNext}>
-                        <Image source={{uri: NEXT_BUTTON}}></Image>
+                        <Image  style={{width: 50, height: 50}} source={{uri: NEXT_BUTTON}}></Image>
                     </Ripple>
                 </View>
         </View>

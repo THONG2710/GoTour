@@ -19,7 +19,7 @@ const SplashTwo: React.FC<SplashTwoProp> = (props) => {
                     <Text style={styles.textTitle}>Khám phá những chuyến {`\n`} đi cùng GoTour</Text>
                     <Text style={styles.textContent}>Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình đáng {`\n`} nhớ một cách dễ dàng</Text>
                     <Ripple onPress={onNext}>
-                        <Image source={{uri: NEXT_BUTTON}}></Image>
+                        <Image style={{width: 50, height: 50}} source={{uri: NEXT_BUTTON}}></Image>
                     </Ripple>
                 </View>
         </View>

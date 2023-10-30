@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import SplashOne from '../container/StartScreen/SplashScreen/SplashOne/SplashOne';
 import SplashTwo from '../container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
 import SplashThree from '../container/StartScreen/SplashScreen/SplashThree/SplashThree';
+import AuthenticationNavigation from './AuthenticationNavigation';
 
 const Stack = createStackNavigator<SplashParamlist>();
 
@@ -16,6 +17,7 @@ const SplashStackNavigation = () => {
             <Stack.Screen name='splashOne' component={SplashOne}/>
             <Stack.Screen name='splashTwo' component={SplashTwo}/>
             <Stack.Screen name='splashThree' component={SplashThree}/>
+            <Stack.Screen name='authentication' component={AuthenticationNavigation}/>
         </Stack.Navigator>
     </NavigationContainer>
   )

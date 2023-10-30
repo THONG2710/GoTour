@@ -4,4 +4,5 @@ export type AuthenticationParamList = {
     changePassword: undefined,
     resetPassword: undefined,
     sendOTP: undefined,
+    authorized: undefined,
 }
