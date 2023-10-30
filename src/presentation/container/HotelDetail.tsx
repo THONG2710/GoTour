@@ -44,7 +44,7 @@ const HotelDetail = () => {
             </View>
             {/* //========price====== */}
             <View style={styles.boxPrice}>
-                <Text style={styles.txtPrice}>{dataHotel.priceHotel} VNĐ</Text>
+                <Text style={styles.txtPrice}>{dataHotel.priceHotel.toLocaleString('vi-VN',)} VND</Text> 
             </View>
             {/* //========detail====== */}
             <View style={styles.divHotel}>
@@ -125,7 +125,7 @@ const dataHotel = {
     addressHotel: `65 Le Loi, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam`,
     phoneHotel: `+84 28 3822 9666`,
     starHotel: 4,
-    priceHotel: `10.000.000`,
+    priceHotel: 10000000,
     detailHotel: `Tìm kiếm một khách sạn dành cho gia đình lý tưởng ở Thành phố Hồ Chí Minh không phải là quá khó. Chào đón bạn đến với Sedona Suites Ho Chi Minh City, một lựa chọn đúng đắn cho những du khách như bạn.
 Nằm gần những địa danh yêu thích như Phố đi bộ Nguyễn Huệ (0,3 km) và Chợ Ẩm Thực Đường Phố Bến Thành (0,4 km), du khách tại Sedona Suites Ho Chi Minh City có thể dễ dàng đến thăm những điểm đến nổi tiếng này ở Thành phố Hồ Chí Minh
 Tìm kiếm một khách sạn dành cho gia đình lý tưởng ở Thành phố Hồ Chí Minh không phải là quá khó. Chào đón bạn đến với Sedona Suites Ho Chi Minh City, một lựa chọn đúng đắn cho những du khách như bạn.

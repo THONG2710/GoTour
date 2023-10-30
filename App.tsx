@@ -20,6 +20,9 @@ import ChangePassword from './src/presentation/container/StartScreen/Authenticat
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import HotelDetail from './src/presentation/container/HotelDetail';
 import NewsDetail from './src/presentation/container/NewsDetail';
+import News from './src/presentation/container/News';
+import Post from './src/presentation/container/screens/Post';
+import History from './src/presentation/container/screens/History';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -36,7 +39,7 @@ function App(): JSX.Element {
     // <Plane/>
     // <Train/>
     // <SplashStackNavigation/>
-    <AuthenticationNavigation/>
+    // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
     // <ListShare/>
@@ -46,6 +49,9 @@ function App(): JSX.Element {
     // <OTP/>
     // <HotelDetail/>
     // <NewsDetail/>
+    // <News/>
+    // <Post/>
+    <History/>
   ); 
 }
 

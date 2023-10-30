@@ -1,8 +1,11 @@
-import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Dimensions, FlatList, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 
 
 const News = () => {
+    const [searchText, setsearchText] = useState('')
+
+
     const search = () => {
         console.log(searchText)
     }
@@ -13,14 +16,16 @@ const News = () => {
         console.log(itemid);
 
     }
-    const itemMap = (itemid :Number) => {
+    const itemMap = (itemid: Number) => {
         console.log(itemid)
     }
-    const [searchText, setsearchText] = useState('')
+
+   
     return (
 
         <View style={{ flex: 1 }}>
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} >
+                {/* //============header================ */}
                 <View style={{ height: 150 }}>
                     <Image style={styles.imgTittle} source={require("../resource/images/new1.webp")} />
                     <Image style={styles.imgLogo} source={require("../resource/images/logo.png")} />
@@ -30,6 +35,7 @@ const News = () => {
                     </Pressable>
 
                 </View>
+                {/* //============seachbox================ */}
                 <View style={styles.boxSearch}>
                     <TextInput
                         placeholder="Tìm kiếm"
@@ -41,6 +47,7 @@ const News = () => {
                         <Image style={styles.imgSearch} source={require("../resource/images/search.png")} />
                     </Pressable>
                 </View>
+                {/* //============news================ */}
                 <Text style={styles.txtNews}>Tin tức mới nhất</Text>
                 <View>
                     <FlatList
@@ -50,8 +57,8 @@ const News = () => {
                         showsHorizontalScrollIndicator={false}
                         style={{}}
                         renderItem={({ item }) => (
-                            <Pressable onPress={()=>itemFlatList(item.id)}>
-                                <View style={styles.viewSlide}>
+                            <Pressable onPress={() => itemFlatList(item.id)}>
+                                <View style={styles.viewSlide} key={item.id}>
                                     <Image style={styles.imgSlide} source={item.img} />
                                     <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
                                     <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
@@ -62,24 +69,27 @@ const News = () => {
                     />
 
                 </View>
+                {/* //============news================ */}
                 <Text style={styles.txtNews}>Gần đây</Text>
+         
+                    {images.map((item) => {
+                        return (
+                            <Pressable key={item.id} onPress={() => itemMap(item.id)}>
+                                <View  style={[styles.viewSlide, { flexDirection: 'row', width: 250, marginBottom: 10 }]}>
+                                    <Image style={[styles.imgSlide, { width: 100, height: 100 }]} source={item.img} />
+                                    <View style={{ marginLeft: 10 }}>
+                                        <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
+                                        <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
+                                    </View>
 
-
-                {images.map((item) => {
-                    return (
-                        <Pressable onPress={() => itemMap(item.id)}>
-                            <View key={item.id} style={[styles.viewSlide, { flexDirection: 'row', width: 250, marginBottom: 10 }]}>
-                                <Image style={[styles.imgSlide, { width: 100, height: 100 }]} source={item.img} />
-                                <View style={{ marginLeft: 10 }}>
-                                    <Text style={{ color: 'blue', fontWeight: '600' }}>{item.date}</Text>
-                                    <Text style={styles.txtSlideTittle} numberOfLines={3}>{item.title}</Text>
                                 </View>
+                            </Pressable>
 
-                            </View>
-                        </Pressable>
+                        )
+                    })}
+       
 
-                    )
-                })}
+                <Text>Xem thêm</Text>
             </ScrollView>
         </View>
     )
@@ -97,6 +107,7 @@ const images = [
 
 ];
 const styles = StyleSheet.create({
+    // =============header=================
     imgLogo: {
         width: 100,
         height: 100,
@@ -119,6 +130,7 @@ const styles = StyleSheet.create({
 
 
     },
+    // =============searchbox=================
     boxSearch: {
         width: '90%',
         height: 40,
@@ -143,6 +155,7 @@ const styles = StyleSheet.create({
         width: '90%',
 
     },
+    // =============news=================
     txtNews: {
         marginLeft: 20,
         marginTop: 10,
