@@ -3,4 +3,5 @@ export type AuthorizedParamList = {
     Social: undefined,
     Sale: undefined,
     Service: undefined,
+    account: undefined,
 }

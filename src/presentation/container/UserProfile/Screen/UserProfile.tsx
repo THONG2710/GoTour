@@ -5,6 +5,7 @@ import { Shadow } from 'react-native-shadow-2'
 
 import ItemFavouriteUser from '../ItemList/ItemFavouriteUser'
 import { TEXT_HEADER_USERPROFILE_VN } from '../Text/TextUserProfileVN'
+import { ICON_BACK, ICON_HOME, ICON_SEARCH_BLACK } from '../../../resource/assets/images'
 
 
 const UserProfile = () => {
@@ -19,11 +20,11 @@ const UserProfile = () => {
             <LinearGradient style={styles.header} colors={['#FF380D', '#F9B889', '#FFEBDD']}>
                 <View style={styles.headerTitle}>
                     <TouchableOpacity>
-                        <Image source={require('../../../resource/assets/images/back.png')} style={styles.imgTitle}></Image>
+                        <Image source={{uri: ICON_BACK}} style={styles.imgTitle}></Image>
                     </TouchableOpacity>
                     <Text style={styles.textHeader}>{TEXT_HEADER_USERPROFILE_VN}</Text>
                     <TouchableOpacity>
-                        <Image source={require('../../../resource/assets/images/home.png')} style={styles.imgTitle}></Image>
+                        <Image source={{uri: ICON_HOME}} style={styles.imgTitle}></Image>
                     </TouchableOpacity>
                 </View>
 
@@ -31,7 +32,7 @@ const UserProfile = () => {
                     <Shadow distance={8} style={styles.gr_findHeader}>
                         <TextInput placeholder='Tìm kiếm ...' />
                         <TouchableOpacity style={styles.imgFind}>
-                            <Image style={styles.imgIcon} source={require('../../../resource/assets/images/find.png')}></Image>
+                            <Image style={styles.imgIcon} source={{uri: ICON_SEARCH_BLACK}}></Image>
                         </TouchableOpacity>
                     </Shadow>
                 </View>

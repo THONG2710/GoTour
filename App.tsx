@@ -1,6 +1,5 @@
 import React from 'react';
 import ForgotPass from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
-import Profile from './src/presentation/container/screens/Profile';
 import Deals from './src/presentation/container/screens/Deals';
 import OTP from './src/presentation/container/StartScreen/Authentication/SendOTP/OTP';
 import ResetPass from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';

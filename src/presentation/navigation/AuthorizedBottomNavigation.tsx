@@ -7,6 +7,7 @@ import Home from '../container/screens/Home';
 import Social from '../container/screens/Social';
 import Deals from '../container/screens/Deals';
 import Booking from '../container/screens/Booking';
+import UserProfile from '../container/UserProfile/Screen/UserProfile';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
@@ -18,6 +19,7 @@ const AuthorizedBottomNavigation = () => {
             <AuthorizedBottomTab.Screen name='Social' component={Social}/>
             <AuthorizedBottomTab.Screen name='Sale' component={Deals}/>
             <AuthorizedBottomTab.Screen name='Service' component={Booking}/>
+            {/* <AuthorizedBottomTab.Screen name='account' component={Profile}/> */}
         </AuthorizedBottomTab.Navigator>
     </NavigationContainer>
   )
