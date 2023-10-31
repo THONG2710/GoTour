@@ -8,10 +8,10 @@ export interface item{
 
 
 const ItemSeatPlane:React.FC<item> = (props:any) => {
-    const [isSelected,setIsSelected]=useState(0);
+    const [isSelected,setIsSelected]=useState(false);
     const{id,number}=props;
     const onPressSeat=(id:any)=>{
-        setIsSelected(isSelected+1);   
+        setIsSelected(!isSelected);   
         console.log(id)
     }
   
@@ -19,7 +19,7 @@ const ItemSeatPlane:React.FC<item> = (props:any) => {
     <View>
       <View >
               <TouchableOpacity onPress={onPressSeat} >
-                  <Text style={isSelected%2==1? styles.seatChoose:styles.seat}>{number}</Text>
+                  <Text style={isSelected? styles.seatChoose:styles.seat}>{number}</Text>
               </TouchableOpacity>
           </View>
     </View>
