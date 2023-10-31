@@ -64,10 +64,10 @@ export const TOURPLACE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72b
 export const IMAGE1 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img1.png?alt=media&token=22fd6e59-ea19-4096-bcd0-f0439ec63f3a&_gl=1*2eip0y*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODY3NzY0NS44Ni4xLjE2OTg2ODE0NTAuMTAuMC4w';
 export const IMAGE2 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img2.png?alt=media&token=24faf11d-e591-476d-827d-11d6384ba9a1&_gl=1*y9nxb2*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODY3NzY0NS44Ni4xLjE2OTg2ODE0NTkuMS4wLjA.';
 export const IMAGE3 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img3.png?alt=media&token=88c6d0b9-4164-401d-bcdf-7bc81658fbf7&_gl=1*jgoifn*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODY3NzY0NS44Ni4xLjE2OTg2ODE0NjguNjAuMC4w';
-
-
-
-
+export const NUIBADEN = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/nuibaden.png?alt=media&token=a302b1c6-b33f-43d0-b720-5889b063d7b7&_gl=1*37bdem*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY3NTMuNjAuMC4w';
+export const ICON_STAR2 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star2.png?alt=media&token=c8c87c16-8ee3-4255-acf5-ad1bf92c279d';
+export const ICON_HEART4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_heart4.png?alt=media&token=e9aa39f9-7876-48b3-9cff-30700923419a&_gl=1*49k5ig*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5MTUuNjAuMC4w';
+export const ICON_MARKER4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_marker4.png?alt=media&token=aa3b2dd4-7fc3-4abd-9ecf-b8f925510bce&_gl=1*bvay5i*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5OTcuNjAuMC4w';
 
 
 
