@@ -38,12 +38,12 @@ function App(): JSX.Element {
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
-    // <ListShare/>
+    <ListShare/>
     // <Booking/>
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
-    <AuthorizedBottomNavigation/>
+    // <AuthorizedBottomNavigation/>
   ); 
 }
 

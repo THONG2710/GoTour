@@ -68,8 +68,9 @@ export const NUIBADEN = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bc
 export const ICON_STAR2 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star2.png?alt=media&token=c8c87c16-8ee3-4255-acf5-ad1bf92c279d';
 export const ICON_HEART4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_heart4.png?alt=media&token=e9aa39f9-7876-48b3-9cff-30700923419a&_gl=1*49k5ig*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5MTUuNjAuMC4w';
 export const ICON_MARKER4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_marker4.png?alt=media&token=aa3b2dd4-7fc3-4abd-9ecf-b8f925510bce&_gl=1*bvay5i*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5OTcuNjAuMC4w';
-
-
+export const AVT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743&_gl=1*63wgnn*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODg0OTM3Ny4zLjEuMTY5ODg0OTYwMy43LjAuMA..'
+export const ICON_LIKED = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_like.png?alt=media&token=7d7fac80-b1e7-4cbd-b90b-4d0718d39876&_gl=1*1g9jpou*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzUzNjEuNDcuMC4w' 
+       
 
 
 
