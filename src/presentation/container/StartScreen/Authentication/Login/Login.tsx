@@ -24,6 +24,7 @@ const Login: React.FC<LoginProp> = (props) => {
   };
   const login = () => {
     console.log('phone', phone, 'Password:', password);
+    navigation.navigate('authorized');
   };
   const register = () => {
     navigation.navigate('register');

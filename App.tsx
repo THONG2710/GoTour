@@ -6,7 +6,7 @@ import ResetPass from './src/presentation/container/StartScreen/Authentication/C
 import SplashOne from './src/presentation/container/StartScreen/SplashScreen/SplashOne/SplashOne';
 import SplashTwo from './src/presentation/container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
 import SplashThree from './src/presentation/container/StartScreen/SplashScreen/SplashThree/SplashThree';
-import MyFavourite from './src/presentation/container/Authorized/Account/MyFavorites/MyFavourite';
+import MyFavourite from './src/presentation/container/Authorized/Home/ListTour/ListTour';
 import Hotel from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
 import Plane from './src/presentation/container/Authorized/Service/TabBooking/BookPlane/Plane';
 import Train from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
@@ -20,6 +20,8 @@ import ChangePassword from './src/presentation/container/StartScreen/Authenticat
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import AuthorizedBottomNavigation from './src/presentation/navigation/AuthorizedBottomNavigation';
 import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
+import Home from './src/presentation/container/Authorized/Home/Home';
+import Account from './src/presentation/container/Authorized/Account/Account';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -44,8 +46,10 @@ function App(): JSX.Element {
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
-    <AuthorizedBottomNavigation/>
+    // <AuthorizedBottomNavigation/>
     // <ItemBottomHome/>
+    // <Home/>
+    <Account/>
   ); 
 }
 

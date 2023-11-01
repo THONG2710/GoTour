@@ -7,7 +7,6 @@ import Social from '../container/Authorized/Social/Social';
 import Deals from '../container/Authorized/Sale/Deals';
 import Booking from '../container/Authorized/Service/Booking';
 import Profile from '../container/Authorized/Account/Profile/Profile';
-import MainHome from '../container/Authorized/Home/HomeMain/MainHome';
 import ItemBottomHome from '../component/Items/ItemBottomHome';
 import {
   B_ACCOUNT,
@@ -16,16 +15,16 @@ import {
   B_SERVICE,
   B_SOCIAL,
 } from '../resource/assets/images';
+import Home from '../container/Authorized/Home/Home';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
 const AuthorizedBottomNavigation = () => {
   return (
-    <NavigationContainer>
       <AuthorizedBottomTab.Navigator screenOptions={{headerShown: false}}>
         <AuthorizedBottomTab.Screen
           name="Home"
-          component={MainHome}
+          component={Home}
           options={{
             tabBarLabel: ({focused}) => {
               return <ItemBottomHome isFocused={focused} icon={B_HOME} label="Trang chủ" />;
@@ -69,7 +68,6 @@ const AuthorizedBottomNavigation = () => {
           }}
         />
       </AuthorizedBottomTab.Navigator>
-    </NavigationContainer>
   );
 };
 

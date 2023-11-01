@@ -73,15 +73,16 @@ export const B_ACCOUNT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72b
 export const B_SERVICE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_booking.png?alt=media&token=98e53eb7-65dd-4022-a735-0e3b0518a16d&_gl=1*19tnygq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1MzYuNTEuMC4w';
 export const B_HOT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_hot.png?alt=media&token=e89771e8-58b1-4a16-8580-4a7dc4730aa7&_gl=1*e6xmq2*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1NTIuMzUuMC4w';
 export const B_SOCIAL = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_social.png?alt=media&token=4ccc0b57-8e05-460f-893f-72d8b78ad869&_gl=1*o3ux8v*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1NTkuMjguMC4w';
-
-
-
-
-
-
-
-
-
-
-
-
+export const ICON_HEART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_heart.png?alt=media&token=55dc9222-b4ed-4b64-9303-4608a031a88b&_gl=1*tya7k4*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTQ3OTMuNTcuMC4w';
+export const IMG_FVR = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/imgFVR.png?alt=media&token=6ee8fda3-09d7-4163-857e-07b50e122b15&_gl=1*uotp6z*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTQ4OTUuMzQuMC4w';
+export const MENU_MYFVR = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/menuMyFVR.png?alt=media&token=29738608-2dda-48c7-868b-a57cfbba4a01&_gl=1*u47gr5*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTUwNzIuMjUuMC4w';
+export const ICON_FIRE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_fire.png?alt=media&token=ff9f0e86-2150-48b5-a995-3e607bca537c&_gl=1*1es4vq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTUxNTguMzUuMC4w';
+export const ICON_EXPLORE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_explore.png?alt=media&token=7ca63c78-d94c-42be-924e-cdb2ac855ed3&_gl=1*aw6bf0*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTUyODQuMS4wLjA.';
+export const ANOTHER = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/another.png?alt=media&token=e8692350-e7b5-41e9-a094-b02d65e44a6b&_gl=1*9avruq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU2MDkuNDIuMC4w';
+export const MOUNTAIN = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/mountain.png?alt=media&token=2da3db1d-6c20-4e28-ad47-0d263bf9f74b&_gl=1*16xxtr5*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU2NDYuNS4wLjA.';
+export const SEA = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/sea.png?alt=media&token=5f1a319a-b04c-492f-95d7-31d97a904a7b&_gl=1*geeoyi*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU2OTIuNDEuMC4w';
+export const ISLAND = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/island.png?alt=media&token=2270a674-b763-445c-ac79-8698cc8bebba&_gl=1*vqszlk*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU3NDMuNjAuMC4w';
+export const CAMP = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/camp.png?alt=media&token=4982545b-eea5-4a18-8a16-d020241eb81e&_gl=1*gegqut*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU3ODguMTUuMC4w';
+export const SLIDE4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/slide4.png?alt=media&token=2018a2b2-a117-4f69-95b5-9197237fa9ce&_gl=1*fj6gc3*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU5MzAuMjEuMC4w';
+export const ICON_CART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_cart.png?alt=media&token=cd580935-b6f8-4934-b355-a0c22135c94e&_gl=1*hxf4ep*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTYwOTAuMjEuMC4w';
+export const ICON_NOHEART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_noHeart.png?alt=media&token=e08d9c43-d6d3-41d8-9aa0-2b2261ab6af8&_gl=1*1hagnyq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTYxNTcuMzYuMC4w';
