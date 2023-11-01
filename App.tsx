@@ -19,6 +19,7 @@ import Booking from './src/presentation/container/Authorized/Service/Booking';
 import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import AuthorizedBottomNavigation from './src/presentation/navigation/AuthorizedBottomNavigation';
+import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -44,6 +45,7 @@ function App(): JSX.Element {
     // <ResetPassword/>
     // <OTP/>
     <AuthorizedBottomNavigation/>
+    // <ItemBottomHome/>
   ); 
 }
 

@@ -68,7 +68,11 @@ export const NUIBADEN = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bc
 export const ICON_STAR2 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star2.png?alt=media&token=c8c87c16-8ee3-4255-acf5-ad1bf92c279d';
 export const ICON_HEART4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_heart4.png?alt=media&token=e9aa39f9-7876-48b3-9cff-30700923419a&_gl=1*49k5ig*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5MTUuNjAuMC4w';
 export const ICON_MARKER4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_marker4.png?alt=media&token=aa3b2dd4-7fc3-4abd-9ecf-b8f925510bce&_gl=1*bvay5i*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODcyNjY5Mi44OC4xLjE2OTg3MjY5OTcuNjAuMC4w';
-
+export const B_HOME = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_home.png?alt=media&token=3b25095b-3771-4c19-8c95-57339df24e6e&_gl=1*193d52j*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1NDUuNDIuMC4w';
+export const B_ACCOUNT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_account.png?alt=media&token=39d160dd-8e70-46b6-b36a-d18e16271fe6&_gl=1*6lr315*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1MjcuNjAuMC4w';
+export const B_SERVICE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_booking.png?alt=media&token=98e53eb7-65dd-4022-a735-0e3b0518a16d&_gl=1*19tnygq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1MzYuNTEuMC4w';
+export const B_HOT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_hot.png?alt=media&token=e89771e8-58b1-4a16-8580-4a7dc4730aa7&_gl=1*e6xmq2*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1NTIuMzUuMC4w';
+export const B_SOCIAL = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/b_social.png?alt=media&token=4ccc0b57-8e05-460f-893f-72d8b78ad869&_gl=1*o3ux8v*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg0ODkwNy45Mi4xLjE2OTg4NTE1NTkuMjguMC4w';
 
 
 

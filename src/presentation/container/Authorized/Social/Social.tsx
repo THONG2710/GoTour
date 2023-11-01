@@ -2,9 +2,11 @@ import { ImageBackground, StyleSheet, Text, TextInput, View, Image, FlatList } f
 import React from 'react'
 import ItemListShare from '../../../component/Items/ItemListShare'
 import { AVATAR, ICON_SEARCH_BLACK, SPLASH_THREE } from '../../../resource/assets/images'
+import { SocialProp } from './type'
 
 
-const Social = () => {
+const Social: React.FC<SocialProp> = (props) => {
+    const {navigation} = props;
     interface Props {
         item: { image: any, title: string, name: string, time: string, day: string, turn: string,namePlace: string }
     }
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     findHeader:
     {
         borderWidth: 1,
-        borderRadius: 20,
+        borderRadius: 30,
         width: '85%',
         paddingLeft: 20,
         position: 'relative',
