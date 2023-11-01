@@ -10,17 +10,17 @@ const Profile = () => {
 
                     <View style={styles.avtHeader}>
                         <View style={{ backgroundColor: '#6A9C89', width: 220, height: 70, position: 'relative', borderTopRightRadius: 30, borderBottomRightRadius: 30 }}>
-                            <Image style={{ position: 'absolute', marginLeft: -30, width: 70, height: 70 }} source={require('../resource/assets/images/avatar.png')}></Image>
+                            <Image style={{ position: 'absolute', marginLeft: -30, width: 70, height: 70 }} source={require('../../../resource/assets/images/avatar.png')}></Image>
                             <View style={styles.grPoint}>
                                 <Text style={{ textAlign: 'center', color: '#fff', fontSize: 20, fontWeight: 'bold' }}>102 Điểm</Text>
-                                <Image style={{ width: 40, height: 40 }} source={require('../resource/assets/images/point.png')}></Image>
+                                <Image style={{ width: 40, height: 40 }} source={require('../../../resource/assets/images/point.png')}></Image>
 
                             </View>
                         </View>
                     </View>
                     <TouchableOpacity>
 
-                        <Image source={require('../resource/assets/images/setting.png')}></Image>
+                        <Image source={require('../../../resource/assets/images/setting.png')}></Image>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.grText}>
@@ -29,14 +29,14 @@ const Profile = () => {
                 </View>
                 <View style={styles.grProfile}>
                     <Text style={styles.text}>Thông tin cá nhân</Text>
-                    <Image style={{ marginLeft: 20 }} source={require('../resource/assets/images/arrowRight.png')}></Image>
+                    <Image style={{ marginLeft: 20 }} source={require('../../../resource/assets/images/arrowRight.png')}></Image>
                 </View>
             </View>
 
             <View style={styles.center}>
                 <TouchableOpacity>
                     <View style={{ height: 60, width: '100%', backgroundColor: '#6A9C89', borderRadius: 10, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <Image style={{ marginLeft: 10 }} source={require('../resource/assets/images/voucher.png')}></Image>
+                        <Image style={{ marginLeft: 10 }} source={require('../../../resource/assets/images/voucher.png')}></Image>
                         <View style={{ marginLeft: 10 }}>
                             <Text style={{ marginBottom: 10, fontSize: 12, color: '#fff' }}>Sử dụng khuyến mãi để tiết kiệm nhiều hơn</Text>
                             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -45,7 +45,7 @@ const Profile = () => {
                                 <Text style={{ color: '#fff', fontSize: 14 }}>Mã khuyến mãi</Text>
                             </View>
                         </View>
-                        <Image style={{ marginRight: 10 }} source={require('../resource/assets/images/next.png')}></Image>
+                        <Image style={{ marginRight: 10 }} source={require('../../../resource/assets/images/next.png')}></Image>
 
                     </View>
                 </TouchableOpacity>
@@ -56,7 +56,7 @@ const Profile = () => {
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
-                                <Image source={require('../resource/assets/images/history.png')}></Image>
+                                <Image source={require('../../../resource/assets/images/history.png')}></Image>
                                 <Text style={{ marginTop: 10 }}>Lịch sử</Text>
                             </View>
                         </Shadow>
@@ -67,7 +67,7 @@ const Profile = () => {
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
-                                <Image source={require('../resource/assets/images/favourite.png')}></Image>
+                                <Image source={require('../../../resource/assets/images/favourite.png')}></Image>
                                 <Text style={{ marginTop: 10 }}>Yêu thích</Text>
                             </View>
                         </Shadow>
@@ -78,7 +78,7 @@ const Profile = () => {
                         <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
 
                             <View style={{ backgroundColor: '#fff', width: 120, height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'center' }}>
-                                <Image source={require('../resource/assets/images/post.png')}></Image>
+                                <Image source={require('../../../resource/assets/images/post.png')}></Image>
                                 <Text style={{ marginTop: 10 }}>Bài đăng</Text>
                             </View>
                         </Shadow>
@@ -91,14 +91,14 @@ const Profile = () => {
                         <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: '100%', height: 100, borderRadius: 10, marginTop: 10, alignItems: 'center', justifyContent: 'space-around' }}>
                             <TouchableOpacity>
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Image source={require('../resource/assets/images/evalute.png')}></Image>
+                                    <Image source={require('../../../resource/assets/images/evalute.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Đang chờ{`\n`} đánh giá</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity>
 
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Image source={require('../resource/assets/images/introduce.png')}></Image>
+                                    <Image source={require('../../../resource/assets/images/introduce.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Giới thiệu về {`\n`} Gotour</Text>
                                 </View>
                             </TouchableOpacity>
@@ -106,7 +106,7 @@ const Profile = () => {
                             <TouchableOpacity>
 
                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Image source={require('../resource/assets/images/contact.png')}></Image>
+                                    <Image source={require('../../../resource/assets/images/contact.png')}></Image>
                                     <Text style={{ marginTop: 10, textAlign: 'center' }}>Chăm sóc {`\n`} khách hàng</Text>
                                 </View>
                             </TouchableOpacity>
@@ -118,7 +118,7 @@ const Profile = () => {
 
             <View style={styles.footer}>
                 <View style={{ alignItems: 'center', height: 160 }}>
-                    <Image style={{ position: 'relative', top: -20 }} source={require('../resource/assets/images/logo.png')}></Image>
+                    <Image style={{ position: 'relative', top: -20 }} source={require('../../../resource/assets/images/logo.png')}></Image>
                     <Text style={{ position: 'absolute', color: '#000', bottom: 20 }}>Dịch vụ mà bạn có thể tin cậy</Text>
                 </View>
                 <TouchableOpacity>

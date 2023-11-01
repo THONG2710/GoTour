@@ -24,22 +24,22 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import SplashOne from './src/presentation/container/SplashOne';
-import SplashTwo from './src/presentation/container/SplashTwo';
-import SplashThree from './src/presentation/container/SplashThree';
-import MyFavourite from './src/presentation/container/MyFavourite';
-import ItemMyFavourite from './src/presentation/container/ItemTypeOfTravelMyFavourite';
-import ItemExploreMyFavourite from './src/presentation/container/ItemExploreMyFavourite';
-import Profile from './src/presentation/container/Profile';
+import SplashTwo from './src/presentation/container/Splash/SplashTwo';
+import SplashThree from './src/presentation/container/Splash/SplashThree';
+import MyFavourite from './src/presentation/container/MyFavourite/Screen/MyFavourite';
+import ItemMyFavourite from './src/presentation/container/MyFavourite/ItemMyFavourite/ItemTypeOfTravelMyFavourite';
+import ItemExploreMyFavourite from './src/presentation/container/MyFavourite/ItemMyFavourite/ItemExploreMyFavourite';
+import Profile from './src/presentation/container/Profille/Screen/Profile';
 import Editprofile from './src/presentation/container/EditProfile/Screen/EditProfile';
 import ViewForm from './src/presentation/container/EditProfile/Component/InputForm';
 import Favourite from './src/presentation/container/Favourite/Screen/Favourite';
 import ListShare from './src/presentation/container/ListShare/Screen/ListShare';
+import SplashOne from './src/presentation/container/Splash/SplashOne';
 
 
 const App = (): JSX.Element => {
   return (
-    <ListShare></ListShare>
+    <SplashOne></SplashOne>
   );
 };
 export default App;

@@ -2,10 +2,10 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import Ripple from 'react-native-material-ripple'
 
-interface ItemMyFavouriteProps {
+interface ItemTypeOfTravelMyFavouriteProps {
     item: { _id: string, title: string, image: any }
 }
-const ItemMyFavourite: React.FC<ItemMyFavouriteProps> = (props) => {
+const ItemTypeOfTravelMyFavourite: React.FC<ItemTypeOfTravelMyFavouriteProps> = (props) => {
     const { item } = props
     return (
         <View style={styles.itemListMyFVR}>
@@ -17,7 +17,7 @@ const ItemMyFavourite: React.FC<ItemMyFavouriteProps> = (props) => {
     )
 }
 
-export default ItemMyFavourite
+export default ItemTypeOfTravelMyFavourite
 
 const styles = StyleSheet.create({
     itemListMyFVR:

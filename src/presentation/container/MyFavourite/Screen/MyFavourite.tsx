@@ -2,9 +2,9 @@ import { Image, ImageBackground, StyleSheet, Text, TextInput, View, FlatList, Di
 import React, { useState, useRef } from 'react'
 import Ripple from 'react-native-material-ripple';
 import { Shadow } from 'react-native-shadow-2';
-import ItemMyFavourite from './ItemTypeOfTravelMyFavourite';
 import Carousel from 'react-native-snap-carousel';
-import ItemExploreMyFavourite from './ItemExploreMyFavourite';
+import ItemExploreMyFavourite from '../ItemMyFavourite/ItemExploreMyFavourite';
+import ItemTypeOfTravelMyFavourite from '../ItemMyFavourite/ItemTypeOfTravelMyFavourite';
 
 const SLIDE_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = SLIDE_WIDTH * 0.6;
@@ -24,7 +24,7 @@ const MyFavourite: React.FC<Props> = () => {
                     <View>
                         <View style={styles.groupHeader}>
                             <Text style={styles.textAddress}>{item.name}</Text>
-                            <Image style={{ width: 24, height: 24 }} source={require('../resource/assets/images/heart.png')}></Image>
+                            <Image style={{ width: 24, height: 24 }} source={require('../../../resource/assets/images/heart.png')}></Image>
                         </View>
                         <Text style={styles.textTurn}>{item.turn}</Text>
                     </View>
@@ -42,13 +42,13 @@ const MyFavourite: React.FC<Props> = () => {
 
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image style={styles.imgHeader} source={require('../resource/assets/images/imgFVR.png')}></Image>
+                <Image style={styles.imgHeader} source={require('../../../resource/assets/images/imgFVR.png')}></Image>
                 <View style={styles.iconHeader}>
                     <Ripple>
-                        <Image source={require('../resource/assets/images/back.png')}></Image>
+                        <Image source={require('../../../resource/assets/images/back.png')}></Image>
                     </Ripple>
                     <Ripple>
-                        <Image source={require('../resource/assets/images/bell.png')}></Image>
+                        <Image source={require('../../../resource/assets/images/bell.png')}></Image>
                     </Ripple>
                 </View>
                 <Text style={styles.textHeader}>Lựa chọn chuyến đi phù hợp {`\n`}cho bạn nào !!!</Text>
@@ -56,13 +56,13 @@ const MyFavourite: React.FC<Props> = () => {
                     <Shadow distance={1} endColor={'#ff00ff10'} offset={[20, 1]} style={styles.findMyFavourite}>
                         <TextInput placeholder='Tìm kiếm ...'></TextInput>
                     </Shadow>
-                    <Image style={styles.find} source={require('../resource/assets/images/find.png')}></Image>
-                    <Image style={styles.imgMenu} source={require('../resource/assets/images/menuMyFVR.png')}></Image>
+                    <Image style={styles.find} source={require('../../../resource/assets/images/find.png')}></Image>
+                    <Image style={styles.imgMenu} source={require('../../../resource/assets/images/menuMyFVR.png')}></Image>
                 </View>
                 <FlatList
-                    style={{ marginTop: 180, marginRight: 15 }}
+                    style={{ marginTop: 190, marginRight: 15 }}
                     data={data}
-                    renderItem={({ item }) => <ItemMyFavourite item={item} />}
+                    renderItem={({ item }) => <ItemTypeOfTravelMyFavourite item={item} />}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={item => item._id}
                     horizontal
@@ -73,7 +73,7 @@ const MyFavourite: React.FC<Props> = () => {
             <View style={styles.center}>
                 <View style={styles.titleCenter}>
                     <Text style={styles.textTitle}>Điểm đến yêu thích</Text>
-                    <Image source={require('../resource/assets/images/fire.png')}></Image>
+                    <Image source={require('../../../resource/assets/images/fire.png')}></Image>
                 </View>
                 <Carousel
                     data={dataSlide}
@@ -89,7 +89,7 @@ const MyFavourite: React.FC<Props> = () => {
             <View style={styles.footer}>
                 <View style={styles.titleCenter}>
                     <Text style={styles.textTitle}>Khám phá thêm</Text>
-                    <Image source={require('../resource/assets/images/explore.png')}></Image>
+                    <Image source={require('../../../resource/assets/images/explore.png')}></Image>
                 </View>
                 <FlatList
                     data={dataExplore}
@@ -278,7 +278,7 @@ const data = [
 
         _id: "1",
         title: "Núi",
-        image: require('../resource/assets/images/mountain.png')
+        image: require('../../../resource/assets/images/mountain.png')
 
     },
 
@@ -286,25 +286,25 @@ const data = [
 
         _id: "2",
         title: "Biển",
-        image: require('../resource/assets/images/sea.png')
+        image: require('../../../resource/assets/images/sea.png')
 
     }, {
 
         _id: "3",
         title: "Đảo",
-        image: require('../resource/assets/images/island.png')
+        image: require('../../../resource/assets/images/island.png')
 
     }, {
 
         _id: "4",
         title: "Cắm trại",
-        image: require('../resource/assets/images/camp.png')
+        image: require('../../../resource/assets/images/camp.png')
 
     }, {
 
         _id: "5",
         title: "Khác",
-        image: require('../resource/assets/images/another.png')
+        image: require('../../../resource/assets/images/another.png')
 
     },
 
@@ -349,7 +349,7 @@ const dataExplore = [
         price: '1.790.000đ',
         time: '3N2Đ',
         turn: '518 lượt đi',
-        image: require('../resource/assets/images/slide4.png')
+        image: require('../../../resource/assets/images/slide4.png')
 
     },
 
@@ -360,7 +360,7 @@ const dataExplore = [
         price: '1.990.000đ',
         time: '3N3Đ',
         turn: '588 lượt đi',
-        image: require('../resource/assets/images/slide4.png')
+        image: require('../../../resource/assets/images/slide4.png')
 
     },
 
