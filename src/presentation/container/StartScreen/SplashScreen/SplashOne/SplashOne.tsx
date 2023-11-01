@@ -64,16 +64,16 @@ const styles = StyleSheet.create({
   footer: {
     width: '100%',
     position: 'absolute',
-    justifyContent: 'center',
     alignItems: 'center',
     height: '50%',  
-    marginTop: Dimensions.get('screen').height/2,
+    marginTop: Dimensions.get('screen').height/1.8,
+    
   },
 
   imgNextFooter: {
     position: 'absolute',
     width: Dimensions.get('screen').width,
-    height: Dimensions.get('screen').height / 4,
+    height: Dimensions.get('screen').height / 3.5,
     resizeMode: 'contain',
   },
 
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
+    marginTop:20
   },
 
   textContent: {
@@ -92,8 +93,9 @@ const styles = StyleSheet.create({
   },
 
   btnImageNext: {
-    width: 70,
-    height: 70,
+    width: 80,
+    height: 80,
     resizeMode: 'contain',
+    marginTop:60
   },
 });

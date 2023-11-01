@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import Ripple from 'react-native-material-ripple';
-import { HOI_AN, ICON_COMMENT, ICON_LIKE, ICON_MENU_POINT, ICON_RIGHT } from '../../resource/assets/images';
+import { HOI_AN, ICON_COMMENT, ICON_LIKE, ICON_LIKED, ICON_MENU_POINT, ICON_RIGHT } from '../../resource/assets/images';
 interface ItemListShareProps {
     item: { image: any, title: string, name: string, time: string, day: string, turn: string, namePlace: string }
 }
@@ -14,10 +14,9 @@ const ItemListShare: React.FC<ItemListShareProps> = (props) => {
     };
     const getImageUri = () => {
         return imageLike ? 
-        'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_liked.png?alt=media&token=0a946f9e-a7e8-4a72-b34a-f6b91daf13d5&_gl=1*d8156g*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODg1MjU2Ni40LjEuMTY5ODg1MjYzOC41MS4wLjA.'
+        ICON_LIKED
         : 
-        'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_like.png?alt=media&token=7d7fac80-b1e7-4cbd-b90b-4d0718d39876&_gl=1*1g9jpou*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzUzNjEuNDcuMC4w' 
-
+        ICON_LIKE
       };
 
     return (
