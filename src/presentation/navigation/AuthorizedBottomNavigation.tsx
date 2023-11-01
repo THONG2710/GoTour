@@ -1,28 +1,76 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { AuthorizedParamList } from '../storyboard/AuthorizedStoryBoard';
-import { NavigationContainer } from '@react-navigation/native';
+import {View, Text} from 'react-native';
+import React from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {AuthorizedParamList} from '../storyboard/AuthorizedStoryBoard';
+import {NavigationContainer} from '@react-navigation/native';
 import Social from '../container/Authorized/Social/Social';
 import Deals from '../container/Authorized/Sale/Deals';
 import Booking from '../container/Authorized/Service/Booking';
 import Profile from '../container/Authorized/Account/Profile/Profile';
-import MainHome from '../container/Authorized/Home/MainHome';
+import MainHome from '../container/Authorized/Home/HomeMain/MainHome';
+import ItemBottomHome from '../component/Items/ItemBottomHome';
+import {
+  B_ACCOUNT,
+  B_HOME,
+  B_HOT,
+  B_SERVICE,
+  B_SOCIAL,
+} from '../resource/assets/images';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
 const AuthorizedBottomNavigation = () => {
   return (
     <NavigationContainer>
-        <AuthorizedBottomTab.Navigator screenOptions={{headerShown: false}}>
-            <AuthorizedBottomTab.Screen name='Home' component={MainHome}/>
-            <AuthorizedBottomTab.Screen name='Social' component={Social}/>
-            <AuthorizedBottomTab.Screen name='Service' component={Booking}/>
-            <AuthorizedBottomTab.Screen name='Sale' component={Deals}/>
-            <AuthorizedBottomTab.Screen name='account' component={Profile}/>
-        </AuthorizedBottomTab.Navigator>
+      <AuthorizedBottomTab.Navigator screenOptions={{headerShown: false}}>
+        <AuthorizedBottomTab.Screen
+          name="Home"
+          component={MainHome}
+          options={{
+            tabBarLabel: ({focused}) => {
+              return <ItemBottomHome isFocused={focused} icon={B_HOME} label="Trang chủ" />;
+            },
+          }}
+        />
+        <AuthorizedBottomTab.Screen
+          name="Social"
+          component={Social}
+          options={{
+            tabBarLabel: ({focused}) => {
+              return <ItemBottomHome isFocused={focused} icon={B_SOCIAL} label="Mạng xã hội" />;
+            },
+          }}
+        />
+        <AuthorizedBottomTab.Screen
+          name="Service"
+          component={Booking}
+          options={{
+            tabBarLabel: ({focused}) => {
+              return <ItemBottomHome isFocused={focused} icon={B_SERVICE} label="Dịch vụ" />;
+            },
+          }}
+        />
+        <AuthorizedBottomTab.Screen
+          name="Sale"
+          component={Deals}
+          options={{
+            tabBarLabel: ({focused}) => {
+              return <ItemBottomHome isFocused={focused} icon={B_HOT} label="Khuyến mãi" />;
+            },
+          }}
+        />
+        <AuthorizedBottomTab.Screen
+          name="account"
+          component={Profile}
+          options={{
+            tabBarLabel: ({focused}) => {
+              return <ItemBottomHome isFocused={focused} icon={B_ACCOUNT} label="Cá nhân" />;
+            },
+          }}
+        />
+      </AuthorizedBottomTab.Navigator>
     </NavigationContainer>
-  )
-}
+  );
+};
 
-export default AuthorizedBottomNavigation
+export default AuthorizedBottomNavigation;

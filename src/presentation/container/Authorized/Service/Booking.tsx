@@ -5,8 +5,9 @@ import Plane from './TabBooking/BookPlane/Plane'
 import Hotel from './TabBooking/BookHotel/Hotel'
 import Train from './TabBooking/BookTrain/Train'
 import { BACKGROUND, ICON_BELL, ICON_SEARCH, LOGO_GOTOUR } from '../../../resource/assets/images'
+import { BookingProp } from './type'
 
-const Booking: React.FC = () => {
+const Booking: React.FC<BookingProp> = () => {
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={{uri: BACKGROUND}} />

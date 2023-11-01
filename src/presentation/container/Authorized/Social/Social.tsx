@@ -2,13 +2,14 @@ import { ImageBackground, StyleSheet, Text, TextInput, View, Image, FlatList, To
 import React from 'react'
 import ItemListShare from '../../../component/Items/ItemListShare'
 import {Dimensions} from 'react-native';
-
-import { AVATAR, AVT, ICON_SEARCH_BLACK, SPLASH_THREE } from '../../../resource/assets/images'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+import { AVATAR, AVT, ICON_SEARCH_BLACK, SPLASH_THREE } from '../../../resource/assets/images'
+import { SocialProp } from './type'
 
 
-const Social = () => {
+const Social: React.FC<SocialProp> = (props) => {
+    const {navigation} = props;
     interface Props {
         item: { image: any, title: string, name: string, time: string, day: string, turn: string, namePlace: string }
     }
@@ -65,6 +66,9 @@ const styles = StyleSheet.create({
     findHeader:
     {
         width: windowWidth-150,
+        borderRadius: 30,
+        paddingLeft: 20,
+        position: 'relative',
         fontSize: 15,
     },
 

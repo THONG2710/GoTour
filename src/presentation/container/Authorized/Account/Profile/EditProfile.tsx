@@ -2,11 +2,10 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'reac
 import React, { useMemo, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { Shadow } from 'react-native-shadow-2'
-import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../EditProfile/Text/TextEditProfileVN'
 import ViewForm from '../../../../component/Input/InputField'
 import { RadioButtonProps, RadioGroup } from 'react-native-radio-buttons-group'
 import Ripple from 'react-native-material-ripple'
-import { TEXT_BUTTON_EDITPROFILE_EG } from '../../../EditProfile/Text/TextEditProfileEG'
+import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../../resource/assets/String/VNString'
 
 const Editprofile = () => {
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
