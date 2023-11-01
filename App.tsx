@@ -30,16 +30,16 @@ import SplashThree from './src/presentation/container/SplashThree';
 import MyFavourite from './src/presentation/container/MyFavourite';
 import ItemMyFavourite from './src/presentation/container/ItemTypeOfTravelMyFavourite';
 import ItemExploreMyFavourite from './src/presentation/container/ItemExploreMyFavourite';
-import ListShare from './src/presentation/container/ListShare';
 import Profile from './src/presentation/container/Profile';
 import Editprofile from './src/presentation/container/EditProfile/Screen/EditProfile';
 import ViewForm from './src/presentation/container/EditProfile/Component/InputForm';
 import Favourite from './src/presentation/container/Favourite/Screen/Favourite';
+import ListShare from './src/presentation/container/ListShare/Screen/ListShare';
 
 
 const App = (): JSX.Element => {
   return (
-    <Favourite></Favourite>
+    <ListShare></ListShare>
   );
 };
 export default App;
