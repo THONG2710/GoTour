@@ -3,10 +3,10 @@ import React from 'react'
 import { Shadow } from 'react-native-shadow-2'
 import Ripple from 'react-native-material-ripple'
 
-interface ItemFavouriteUserProps {
+interface ItemFavouriteProps {
     item: { title: string, price: string, time: string, turn: string, image: any }
 }
-const ItemFavouriteUser: React.FC<ItemFavouriteUserProps> = (props) => {
+const ItemFavourite: React.FC<ItemFavouriteProps> = (props) => {
     const { item } = props
     return (
 
@@ -42,7 +42,7 @@ const ItemFavouriteUser: React.FC<ItemFavouriteUserProps> = (props) => {
     )
 }
 
-export default ItemFavouriteUser
+export default ItemFavourite
 
 const styles = StyleSheet.create({
 

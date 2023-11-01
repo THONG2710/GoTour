@@ -3,11 +3,11 @@ import React from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { Shadow } from 'react-native-shadow-2'
 
-import ItemFavouriteUser from '../ItemList/ItemFavouriteUser'
 import { TEXT_HEADER_USERPROFILE_VN } from '../Text/TextUserProfileVN'
+import ItemFavourite from '../ItemList/ItemFavourite'
 
 
-const UserProfile = () => {
+const Favourite = () => {
     // interface Props {
     //     item: { title: string, price: string, time: string, turn: string, image: any }
     // }
@@ -41,7 +41,7 @@ const UserProfile = () => {
             <View style={styles.footer}>
                 <FlatList
                     data={dataListFavouriteUser}
-                    renderItem={({ item }) => <ItemFavouriteUser item={item} />}
+                    renderItem={({ item }) => <ItemFavourite item={item} />}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={item => item._id}
                 />
@@ -50,7 +50,7 @@ const UserProfile = () => {
     )
 }
 
-export default UserProfile
+export default Favourite
 
 const styles = StyleSheet.create({
     // CONTAINER

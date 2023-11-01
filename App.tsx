@@ -32,14 +32,14 @@ import ItemMyFavourite from './src/presentation/container/ItemTypeOfTravelMyFavo
 import ItemExploreMyFavourite from './src/presentation/container/ItemExploreMyFavourite';
 import ListShare from './src/presentation/container/ListShare';
 import Profile from './src/presentation/container/Profile';
-import UserProfile from './src/presentation/container/UserProfile/Screen/UserProfile';
 import Editprofile from './src/presentation/container/EditProfile/Screen/EditProfile';
 import ViewForm from './src/presentation/container/EditProfile/Component/InputForm';
+import Favourite from './src/presentation/container/Favourite/Screen/Favourite';
 
 
 const App = (): JSX.Element => {
   return (
-    <Editprofile></Editprofile>
+    <Favourite></Favourite>
   );
 };
 export default App;
