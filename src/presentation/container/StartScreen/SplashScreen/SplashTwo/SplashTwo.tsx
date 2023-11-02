@@ -34,7 +34,7 @@ import {
           <Text style={styles.textContent}>
           Lên kế hoạch cho những chuyến đi cũng {`\n`} những ưu đãi tốt nhất và tạo hành trình {`\n`} đáng nhớ một cách dễ dàng
           </Text>
-          <Ripple onPress={onNext}>
+          <Ripple style={styles.btnNext} rippleContainerBorderRadius={40} onPress={onNext}>
             <Image
               style={styles.btnImageNext}
               source={{uri: NEXT_BUTTON}}></Image>
@@ -90,12 +90,18 @@ import {
       color: 'white',
       marginVertical: 10,
     },
+
+    btnNext:
+    {
+      marginTop:40
+    },
+  
   
     btnImageNext: {
       width: 80,
       height: 80,
       resizeMode: 'contain',
-      marginTop:40
     },
+    
   });
   

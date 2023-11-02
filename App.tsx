@@ -26,7 +26,7 @@ function App(): JSX.Element {
     // <OTP/>
     // <SplashOne/>
     // <SplashTwo/>
-    // <SplashThree/>
+    <SplashThree/>
     // <Deals/>
     // <ForgotPass/>
     // <MyFavourite/>
@@ -40,7 +40,7 @@ function App(): JSX.Element {
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
-    <Social/>
+    // <Social/>
     // <Booking/>
     // <ChangePassword/>
     // <ResetPassword/>
