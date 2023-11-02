@@ -18,7 +18,7 @@ const ItemListHotel: React.FC<Item> = (props: any) => {
     return (
         <View style={styles.container}>
             <View style={styles.item}>
-                <Image source={{uri: FRAME_HOTEL}} />
+                <Image source={{uri: FRAME_HOTEL}} style={styles.img}/>
                 <View style={styles.rightContent}>
                     <Text style={styles.nameHotel}>{nameHotel}</Text>
                     <View style={{ flexDirection: 'row'}}>
@@ -69,5 +69,9 @@ const styles = StyleSheet.create({
         fontSize:18,
         color:'blue',
         textAlign:'center'
+    },
+    img:{
+        width:116,
+        height:140
     }
 });

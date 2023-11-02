@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,     
+        flex: 1,
     },
     imgBackground: {
         position: 'absolute',
@@ -36,54 +36,113 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         fontSize: 18
     },
-    category:{
-        flexDirection:'row',
-        margin:10,
-        justifyContent:'space-around'
+    titleCategory:{
+        marginHorizontal: 15, 
+        marginTop: 15, 
+        fontSize: 20, 
+        fontWeight: 'bold', 
+        color: 'black'
     },
-    item:{
-        backgroundColor:'white',
-        height:75,
-        width:75,
-        alignItems:'center',
-        paddingVertical:12,
-        borderRadius:10
+    nameCategory:{
+        color: 'black'
     },
-    title:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        marginHorizontal:10,     
-        alignItems:'center'
+    category: {
+        flexDirection: 'row',
+        margin: 10,
+        justifyContent: 'space-around'
     },
-    service:{
-        flexDirection:'row',
-        marginVertical:10,
-        marginLeft:10
+    item: {
+        backgroundColor: 'white',
+        height: 75,
+        width: 75,
+        alignItems: 'center',
+        paddingVertical: 12,
+        borderRadius: 10
     },
-    itemService:{
-        flexDirection:'row',
-        width:120,
-        height:40,
-        backgroundColor:'#F45E09',
-        borderRadius:10,
-        alignItems:'center',
-        paddingHorizontal:15,
-        marginHorizontal:10
+    title: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 10,
+        alignItems: 'center'
     },
-    nameService:{
-        color:'white',
-        marginStart:5
+    service: {
+        flexDirection: 'row',
+        marginVertical: 10,
+        marginLeft: 10
     },
-    sliderImg:{
-        flexDirection:'row',
-        marginVertical:10,
-        marginLeft:10
+    itemService: {
+        flexDirection: 'row',
+        width: 120,
+        height: 40,
+        backgroundColor: '#F45E09',
+        borderRadius: 10,
+        alignItems: 'center',
+        paddingHorizontal: 15,
+        marginHorizontal: 10
     },
-    imgSlider:{
-        marginRight:10,
-        borderRadius:10,
-        width:150,
-        height:100
+    nameService: {
+        color: 'white',
+        marginStart: 5
+    },
+    sliderImg: {
+        flexDirection: 'row',
+        marginVertical: 10,
+        marginLeft: 10
+    },
+    imgSlider: {
+        marginRight: 10,
+        borderRadius: 10,
+        width: 150,
+        height: 100
+    },
+    imgItem: {
+        width: 32,
+        height: 32
+    },
+    iconService:{
+        width: 18, 
+        height: 16
+    },
+    titleTop:{
+        marginHorizontal: 15, 
+        marginTop: -1, 
+        fontSize: 20, 
+        fontWeight: 'bold', 
+        color: 'black'
+    },
+    seeAll:{
+        color: 'orange', 
+        fontWeight: 'bold'
+    },
+    favourite:{
+        fontSize: 20, 
+        fontWeight: 'bold', 
+        color: 'black'
+    },
+    icon_menu:{
+        width: 24, 
+        height: 24
+    },
+    icon_bell:{
+        marginRight: 10, width: 24, height: 24 
+    },
+    avatar:{
+        marginStart: 5, 
+        marginTop: -10, 
+        width: 47, 
+        height: 47
+    },
+    icon_marker:{
+        width: 33, height: 52 
+    },
+    logo_gotour:{
+        width: 170, height: 38
+    },
+    txttitle:{
+        width: 135, height: 10 
+    },
+    icon_search:{
+        marginVertical: 11, width: 24, height: 24
     }
 
 })
