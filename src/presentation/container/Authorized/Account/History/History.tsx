@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { FlatList, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { HEART, ICON_BACK, ICON_HOME, ICON_SEARCH, NEW1, SHOPPING } from "../../../../resource/assets/images";
+import { HistoryProp } from "./type";
 
-const History: React.FC = () => {
+const History: React.FC<HistoryProp> = (props) => {
     const [searchText, setsearchText] = useState('')
+    const {navigation} = props;
 
     const back = () => {
         console.log('back')

@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from './styles'
+import { ICON_CART, ICON_STAR2, ICON_STAR4, NHATRANG } from '../../../resource/assets/images'
 
 interface Item {
   placeName: string,
@@ -13,13 +14,13 @@ const ItemDoneRating: React.FC<Item> = (props) => {
   const { placeName, price, date, tripNumber,rating } = props
   return (
     <View style={styles.container}>
-      <Image source={require('../../../../../img/nhatrang.png')} style={styles.img} />
+      <Image source={{uri: NHATRANG}} style={styles.img} />
       <View style={styles.content}>
         <View style={styles.nameAndRating}>
           <Text style={styles.txtPlaceName}>{placeName}</Text>
           <View style={{flexDirection:'row'}}>
             <Text style={styles.txtRating}>{rating}</Text>
-            <Image source={require('../../../../../img/star4.png')} style={styles.star} />
+            <Image source={{uri: ICON_STAR4}} style={styles.star} />
           </View>
 
         </View>
@@ -32,7 +33,7 @@ const ItemDoneRating: React.FC<Item> = (props) => {
           <View style={styles.btn}>
             <View style={styles.inBtn}>
               <Text style={styles.txtBtn}>Đặt hàng</Text>
-              <Image source={require('../../../../../img/cart.png')} style={styles.cart} />
+              <Image source={{uri: ICON_CART}} style={styles.cart} />
             </View>
           </View>
         </TouchableOpacity>

@@ -23,6 +23,7 @@ import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Home from './src/presentation/container/Authorized/Home/Home';
 import Account from './src/presentation/container/Authorized/Account/Account';
 import RootNavigation from './src/presentation/navigation/RootNavigation';
+import HisRating from './src/presentation/container/Authorized/Account/Rating/MyRating';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -52,6 +53,7 @@ function App(): JSX.Element {
     // <Home/>
     // <Account/>
     <RootNavigation/>
+    // <HisRating/>
   ); 
 }
 

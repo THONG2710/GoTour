@@ -92,4 +92,18 @@ export const HEART_FAVORITES = 'https://firebasestorage.googleapis.com/v0/b/goto
 export const HEART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/heartFavourite.png?alt=media&token=c8b4819f-faed-4507-ac70-94fe20253e22&_gl=1*1krcx9g*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzNzQ5Mi45NS4xLjE2OTg5Mzg1ODMuNS4wLjA.';
 export const SHOPPING = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/heartFavourite.png?alt=media&token=c8b4819f-faed-4507-ac70-94fe20253e22&_gl=1*1krcx9g*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzNzQ5Mi45NS4xLjE2OTg5Mzg1ODMuNS4wLjA.';
 export const NEW1 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/new1.webp?alt=media&token=6fe779f8-1aa4-46da-9438-23ef07b9072b&_gl=1*14r86bd*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzNzQ5Mi45NS4xLjE2OTg5MzkxMzIuNjAuMC4w';
+export const CHOOSE_AVT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/chooseAVT.png?alt=media&token=470e6f93-b291-4fd6-8493-48e5d167e0db&_gl=1*on02jd*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDEyNDcuNjAuMC4w';
+export const EDIT_USERNAME = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/edtUsername.png?alt=media&token=f332f585-93f9-49b2-af3b-d2c76b061ff4&_gl=1*1eyzr39*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDE1MzguMjcuMC4w';
+export const EMAIL = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/email.png?alt=media&token=41020443-2a1b-4a53-bfc0-9f22a3493c57&_gl=1*15luvy8*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDE2ODEuMzIuMC4w';
+export const CODE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/email.png?alt=media&token=41020443-2a1b-4a53-bfc0-9f22a3493c57&_gl=1*15luvy8*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDE2ODEuMzIuMC4w';
+export const ADDRESS = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/address.png?alt=media&token=7c09bcc4-00ca-4236-a300-96b9d9a0a6cc&_gl=1*nchzyh*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDE4MzYuNTEuMC4w';
+export const BACKGROUND_RATING = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/backgroundRating.png?alt=media&token=a4e9ec81-8788-465c-8b43-6a78b4e8d0b6&_gl=1*f0575g*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDI4NTcuMTMuMC4w';
+export const NHATRANG = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/nhatrang.png?alt=media&token=03ea3eb5-9d1f-4826-879c-d052509591a0&_gl=1*7vv4r*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDMyMjAuNDIuMC4w';
+export const ICON_STAR4 ='https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star4.png?alt=media&token=5e39d340-c45f-4b84-9877-b05eedadc647&_gl=1*5knbpb*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDMzNDUuNDAuMC4w';
+export const ICON_STAR3 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_start3.png?alt=media&token=0a4ab561-851b-4386-acd2-7e70d8a18985&_gl=1*1fdomax*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDM1MDkuMjAuMC4w';
+
+
+
+
+
 
