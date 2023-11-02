@@ -95,7 +95,7 @@ import {
       width: 80,
       height: 80,
       resizeMode: 'contain',
-      marginTop:30
+      marginTop:40
     },
   });
   

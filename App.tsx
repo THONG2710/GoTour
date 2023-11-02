@@ -6,7 +6,6 @@ import ResetPass from './src/presentation/container/StartScreen/Authentication/C
 import SplashOne from './src/presentation/container/StartScreen/SplashScreen/SplashOne/SplashOne';
 import SplashTwo from './src/presentation/container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
 import SplashThree from './src/presentation/container/StartScreen/SplashScreen/SplashThree/SplashThree';
-import MyFavourite from './src/presentation/container/Authorized/Account/MyFavorites/MyFavourite';
 import Hotel from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
 import Plane from './src/presentation/container/Authorized/Service/TabBooking/BookPlane/Plane';
 import Train from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
@@ -32,7 +31,7 @@ function App(): JSX.Element {
     // <ForgotPass/>
     // <MyFavourite/>
     // <OTP/>
-    <Profile/>
+    // <Profile/>
     // <ResetPass/>
     // <Hotel/>
     // <Plane/>
@@ -41,7 +40,7 @@ function App(): JSX.Element {
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
-    // <Social/>
+    <Social/>
     // <Booking/>
     // <ChangePassword/>
     // <ResetPassword/>

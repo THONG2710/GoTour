@@ -26,6 +26,7 @@ const Social: React.FC<SocialProp> = (props) => {
             </View>
 
             <FlatList
+                style={{marginBottom:100}}
                 data={dataListPoster}
                 renderItem={({ item }) => <ItemListShare item={item} />}
                 showsVerticalScrollIndicator={false}

@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     container:
     {
         marginHorizontal: 10,
-        marginBottom: 40,
+        marginBottom: 20,
         width: '95%',
         height: 550,
         borderRadius: 20,
