@@ -21,6 +21,7 @@ import AuthorizedBottomNavigation from './src/presentation/navigation/Authorized
 import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Social from './src/presentation/container/Authorized/Social/Social';
 import Profile from './src/presentation/container/Authorized/Account/Profile/Profile';
+import ItemCenterContent from './src/presentation/container/Authorized/Account/Profile/Component/ItemCenterContent';
 function App(): JSX.Element {
   return (
     // <OTP/>
