@@ -16,6 +16,7 @@ import {
   B_SOCIAL,
 } from '../resource/assets/images';
 import Home from '../container/Authorized/Home/Home';
+import Account from '../container/Authorized/Account/Account';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
@@ -60,7 +61,7 @@ const AuthorizedBottomNavigation = () => {
         />
         <AuthorizedBottomTab.Screen
           name="account"
-          component={Profile}
+          component={Account}
           options={{
             tabBarLabel: ({focused}) => {
               return <ItemBottomHome isFocused={focused} icon={B_ACCOUNT} label="Cá nhân" />;
