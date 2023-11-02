@@ -21,6 +21,8 @@ import {
   VOUCHER,
 } from '../../../../resource/assets/images';
 import { ProfileProp } from './type';
+import ItemCenter from './Component/ItemCenterTitle';
+import ItemCenterContent from './Component/ItemCenterContent';
 
 const Profile: React.FC<ProfileProp> = () => {
   return (
@@ -34,12 +36,12 @@ const Profile: React.FC<ProfileProp> = () => {
               <Image style={styles.imgAvatar} source={{ uri: AVT }}></Image>
               <View style={styles.grPoint}>
                 <Text style={styles.textPoint}>102 Điểm</Text>
-                <Image style={{ width: 40, height: 40 }} source={{ uri: MEDAL_S }}></Image>
+                <Image style={styles.imgPoint} source={{ uri: MEDAL_S }}></Image>
               </View>
             </View>
           </View>
           <TouchableOpacity>
-            <Image source={{ uri: ICON_SETTING }}></Image>
+            <Image style={styles.imgSetting} source={{ uri: ICON_SETTING }}></Image>
           </TouchableOpacity>
         </View>
         <View style={styles.grText}>
@@ -57,162 +59,47 @@ const Profile: React.FC<ProfileProp> = () => {
         <TouchableOpacity>
           <View style={styles.centerVoucher}>
             <Image style={styles.imgVoucher} source={{ uri: VOUCHER }}></Image>
-            <View style={{ marginLeft: 10 }}>
-              <Text style={{ marginBottom: 10, fontSize: 12, color: '#fff' }}>
+            <View>
+              <Text style={styles.textTitleVoucher}>
                 Sử dụng khuyến mãi để tiết kiệm nhiều hơn
               </Text>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ color: '#fff', fontSize: 14 }}>Bạn hiện có</Text>
+              <View style={styles.grVoucher}>
+                <Text style={styles.textContentVoucher}>Bạn hiện có</Text>
                 <Text style={{ fontSize: 18, color: '#fff' }}> 1 </Text>
-                <Text style={{ color: '#fff', fontSize: 14 }}>Mã khuyến mãi</Text>
+                <Text style={styles.textContentVoucher}>Mã khuyến mãi</Text>
               </View>
             </View>
-            <Image style={{ marginRight: 10 }} source={{ uri: ICON_NEXT }}></Image>
+            <Image style={styles.imgNextVoucher} source={{ uri: ICON_NEXT }} ></Image>
           </View>
         </TouchableOpacity>
 
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TouchableOpacity>
-            <Shadow
-              distance={2}
-              startColor={'#ccc'}
-              endColor={'#ff00ff10'}
-              offset={[0, 15]}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 120,
-                  height: 100,
-                  borderRadius: 10,
-                  marginTop: 10,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Image source={{ uri: HISTORY }}></Image>
-                <Text style={{ marginTop: 10 }}>Lịch sử</Text>
-              </View>
-            </Shadow>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Shadow
-              distance={2}
-              startColor={'#ccc'}
-              endColor={'#ff00ff10'}
-              offset={[0, 15]}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 120,
-                  height: 100,
-                  borderRadius: 10,
-                  marginTop: 10,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Image source={{ uri: FAVORITES }}></Image>
-                <Text style={{ marginTop: 10 }}>Yêu thích</Text>
-              </View>
-            </Shadow>
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Shadow
-              distance={2}
-              startColor={'#ccc'}
-              endColor={'#ff00ff10'}
-              offset={[0, 15]}>
-              <View
-                style={{
-                  backgroundColor: '#fff',
-                  width: 120,
-                  height: 100,
-                  borderRadius: 10,
-                  marginTop: 10,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Image source={{ uri: POST }}></Image>
-                <Text style={{ marginTop: 10 }}>Bài đăng</Text>
-              </View>
-            </Shadow>
-          </TouchableOpacity>
+        {/* LIST HISTORY, FAVOURITE, POST */}
+        <View style={styles.grCenterTitle}>
+          <ItemCenter image={HISTORY} text='Lịch sử'></ItemCenter>
+          <ItemCenter image={FAVORITES} text='Yêu thích'></ItemCenter>
+          <ItemCenter image={POST} text='Bài đăng'></ItemCenter>
         </View>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginRight: 20,
-          }}>
-          <Shadow
-            distance={2}
-            startColor={'#ccc'}
-            endColor={'#ff00ff10'}
-            offset={[0, 15]}>
-            <View
-              style={{
-                flexDirection: 'row',
-                backgroundColor: '#fff',
-                width: '100%',
-                height: 100,
-                borderRadius: 10,
-                marginTop: 10,
-                alignItems: 'center',
-                justifyContent: 'space-around',
-              }}>
-              <TouchableOpacity>
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={{ uri: EVALUTE }}></Image>
-                  <Text style={{ marginTop: 10, textAlign: 'center' }}>
-                    Đang chờ{`\n`} đánh giá
-                  </Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={{ uri: INTRODUCE }}></Image>
-                  <Text style={{ marginTop: 10, textAlign: 'center' }}>
-                    Giới thiệu về {`\n`} Gotour
-                  </Text>
-                </View>
-              </TouchableOpacity>
-
-              <TouchableOpacity>
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                  <Image source={{ uri: CONTACT }}></Image>
-                  <Text style={{ marginTop: 10, textAlign: 'center' }}>
-                    Chăm sóc {`\n`} khách hàng
-                  </Text>
-                </View>
-              </TouchableOpacity>
+        {/* LIST EVALUTE, INTRODUCE, CONTACT */}
+        <View style={styles.grCenterContent}>
+          <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
+            <View style={styles.grCenterContentList}>
+              <ItemCenterContent image={EVALUTE} text={'Đang chờ\nđánh giá'}></ItemCenterContent>
+              <ItemCenterContent image={INTRODUCE} text={'Giới thiệu về\nGotour'}></ItemCenterContent>
+              <ItemCenterContent image={CONTACT} text={'Chăm sóc\nkhách hàng'}></ItemCenterContent>
             </View>
           </Shadow>
         </View>
       </View>
 
       <View style={styles.footer}>
-        <View style={{ alignItems: 'center', height: 160 }}>
-          <Image
-            style={{ position: 'relative', top: -20 }}
-            source={{ uri: LOGO_GOTOUR }}></Image>
-          <Text style={{ position: 'absolute', color: '#000', bottom: 20 }}>
-            Dịch vụ mà bạn có thể tin cậy
-          </Text>
+        <View style={{ alignItems: 'center' }}>
+          <Image style={styles.logo} source={{ uri: LOGO_GOTOUR }}></Image>
+          <Text style={styles.textFooter}>Dịch vụ mà bạn có thể tin cậy</Text>
         </View>
         <TouchableOpacity>
-          <View
-            style={{
-              width: '100%',
-              height: 46,
-              backgroundColor: '#6A9C89',
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderRadius: 10,
-            }}>
-            <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#C1D8C3' }}>
-              Đăng xuất
-            </Text>
+          <View style={styles.grButtonFooter}>
+            <Text style={styles.textLogout}>Đăng xuất</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -224,17 +111,17 @@ export default Profile;
 
 const styles = StyleSheet.create({
   container: {
-    width:windowWidth - 20,
-    height:windowHeight,
+    width: windowWidth - 20,
+    height: windowHeight,
     marginHorizontal: 10,
   },
 
   header: {
     backgroundColor: '#C1D8C3',
-    height:windowHeight - (windowHeight * 75) / 100,
+    height: windowHeight - (windowHeight * 75) / 100,
     marginTop: 10,
     borderRadius: 10,
-    
+
   },
 
   row: {
@@ -295,6 +182,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
+  imgPoint:
+  {
+    width: 40,
+    height: 40
+  },
+
+  imgSetting:
+  {
+    width: 30,
+    height: 30
+  },
+
   grText: {
     marginLeft: 20,
     flexDirection: 'row',
@@ -335,11 +234,99 @@ const styles = StyleSheet.create({
   imgVoucher:
   {
     marginLeft: 30,
-    width:40, 
-    height:40 
+    width: 40,
+    height: 40
+  },
+
+  grVoucher:
+  {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  textTitleVoucher:
+  {
+    marginBottom: 10,
+    fontSize: 12,
+    color: '#fff'
+  },
+
+  textContentVoucher:
+  {
+    color: '#fff',
+    fontSize: 14
+  },
+
+  imgNextVoucher:
+  {
+    width: 20,
+    height: 20,
+    marginRight: 10
+  },
+
+  // {/* LIST HISTORY, FAVOURITE, POST */}
+
+  grCenterTitle:
+  {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+
+  grCenterContent:
+  {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 20,
+  },
+
+  grCenterContentList:
+  {
+
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    width: '100%',
+    height: 100,
+    borderRadius: 10,
+    marginTop: 10,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+
+  },
+
+
+  logo:
+  {
+    width: 180,
+    height: 180,
+    marginTop: 40
   },
 
   footer: {
     flex: 0.35,
   },
+
+  textFooter:
+  {
+    position: 'absolute',
+    color: '#000',
+    bottom: 20,
+  },
+
+  grButtonFooter:
+  {
+    width: '100%',
+    height: 46,
+    backgroundColor: '#6A9C89',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+
+  textLogout:
+  {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#C1D8C3'
+  }
 });
