@@ -6,9 +6,11 @@ import { Shadow } from 'react-native-shadow-2'
 import ItemFavouriteUser from '../../../../component/Items/ItemFavouriteUser'
 import { ICON_BACK, ICON_HOME, ICON_SEARCH_BLACK } from '../../../../resource/assets/images'
 import { TEXT_HEADER_USERPROFILE_VN } from '../../../../resource/assets/String/VNString'
+import { AccountProp } from '../type'
+import { MyFavoritesProp } from './type'
 
 
-const MyFavourites = () => {
+const MyFavourites: React.FC<MyFavoritesProp> = () => {
     // interface Props {
     //     item: { title: string, price: string, time: string, turn: string, image: any }
     // }

@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Shadow } from 'react-native-shadow-2'
 import Ripple from 'react-native-material-ripple'
+import { ICON_CART, ICON_NOHEART, SLIDE4 } from '../../resource/assets/images'
 
 interface ItemExploreMyFavouriteProps {
     item: { _id: string, title: string, image: any, price: string, time: string, turn: string }
@@ -12,14 +13,14 @@ const ItemExploreMyFavourite: React.FC<ItemExploreMyFavouriteProps> = (props) =>
 
         <View style={styles.container}>
             <View>
-                <Image style={styles.imageAddress} source={require('../../resource/assets/images/slide4.png')}></Image>
+                <Image style={styles.imageAddress} source={{uri: SLIDE4}}></Image>
             </View>
             <View>
                 <View style={styles.groupHeader}>
                     <Text style={styles.textAddress}>{item.title}</Text>
                     <Ripple>
 
-                        <Image style={styles.iconNoHeart} source={require('../../resource/assets/images/noHeart.png')}></Image>
+                        <Image style={styles.iconNoHeart} source={{uri: ICON_NOHEART}}></Image>
                     </Ripple>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10 }}>
@@ -34,7 +35,7 @@ const ItemExploreMyFavourite: React.FC<ItemExploreMyFavouriteProps> = (props) =>
 
                     <View style={{ flexDirection: 'row', borderRadius: 5, backgroundColor: '#ff7a00', alignItems: 'center', justifyContent: 'center', marginHorizontal: 25, marginTop: 10, paddingLeft: 10, padding: 3 }}>
                         <Text style={{ color: '#fff', marginBottom: 3 }}>Đặt ngay</Text>
-                        <Image style={{ marginLeft: 5 }} source={require('../../resource/assets/images/cart.png')}></Image>
+                        <Image style={{ marginLeft: 5 }} source={{uri: ICON_CART}}></Image>
                     </View>
                 </TouchableOpacity>
             </View>

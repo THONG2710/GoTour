@@ -17,15 +17,16 @@ const Plane: React.FC = () => {
     return (
         <View style={styles.container}>
             {/* <Image style={styles.img} source={require('../img/background.png')} /> */}
+            <Image style={styles.img} source={require('../../../../img/background2.png')} />
 
             <View style={styles.book}>
                 <View style={styles.item}>
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
-                    <Image style={{ marginTop: -10 }} source={{uri: ICON_TRAIN}} />
+                    <Image style={{ marginTop: -10 ,width:35,height:35}} source={{uri: ICON_TRAIN2}} />
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_CALENDAR}} />
+                    <Image source={{uri: ICON_CALENDAR} } style={{width:25,height:25}}/>
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>T6,20 thg10</Text>
                 </View>
                 <View style={styles.item1}>
@@ -69,7 +70,11 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white'
     },
-
+    img:{
+        position:'absolute',
+        width:'100%',
+        height:200
+    },
     book: {
         backgroundColor: 'white',
         marginHorizontal: 10,

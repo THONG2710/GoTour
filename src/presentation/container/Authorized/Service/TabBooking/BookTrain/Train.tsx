@@ -15,15 +15,16 @@ const Train: React.FC = () => {
     return (
         <View style={styles.container}>
             {/* <Image style={styles.img} source={require('../img/background.png')} /> */} 
+            <Image style={styles.img} source={require('../../../../img/background2.png')} />
             
             <View style={styles.book}>
                 <View style={styles.item}>
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
-                    <Image style={{ marginTop: -10 }} source={{uri: ICON_TRAIN2}} />
+                    <Image style={{ width:35,height:35 }} source={{uri: ICON_TRAIN2}} />
                     <Text style={{ fontSize: 15, color: 'black' }}>Điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_CALENDAR}} />
+                    <Image source={{uri: ICON_CALENDAR}} style={{width:25,height:25}}/>
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>T6,20 thg10</Text>
                 </View>
                 <TouchableOpacity style={styles.btn}>
@@ -34,10 +35,10 @@ const Train: React.FC = () => {
 
             </View>
             <View style={{ flexDirection: 'row', marginHorizontal: 10 }}>
-                <Image source={{uri: ICON_TRAIN2}} />
+                <Image source={{uri: ICON_TRAIN2}} style={{width:25,height:25}}/>
                 <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
             </View>
-            <View style={{height:280}}>    
+            <View style={{height:310}}>    
             <FlatList 
                 data={DATA}
                 renderItem={render}
@@ -57,6 +58,11 @@ export default Train
 const styles = StyleSheet.create({
     container: {
         backgroundColor:'white'
+    },
+    img:{
+        position:'absolute',
+        width:'100%',
+        height:200
     },
     book: {
         backgroundColor: 'white',

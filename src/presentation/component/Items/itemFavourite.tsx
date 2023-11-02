@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { StyleSheet, Text, View,Image,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ICON_HEART4, ICON_MARKER4, ICON_STAR2, NUIBADEN } from '../../resource/assets/images';
+
 
 interface Item{
   rating:string,
@@ -11,6 +12,7 @@ interface Item{
 const ItemFavourite:React.FC<Item> = (props) => {
   const {rating,name,location}=props;
   return (
+    <TouchableOpacity>
     <View style={styles.container}>
 
       {/* IMAGE BACKFROUND */}
@@ -33,6 +35,7 @@ const ItemFavourite:React.FC<Item> = (props) => {
         </View>
 
     </View>
+    </TouchableOpacity>
   )
 }
 
