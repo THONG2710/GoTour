@@ -96,6 +96,6 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     resizeMode: 'contain',
-    marginTop:60
+    marginTop:65
   },
 });

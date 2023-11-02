@@ -50,7 +50,7 @@ const Profile: React.FC<ProfileProp> = () => {
         </View>
         <View style={styles.grProfile}>
           <Text style={styles.text}>Thông tin cá nhân</Text>
-          <Image style={{ marginLeft: 20 }} source={{ uri: ICON_RIGHT }}></Image>
+          <Image style={styles.iconRight} source={{ uri: ICON_RIGHT }}></Image>
         </View>
       </View>
 
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
 
   header: {
     backgroundColor: '#C1D8C3',
-    height: windowHeight - (windowHeight * 75) / 100,
+    height: windowHeight - (windowHeight * 77) / 100,
     marginTop: 10,
     borderRadius: 10,
 
@@ -209,6 +209,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 
+  iconRight:
+  {
+    marginLeft: 20,
+    width:14,
+    height:14
+  },
+
   textName:
   {
     fontSize: 18,
@@ -297,8 +304,8 @@ const styles = StyleSheet.create({
 
   logo:
   {
-    width: 180,
-    height: 180,
+    width: 140,
+    height: 140,
     marginTop: 40
   },
 
