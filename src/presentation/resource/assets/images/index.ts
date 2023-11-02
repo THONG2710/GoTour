@@ -86,3 +86,11 @@ export const CAMP = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.ap
 export const SLIDE4 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/slide4.png?alt=media&token=2018a2b2-a117-4f69-95b5-9197237fa9ce&_gl=1*fj6gc3*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTU5MzAuMjEuMC4w';
 export const ICON_CART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_cart.png?alt=media&token=cd580935-b6f8-4934-b355-a0c22135c94e&_gl=1*hxf4ep*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTYwOTAuMjEuMC4w';
 export const ICON_NOHEART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_noHeart.png?alt=media&token=e08d9c43-d6d3-41d8-9aa0-2b2261ab6af8&_gl=1*1hagnyq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTYxNTcuMzYuMC4w';
+export const AVT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743&_gl=1*vs5aev*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzMzk3Ny45NC4xLjE2OTg5MzQwNTguNjAuMC4w';
+export const ICON_LIKED = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_liked.png?alt=media&token=0a946f9e-a7e8-4a72-b34a-f6b91daf13d5&_gl=1*h0yjkf*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzMzk3Ny45NC4xLjE2OTg5MzQxMjEuNTkuMC4w';
+
+
+
+
+
+
