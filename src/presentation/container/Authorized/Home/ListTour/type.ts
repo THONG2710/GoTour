@@ -4,9 +4,9 @@ import { RouteProp } from "@react-navigation/native";
 import { AuthorizedParamList } from "../../../../storyboard/AuthorizedStoryBoard";
 import { HomeParamlist } from "../../../../storyboard/HomeStoryBoard";
 
-export type ListTourNavigationProp = NativeStackNavigationProp<HomeParamlist, 'b_listTour'>;
+export type ListTourNavigationProp = NativeStackNavigationProp<HomeParamlist, 's_listTour'>;
 
-export type ListTourRouteProp = RouteProp<HomeParamlist, 'b_listTour'>;
+export type ListTourRouteProp = RouteProp<HomeParamlist, 's_listTour'>;
 
 export type ListTourProp = {
     navigation: ListTourNavigationProp,

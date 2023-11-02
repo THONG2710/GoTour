@@ -8,6 +8,16 @@ import { HomeMainProp } from './type'
 
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
+    const {navigation} = props;
+
+    const onMoveToListTour = () => {
+        navigation.navigate('s_listTour');
+    };
+
+    const onMoveToService = () => {
+        navigation.navigate('Service');
+    };
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
@@ -50,7 +60,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                 {/* CATEGORY */}
                 <Text style={styles.titleCategory}>Danh mục</Text>
                 <View style={styles.category}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onMoveToListTour}>
                         <View style={styles.item}>
 
                             <Image source={{ uri: ICON_MOUNTAIN }} style={styles.imgItem} />
@@ -58,20 +68,20 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
 
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onMoveToListTour}>
                         <View style={styles.item}>
 
                             <Image source={{ uri: ICON_SEA }} style={styles.imgItem} />
                             <Text style={styles.nameCategory}>Biển</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onMoveToListTour}>
                         <View style={styles.item}>
                             <Image source={{ uri: ICON_ISLAND }} style={styles.imgItem} />
                             <Text style={styles.nameCategory}>Đảo</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={onMoveToListTour}>
                         <View style={styles.item}>
                             <Image source={{ uri: ICON_CAMPING }} style={styles.imgItem} />
                             <Text style={styles.nameCategory}>Cắm trại</Text>
@@ -88,25 +98,25 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                 <Text style={styles.titleTop}>Dịch vụ</Text>
                 <View style={styles.service}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={onMoveToService}>
                             <View style={styles.itemService}>
                                 <Image source={{ uri: HOTEL }} style={styles.iconService} />
                                 <Text style={styles.nameService}>Khách sạn</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={onMoveToService}>
                             <View style={styles.itemService}>
                                 <Image source={{ uri: TRAVELLING }} style={styles.iconService} />
                                 <Text style={styles.nameService}>Máy bay</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={onMoveToService}>
                             <View style={styles.itemService}>
                                 <Image source={{ uri: BUS }} style={styles.iconService} />
                                 <Text style={styles.nameService}>Xe buýt</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={onMoveToService}>
                             <View style={styles.itemService}>
                                 <Image source={{ uri: SHIP }} style={styles.iconService} />
                                 <Text style={styles.nameService}>Thuyền</Text>

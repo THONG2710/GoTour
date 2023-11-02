@@ -22,6 +22,7 @@ import AuthorizedBottomNavigation from './src/presentation/navigation/Authorized
 import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Home from './src/presentation/container/Authorized/Home/Home';
 import Account from './src/presentation/container/Authorized/Account/Account';
+import RootNavigation from './src/presentation/navigation/RootNavigation';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -37,7 +38,7 @@ function App(): JSX.Element {
     // <Hotel/>
     // <Plane/>
     // <Train/>
-    <SplashStackNavigation/>
+    // <SplashStackNavigation/>
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
@@ -50,6 +51,7 @@ function App(): JSX.Element {
     // <ItemBottomHome/>
     // <Home/>
     // <Account/>
+    <RootNavigation/>
   ); 
 }
 
