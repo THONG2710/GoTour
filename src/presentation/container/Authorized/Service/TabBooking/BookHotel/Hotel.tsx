@@ -10,14 +10,14 @@ const Hotel = () => {
     )
     return (
         <View style={styles.container}>
-            {/* <Image style={styles.img} source={require('../img/background.png')} /> */}
+            <Image style={styles.img} source={require('../../../../img/background2.png')} />
             <View style={styles.book}>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_MARKER2}} />
+                    <Image source={{uri: ICON_MARKER2}} style={{width:25,height:25}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>Nhập/Chọn điểm đến</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_USER2}} />
+                    <Image source={{uri: ICON_USER2}} style={{width:25,height:25}}/>
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>
                         <Text style={{ fontWeight: 'bold', color: 'black' }}>1 </Text>
                         phòng
@@ -28,11 +28,11 @@ const Hotel = () => {
                     </Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_USER2}} />
+                    <Image source={{uri: ICON_USER2}} style={{width:25,height:25}} />
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}> 0 sao</Text>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_COIN}} />
+                    <Image source={{uri: ICON_COIN}} style={{width:25,height:25}}/>
                     <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>0đ </Text>
                 </View>
 
@@ -65,6 +65,11 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white'
     },
+    img:{
+        position:'absolute',
+        width:'100%',
+        height:200
+    },
     book: {
         backgroundColor: 'white',
         marginHorizontal: 10,
@@ -75,6 +80,7 @@ const styles = StyleSheet.create({
         width: '95%',
 
     },
+  
     item: {
         flexDirection: 'row',
         justifyContent: 'space-between',

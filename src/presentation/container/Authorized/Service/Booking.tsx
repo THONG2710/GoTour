@@ -10,7 +10,9 @@ import { BookingProp } from './type'
 const Booking: React.FC<BookingProp> = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.img} source={{uri: BACKGROUND}} />
+      {/* <Image style={styles.img} source={{uri: BACKGROUND}} /> */}
+      
+      <Image style={styles.img} source={require('../../img/background2.png')} />
       <View style={styles.header}>
         <Image source={{uri: LOGO_GOTOUR}} />
         <Image style={{ marginStart: 250, marginTop: 20 }} source={{uri: ICON_BELL}} />
@@ -61,6 +63,7 @@ const styles = StyleSheet.create({
   },
   img: {
     position: 'absolute',
-
+    width:'100%',
+    height:352
   }
 })
