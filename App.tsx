@@ -21,12 +21,15 @@ import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Social from './src/presentation/container/Authorized/Social/Social';
 import Profile from './src/presentation/container/Authorized/Account/Profile/Profile';
 import ItemCenterContent from './src/presentation/container/Authorized/Account/Profile/Component/ItemCenterContent';
+import Editprofile from './src/presentation/container/Authorized/Account/Profile/EditProfile';
+import DetailTour from './src/presentation/container/Authorized/Service/TabBooking/BookTour/DetailTour';
+import ItemFeedBack from './src/presentation/component/Items/ItemFeedBack';
 function App(): JSX.Element {
   return (
     // <OTP/>
     // <SplashOne/>
     // <SplashTwo/>
-    <SplashThree/>
+    // <SplashThree/>
     // <Deals/>
     // <ForgotPass/>
     // <MyFavourite/>
@@ -45,6 +48,9 @@ function App(): JSX.Element {
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
+    // <Editprofile></Editprofile>
+    // <DetailTour></DetailTour>
+    <DetailTour></DetailTour>
 
   ); 
 }

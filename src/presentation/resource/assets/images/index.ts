@@ -88,9 +88,11 @@ export const ICON_CART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72b
 export const ICON_NOHEART = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_noHeart.png?alt=media&token=e08d9c43-d6d3-41d8-9aa0-2b2261ab6af8&_gl=1*1hagnyq*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODg1Mzk2NC45My4xLjE2OTg4NTYxNTcuMzYuMC4w';
 export const AVT = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743&_gl=1*vs5aev*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzMzk3Ny45NC4xLjE2OTg5MzQwNTguNjAuMC4w';
 export const ICON_LIKED = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_liked.png?alt=media&token=0a946f9e-a7e8-4a72-b34a-f6b91daf13d5&_gl=1*h0yjkf*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODkzMzk3Ny45NC4xLjE2OTg5MzQxMjEuNTkuMC4w';
-
-
-
-
+export const IMG_DETAIL_TOUR = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_detail_tour.png?alt=media&token=16bff698-680a-4e47-b54f-1cf57b9614d7&_gl=1*1d6pdr9*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODk5NTA5OS41LjEuMTY5ODk5NTMwNy4yMi4wLjA.'
+export const ICON_ADDRESS = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/address.png?alt=media&token=7c09bcc4-00ca-4236-a300-96b9d9a0a6cc&_gl=1*1r4ypux*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODk5NTA5OS41LjEuMTY5ODk5NzI0MC42MC4wLjA.'
+export const IMG_HOTEL = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_hotel.png?alt=media&token=27173794-b789-408c-a2b2-173ca9564904&_gl=1*ajtg2g*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODk5NTA5OS41LjEuMTY5ODk5ODkwNy4zMS4wLjA.'
+export const ICON_START_HOTEL = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star_hotel.png?alt=media&token=e60d0b70-14ae-4d8d-a59d-ac9fd1ab57cc&_gl=1*14s5uvu*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODk5NTA5OS41LjEuMTY5ODk5OTY4Mi41MS4wLjA.'
+export const VEHICLE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/plane.png?alt=media&token=b5340dd2-1aee-4e40-add3-be88ec8fffd5&_gl=1*1sekn10*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5ODk5NTA5OS41LjEuMTY5OTAwMDQwMC40Ni4wLjA.'
+export const BAR_SCHEDULE = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/barSchedule.png?alt=media&token=6e394bf8-f2aa-4681-b979-055dace53611&_gl=1*18eq1di*_ga*MTU0ODY5NjM2NS4xNjk4MzIxNzE4*_ga_CW55HF8NVT*MTY5OTAwOTAxMi43LjEuMTY5OTAwOTk1Ni41My4wLjA.'
 
 
