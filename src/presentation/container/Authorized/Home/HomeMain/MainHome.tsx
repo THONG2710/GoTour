@@ -81,7 +81,9 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                 {/* FAVOURITE */}
                 <View style={styles.title}>
                     <Text style={styles.favourite}>Yêu thích</Text>
+                    <TouchableOpacity>
                     <Text style={styles.seeAll}>See All</Text>
+                    </TouchableOpacity>
                 </View>
                 <FavouriteList />
                 {/* SERVICE */}

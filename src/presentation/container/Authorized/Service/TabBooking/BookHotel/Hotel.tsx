@@ -1,7 +1,7 @@
-import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, FlatList } from 'react-native'
+import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import ItemListHotel from '../../../../../component/Items/ItemListHotel'
-import { ICON_COIN, ICON_HOTEL, ICON_MARKER2, ICON_USER2 } from '../../../../../resource/assets/images'
+import { ICON_COIN, ICON_HOTEL, ICON_MARKER2, ICON_USER2, ICON_STAR } from '../../../../../resource/assets/images'
 
 const Hotel = () => {
     const render = ({ item }: { item: (typeof DATA)[0] }) => (
@@ -9,53 +9,64 @@ const Hotel = () => {
 
     )
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             <Image style={styles.img} source={require('../../../../img/background2.png')} />
             <View style={styles.book}>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_MARKER2}} style={{width:25,height:25}} />
-                    <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>Nhập/Chọn điểm đến</Text>
+                    <Image source={{ uri: ICON_MARKER2 }} style={styles.icon_Item} />
+                    <TouchableOpacity>
+                        <Text style={styles.btnChoose}>Nhập/Chọn điểm đến</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_USER2}} style={{width:25,height:25}}/>
-                    <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>
-                        <Text style={{ fontWeight: 'bold', color: 'black' }}>1 </Text>
-                        phòng
-                        <Text style={{ fontWeight: 'bold', color: 'black' }}> 2 </Text>
-                        người lớn
-                        <Text style={{ fontWeight: 'bold', color: 'black' }}> 0 </Text>
-                        trẻ em
-                    </Text>
+                    <Image source={{ uri: ICON_USER2 }} style={styles.icon_Item} />
+                    <TouchableOpacity>
+                        <Text style={styles.txtPerson}>
+                            <Text style={styles.numberPerson}>1 </Text>
+                            phòng
+                            <Text style={styles.numberPerson}> 2 </Text>
+                            người lớn
+                            <Text style={styles.numberPerson}> 0 </Text>
+                            trẻ em
+                        </Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_USER2}} style={{width:25,height:25}} />
-                    <Text style={{ fontSize: 18, color: 'black', margin: 5 }}> 0 sao</Text>
+                    <Image source={{ uri: ICON_STAR }} style={styles.icon_Item} />
+                    <TouchableOpacity>
+                        <Text style={styles.txtPerson}> 0 sao</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_COIN}} style={{width:25,height:25}}/>
-                    <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>0đ </Text>
+                    <Image source={{ uri: ICON_COIN }} style={styles.icon_Item} />
+                    <TouchableOpacity>
+                        <Text style={styles.txtPerson}>0đ </Text>
+                    </TouchableOpacity>
                 </View>
 
                 <TouchableOpacity style={styles.btn}>
-                    <Text style={{ fontSize: 25, color: 'orange', textAlign: 'center' }}>
+                    <Text style={styles.btn_Find}>
                         Tìm
                     </Text>
                 </TouchableOpacity>
 
             </View>
-            <View style={{ flexDirection: 'row', paddingHorizontal:15 }}>
-                <Image source={{uri: ICON_HOTEL}} />
-                <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
+            <View style={styles.containerTitle}>
+                <Image source={{ uri: ICON_HOTEL }} style={styles.icon_hotel} />
+                <Text style={styles.title}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
             </View>
-            <View style={{ height: 300 }}>
+            <View style={{  }}>
                 <FlatList
                     data={DATA}
                     renderItem={render}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
+                    scrollEnabled={false}
                 />
             </View>
         </View>
+        </ScrollView>
     )
 }
 
@@ -65,10 +76,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white'
     },
-    img:{
-        position:'absolute',
-        width:'100%',
-        height:200
+    img: {
+        position: 'absolute',
+        width: '100%',
+        height: 150
     },
     book: {
         backgroundColor: 'white',
@@ -80,7 +91,6 @@ const styles = StyleSheet.create({
         width: '95%',
 
     },
-  
     item: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -111,6 +121,46 @@ const styles = StyleSheet.create({
 
         width: '100%',
 
+    },
+    icon_Item: {
+        width: 25,
+        height: 25
+    },
+    btnChoose: {
+        fontSize: 18,
+        color: 'black',
+        margin: 5
+    },
+    txtPerson: {
+        fontSize: 18,
+        color: 'black',
+        margin: 5
+    },
+    numberPerson: {
+        fontWeight: 'bold',
+        color: 'black'
+    },
+    btn_Find: {
+        fontSize: 25,
+        color: 'orange',
+        textAlign: 'center'
+    },
+    containerTitle: {
+        flexDirection: 'row',
+        paddingHorizontal: 15,
+      
+        width:'95%'
+    },
+    title: {
+        fontSize: 24,
+        color: 'black',
+        fontWeight: 'bold',
+        marginStart: 5,
+        marginTop: -5
+    },
+    icon_hotel: {
+        width: 40,
+        height: 40
     }
 })
 const DATA = [
@@ -118,7 +168,7 @@ const DATA = [
     { id: '2', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 244, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "5.462.000" },
     { id: '3', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 255, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "6.462.000" },
 
-    
-    
+
+
 
 ]
