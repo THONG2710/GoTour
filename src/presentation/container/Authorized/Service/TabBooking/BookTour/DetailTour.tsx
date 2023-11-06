@@ -99,7 +99,7 @@ const DetailTour = () => {
 
                         <Text style={styles.textScheduleDetail}>Nhận xét</Text>
 
-                        <View>
+                        <View style={{backgroundColor:'red', height:10000}}>
                             {dataFeedBack.map((item) => (
                                 <View key={item._id}>
                                     <View style={styles.feedBack}>

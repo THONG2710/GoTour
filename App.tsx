@@ -23,7 +23,7 @@ import Profile from './src/presentation/container/Authorized/Account/Profile/Pro
 import ItemCenterContent from './src/presentation/container/Authorized/Account/Profile/Component/ItemCenterContent';
 import Editprofile from './src/presentation/container/Authorized/Account/Profile/EditProfile';
 import DetailTour from './src/presentation/container/Authorized/Service/TabBooking/BookTour/DetailTour';
-import ItemFeedBack from './src/presentation/component/Items/ItemFeedBack';
+import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -50,7 +50,7 @@ function App(): JSX.Element {
     // <OTP/>
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
-    <DetailTour></DetailTour>
+    <DetailSocial></DetailSocial>
 
   ); 
 }
