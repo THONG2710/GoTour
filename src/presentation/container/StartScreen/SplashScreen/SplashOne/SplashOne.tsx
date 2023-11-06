@@ -35,7 +35,7 @@ const SplashOne: React.FC<SplashOneProp> = props => {
           Khám phá Việt Nam cùng với {`\n`} GoTour bằng những chuyến phiêu{' '}
           {`\n`} lưu thú vị trên tất cả các vùng miền
         </Text>
-        <Ripple onPress={onNext}>
+        <Ripple style={styles.btnNext} rippleContainerBorderRadius={40} onPress={onNext}>
           <Image
             style={styles.btnImageNext}
             source={{uri: NEXT_BUTTON}}></Image>
@@ -92,10 +92,14 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 
+  btnNext:
+  {
+    marginTop:65
+  },
+
   btnImageNext: {
     width: 80,
     height: 80,
     resizeMode: 'contain',
-    marginTop:65
   },
 });
