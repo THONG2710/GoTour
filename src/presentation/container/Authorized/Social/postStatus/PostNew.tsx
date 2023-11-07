@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity, TextInput } from 'react-native'
 import React from 'react'
 import styles from './styles'
-import { ICON_BACK, AVT, BACKGROUND } from '../../../resource/assets/images'
+import { ICON_BACK, AVT, BACKGROUND } from '../../../../resource/assets/images'
 
 const PostNew: React.FC = () => {
     const [valueInput, setValueInput] = React.useState('');
