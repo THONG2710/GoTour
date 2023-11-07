@@ -56,13 +56,14 @@ const Hotel = () => {
                 <Image source={{ uri: ICON_HOTEL }} style={styles.icon_hotel} />
                 <Text style={styles.title}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
             </View>
-            <View style={{  }}>
+            <View >
                 <FlatList
                     data={DATA}
                     renderItem={render}
                     keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
                     scrollEnabled={false}
+                    style={styles.flatlist}
                 />
             </View>
         </View>
@@ -161,6 +162,9 @@ const styles = StyleSheet.create({
     icon_hotel: {
         width: 40,
         height: 40
+    },
+    flatlist:{
+        backgroundColor:'#EBEBEB'
     }
 })
 const DATA = [

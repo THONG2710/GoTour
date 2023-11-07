@@ -38,7 +38,7 @@ function App(): JSX.Element {
     // <Hotel/>
     // <Plane/>
     // <Train/>
-    // <SplashStackNavigation/>
+    <SplashStackNavigation/>
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
@@ -50,7 +50,7 @@ function App(): JSX.Element {
     // <AuthorizedBottomNavigation/>
     // <ItemBottomHome/>
     // <Home/>
-    <PostStatus/>
+    // <PostStatus/>
     // <Account/>
   ); 
 }
