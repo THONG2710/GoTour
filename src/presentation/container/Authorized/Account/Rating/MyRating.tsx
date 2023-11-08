@@ -2,29 +2,30 @@ import { View, Text, Image, Touchable, TouchableOpacity, TextInput } from 'react
 import React from 'react'
 import styles from './styles'
 import { Icon } from '@rneui/base'
-import TabViewItem from '../../components/custom/TabViewItem'
-import WaitRating from './components/waitRating'
-import DoneRating from './components/doneRating'
-import TabViewTwoItem from '../../components/custom/TabViewItemTwoScreen'
+import TabViewItem from '../../../components/custom/TabViewItem'
+import WaitRating from './Tab/waitRating'
+import DoneRating from './Tab/doneRating/DoneRating'
+import TabViewTwoItem from '../../../components/custom/TabViewItemTwoScreen'
+import { BACKGROUND_RATING, ICON_BACK, ICON_HOME, ICON_SEARCH } from '../../../../resource/assets/images'
 
-const HisRating: React.FC = () => {
+const MyRating: React.FC = () => {
     return (
         <View style={styles.container}>
             {/* HEADER */}
-            <Image source={require('../../img/backgroundRating.png')} style={styles.imgBackground} />
+            <Image source={{uri: BACKGROUND_RATING}} style={styles.imgBackground} />
             <View style={styles.iconHeader}>
                 <TouchableOpacity>
-                    <Image source={require('../../img/backWhite.png')} style={styles.backBtn} />
+                    <Image source={{uri: ICON_BACK}} style={styles.backBtn} />
                 </TouchableOpacity>
                 <Text style={styles.titleText}>Đánh Giá</Text>
                 <TouchableOpacity>
-                    <Image source={require('../../img/homeWhite.png')} style={styles.backBtn} />
+                    <Image source={{uri: ICON_HOME}} style={styles.backBtn} />
                 </TouchableOpacity>
             </View>
             {/* SEARCH */}
             <View style={styles.search}>
                 <TextInput placeholder='Tìm kiếm...' style={styles.inputSearch}/>
-                <Image source={require('../../img/search.png')} style={styles.searchBtn}/>
+                <Image source={{uri: ICON_SEARCH}} style={styles.searchBtn}/>
             </View>
             {/* BODY RATING */}
             <View style={styles.bodyRating}>
@@ -46,4 +47,4 @@ const HisRating: React.FC = () => {
     )
 }
 
-export default HisRating
+export default MyRating

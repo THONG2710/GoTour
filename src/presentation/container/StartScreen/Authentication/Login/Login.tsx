@@ -7,30 +7,56 @@ import {
   Text,
   TextInput,
   ToastAndroid,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { ICON_FACEBOOK, ICON_GOOGLE, ICON_HIDDENPASSWORD, ICON_LOCK, ICON_PHONE, ICON_SHOWPASSWOR, LOGO_GOTOUR } from '../../../../resource/assets/images';
-import { LoginProp } from './type';
+import {
+  ICON_FACEBOOK,
+  ICON_GOOGLE,
+  ICON_HIDDENPASSWORD,
+  ICON_LOCK,
+  ICON_PHONE,
+  ICON_SHOWPASSWOR,
+  LOGO_GOTOUR,
+} from '../../../../resource/assets/images';
+import {LoginProp} from './type';
 
-const Login: React.FC<LoginProp> = (props) => {
+const Login: React.FC<LoginProp> = props => {
   const [password, setPassword] = useState('');
-  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const {navigation} = props;
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const login = () => {
-    console.log('phone', phone, 'Password:', password);
-    navigation.navigate('authorized');
+  const login = async () => {
+    let data = {email, password};
+    
+    const fetchData = async (data: {emal: string; password: string}) => {
+      let url = 'http://192.168.1.53:3000/user/login'; //ở trường
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+      });
+      const res = await response.json();
+      return res;
+    };
+    
+    const res = await fetchData(data);
+    console.log(res);
+    
+    if (res.result) {
+      navigation.navigate('authorized');
+    }
   };
   const register = () => {
     navigation.navigate('register');
   };
   const forgotPass = () => {
-    navigation.navigate('resetPassword')
+    navigation.navigate('resetPassword');
   };
   const loginWithGoogle = () => {
     console.log('loginWithGoogle');
@@ -47,10 +73,7 @@ const Login: React.FC<LoginProp> = (props) => {
         <View style={styles.div2}></View>
       </View>
       {/* //========logo,tiitle====== */}
-      <Image
-        style={styles.logo}
-        source={{uri: LOGO_GOTOUR}}
-      />
+      <Image style={styles.logo} source={{uri: LOGO_GOTOUR}} />
       <Text style={styles.txtLogin}>ĐĂNG NHẬP</Text>
       {/* //========box====== */}
       <View style={styles.box}>
@@ -58,14 +81,19 @@ const Login: React.FC<LoginProp> = (props) => {
         <View style={[styles.boxInput, {marginTop: 10}]}>
           <Image
             source={{uri: ICON_PHONE}}
-            style={{width: 20, height: 20, marginLeft: 5, resizeMode: 'contain'}}
+            style={{
+              width: 20,
+              height: 20,
+              marginLeft: 5,
+              resizeMode: 'contain',
+            }}
           />
           <TextInput
             style={styles.txtInput}
-            placeholder="Số điện thoại"
-            keyboardType="numeric"
-            value={phone}
-            onChangeText={setPhone}></TextInput>
+            placeholder="Nhập email"
+            // keyboardType="numeric"
+            value={email}
+            onChangeText={setEmail}></TextInput>
         </View>
         <View style={styles.boxInput}>
           <Image
@@ -100,9 +128,9 @@ const Login: React.FC<LoginProp> = (props) => {
           end={{x: 0, y: 0}}
           colors={['#FD9448', '#FB8632', '#FF6B00']}
           style={styles.linearGradient}>
-          <Pressable style={styles.btnLogin} onPress={login}>
+          <TouchableOpacity style={styles.btnLogin} onPress={login}>
             <Text style={styles.txtBtnLogin}>Đăng nhập</Text>
-          </Pressable>
+          </TouchableOpacity>
         </LinearGradient>
         {/* //========or====== */}
         <View
@@ -133,16 +161,10 @@ const Login: React.FC<LoginProp> = (props) => {
         <View
           style={{flexDirection: 'row', justifyContent: 'center', zIndex: 1}}>
           <Pressable onPress={loginWithGoogle}>
-            <Image
-              style={styles.imgGoogle}
-              source={{uri: ICON_GOOGLE}}
-            />
+            <Image style={styles.imgGoogle} source={{uri: ICON_GOOGLE}} />
           </Pressable>
           <Pressable onPress={loginWithFacebook}>
-            <Image
-              style={styles.imgGoogle}
-              source={{uri: ICON_FACEBOOK}}
-            />
+            <Image style={styles.imgGoogle} source={{uri: ICON_FACEBOOK}} />
           </Pressable>
         </View>
         {/* //========register====== */}
@@ -154,7 +176,7 @@ const Login: React.FC<LoginProp> = (props) => {
             marginTop: 20,
           }}>
           <Text style={{color: 'black'}}>Bạn chưa có tài khoản?</Text>
-          <Pressable onPress={register} >
+          <Pressable onPress={register}>
             <Text
               style={{color: 'green', fontWeight: '500', fontStyle: 'italic'}}>
               {' '}

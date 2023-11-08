@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { Shadow } from 'react-native-shadow-2'
 
 import ItemFavouriteUser from '../../../../component/Items/ItemFavouriteUser'
-import { ICON_BACK, ICON_HOME, ICON_SEARCH_BLACK } from '../../../../resource/assets/images'
+import { ICON_BACK, ICON_HOME, ICON_SEARCH_BLACK, SLIDE4 } from '../../../../resource/assets/images'
 import { TEXT_HEADER_USERPROFILE_VN } from '../../../../resource/assets/String/VNString'
 import { AccountProp } from '../type'
 import { MyFavoritesProp } from './type'
@@ -139,7 +139,7 @@ const dataListFavouriteUser = [
         price: '1.790.000đ',
         time: '3N2Đ',
         turn: '518 lượt đi',
-        image: require('../../../resource/assets/images/slide4.png')
+        image: SLIDE4
 
     },
 
@@ -150,7 +150,7 @@ const dataListFavouriteUser = [
         price: '1.990.000đ',
         time: '3N3Đ',
         turn: '588 lượt đi',
-        image: require('../../../resource/assets/images/slide4.png')
+        image: SLIDE4
 
 
     },
@@ -162,7 +162,7 @@ const dataListFavouriteUser = [
         price: '1.990.000đ',
         time: '3N3Đ',
         turn: '588 lượt đi',
-        image: require('../../../resource/assets/images/slide4.png')
+        image: SLIDE4
 
 
     },
@@ -174,7 +174,7 @@ const dataListFavouriteUser = [
         price: '1.990.000đ',
         time: '3N3Đ',
         turn: '588 lượt đi',
-        image: require('../../../resource/assets/images/slide4.png')
+        image: SLIDE4
 
 
     },

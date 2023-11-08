@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Pressable } from 'react-native';
 import React from 'react';
 import { Shadow } from 'react-native-shadow-2';
 import { Dimensions } from 'react-native';
@@ -21,12 +21,33 @@ import {
   VOUCHER,
 } from '../../../../resource/assets/images';
 import { ProfileProp } from './type';
-import ItemCenter from './Component/ItemCenterTitle';
-import ItemCenterContent from './Component/ItemCenterContent';
+import ItemCenter from '../../../../component/Items/ItemCenterTitle';
+import ItemCenterContent from '../../../../component/Items/ItemCenterContent';
 
-const Profile: React.FC<ProfileProp> = () => {
+const Profile: React.FC<ProfileProp> = (props) => {
+  const {navigation} = props;
+
+  const onMoveToHistory = () => {
+    navigation.navigate('history');
+  }
+
+  const onMoveToMyFavorite = () => {
+    navigation.navigate('myFavorites');
+  }
+
+  const onMoveToEditProfile = () => {
+    navigation.navigate('editProfile');
+  };
+
+  const onMoveToMyRating = () => {
+    navigation.navigate('rating');
+  };
+
+  const onMoveToIntroduce = () => {
+    navigation.navigate('introduction');
+  };
+
   return (
-
     // HEADER
     <View style={styles.container}>
       <View style={styles.header}>
@@ -48,10 +69,10 @@ const Profile: React.FC<ProfileProp> = () => {
           <Text style={styles.text}>Xin Chào </Text>
           <Text style={styles.textName}>Nguyễn Văn Thông</Text>
         </View>
-        <View style={styles.grProfile}>
+        <Pressable style={styles.grProfile} onPress={onMoveToEditProfile}>
           <Text style={styles.text}>Thông tin cá nhân</Text>
           <Image style={styles.iconRight} source={{ uri: ICON_RIGHT }}></Image>
-        </View>
+        </Pressable>
       </View>
 
       {/* CENTER */}
@@ -75,8 +96,8 @@ const Profile: React.FC<ProfileProp> = () => {
 
         {/* LIST HISTORY, FAVOURITE, POST */}
         <View style={styles.grCenterTitle}>
-          <ItemCenter image={HISTORY} text='Lịch sử'></ItemCenter>
-          <ItemCenter image={FAVORITES} text='Yêu thích'></ItemCenter>
+          <ItemCenter image={HISTORY} text='Lịch sử' onPress={onMoveToHistory}></ItemCenter>
+          <ItemCenter image={FAVORITES} text='Yêu thích' onPress={onMoveToMyFavorite}></ItemCenter>
           <ItemCenter image={POST} text='Bài đăng'></ItemCenter>
         </View>
 
@@ -84,8 +105,8 @@ const Profile: React.FC<ProfileProp> = () => {
         <View style={styles.grCenterContent}>
           <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
             <View style={styles.grCenterContentList}>
-              <ItemCenterContent image={EVALUTE} text={'Đang chờ\nđánh giá'}></ItemCenterContent>
-              <ItemCenterContent image={INTRODUCE} text={'Giới thiệu về\nGotour'}></ItemCenterContent>
+              <ItemCenterContent onPress={onMoveToMyRating} image={EVALUTE} text={'Đang chờ\nđánh giá'}></ItemCenterContent>
+              <ItemCenterContent onPress={onMoveToIntroduce} image={INTRODUCE} text={'Giới thiệu về\nGotour'}></ItemCenterContent>
               <ItemCenterContent image={CONTACT} text={'Chăm sóc\nkhách hàng'}></ItemCenterContent>
             </View>
           </Shadow>

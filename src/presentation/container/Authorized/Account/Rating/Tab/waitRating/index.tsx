@@ -1,7 +1,7 @@
 import { View, Text,FlatList } from 'react-native'
 import React from 'react'
 import styles from './styles'
-import ItemWaitRating from './ItemWaitRating'
+import ItemWaitRating from '../../../../../../component/Items/ItemWaitRating/ItemWaitRating'
 
 const WaitRating:React.FC = () => {
   const render = ({ item }: { item: (typeof DATA)[0] }) => (

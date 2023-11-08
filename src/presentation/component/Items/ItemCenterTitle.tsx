@@ -1,16 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Shadow } from 'react-native-shadow-2'
-import { HISTORY } from '../../../../../resource/assets/images'
+import { HISTORY } from '../../resource/assets/images'
 
 interface ItemCenterTitleProps{
     image: string;
-    text:string
+    text:string;
+    onPress?: () => void;
 }
 const ItemCenterTitle: React.FC<ItemCenterTitleProps> = (props) => {
-    const { image, text } = props;
+    const { image, text, onPress } = props;
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
     <Shadow distance={2} startColor={'#ccc'} endColor={'#ff00ff10'} offset={[0, 15]}>
       <View
         style={styles.grListCenter}>

@@ -1,7 +1,7 @@
 import { View, Text,FlatList } from 'react-native'
 import React from 'react'
 import styles from './styles'
-import ItemDoneRating from './itemDoneRating'
+import ItemDoneRating from '../../../../../../component/Items/itemDoneRating/ItemDoneRating'
 
 const DoneRating:React.FC = () => {
     const render = ({ item }: { item: (typeof DATA)[0] }) => (

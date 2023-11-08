@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { FlatList, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
+import { HEART, ICON_BACK, ICON_HOME, ICON_SEARCH, NEW1, SHOPPING } from "../../../../resource/assets/images";
+import { HistoryProp } from "./type";
 
-const History: React.FC = () => {
+const History: React.FC<HistoryProp> = (props) => {
     const [searchText, setsearchText] = useState('')
+    const {navigation} = props;
 
     const back = () => {
         console.log('back')
@@ -24,11 +27,11 @@ const History: React.FC = () => {
             >
                 <View style={styles.header}>
                     <Pressable onPress={back}>
-                        <Image style={styles.imgHeader} source={require('../../resource/images/back.png')} />
+                        <Image style={styles.imgHeader} source={{uri: ICON_BACK}} />
                     </Pressable>
                     <Text style={styles.txtHeader}>Bài đăng của tôi</Text>
                     <Pressable onPress={home}>
-                        <Image style={styles.imgHeader} source={require('../../resource/images/home.png')} />
+                        <Image style={styles.imgHeader} source={{uri: ICON_HOME}} />
                     </Pressable>
                 </View>
                 {/* //============Searchbox================ */}
@@ -40,7 +43,7 @@ const History: React.FC = () => {
                     />
                     <Pressable onPress={search}>
 
-                        <Image style={styles.imgSearch} source={require("../../resource/images/search.png")} />
+                        <Image style={styles.imgSearch} source={{uri: ICON_SEARCH}} />
                     </Pressable>
                 </View>
             </LinearGradient>
@@ -60,12 +63,12 @@ const History: React.FC = () => {
             renderItem={({ item }) => (
                 <View style={styles.boxHistory}>
 
-                    <Image style={styles.img} source={item.img} />
+                    <Image style={styles.img} source={{uri: item.img}} />
 
                     <View style={styles.boxMain}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={styles.txtName}>{item.name}</Text>
-                            <Image style={styles.imgHeart} source={require('../../resource/images/heart.png')} />
+                            <Image style={styles.imgHeart} source={{uri: HEART}} />
                         </View>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={styles.txtPrice}>{item.price.toLocaleString('vi-VN')} VND</Text>
@@ -74,7 +77,7 @@ const History: React.FC = () => {
                         <Text style={styles.txtTurn}>{item.turn} lượt đi</Text>
                         <Pressable style={styles.btnEdit}>
                             <Text style={styles.txtButtonEdit}>Đặt ngay</Text>
-                            <Image style={styles.imgShopping} source={require('../../resource/images/shopping.png')} />
+                            <Image style={styles.imgShopping} source={{uri: SHOPPING}} />
                         </Pressable>
 
                     </View>
@@ -94,7 +97,7 @@ const data = [
     {
         id: 1,
         name: 'Đà Lạt',
-        img: require('../../resource/images/new1.webp'),
+        img: NEW1,
         price: 1500000,
         time: '3N2Đ',
         turn: 999,
@@ -103,7 +106,7 @@ const data = [
     {
         id: 2,
         name: 'Đà Lạt',
-        img: require('../../resource/images/new1.webp'),
+        img: NEW1,
         price: 15000000,
         time: '3N2Đ',
         turn: 999,
