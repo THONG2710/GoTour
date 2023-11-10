@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Button,
   Image,
@@ -21,12 +21,22 @@ import {
   LOGO_GOTOUR,
 } from '../../../../resource/assets/images';
 import {LoginProp} from './type';
+import { useAppDispatch, useAppSelector } from '../../../../shared-state/Hook/Hook';
+import { SET_ISLOGGED } from '../../../../shared-state/Action/Authentications';
 
 const Login: React.FC<LoginProp> = props => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const {navigation} = props;
+  const dispatch = useAppDispatch();
+  const islogged = useAppSelector(state => state.Authentication.isLogged)
+
+  useEffect(() => {
+    console.log(islogged);
+    
+  }, [islogged])
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -35,7 +45,7 @@ const Login: React.FC<LoginProp> = props => {
     let data = {email, password};
     const fetchData = async (data: {email: string; password: string}) => {
       try {
-        let url = 'http://42.116.118.85:3000/user/login';
+        let url = 'http://192.168.1.13:3000/user/login';
         const response = await fetch(url, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -50,6 +60,7 @@ const Login: React.FC<LoginProp> = props => {
     const res = await fetchData(data);
     console.log(res);
     if (res.result) {
+      dispatch(SET_ISLOGGED(true))
       navigation.navigate('authorized');
     }
   };

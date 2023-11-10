@@ -20,10 +20,10 @@ import AuthorizedBottomNavigation from './src/presentation/navigation/Authorized
 import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Social from './src/presentation/container/Authorized/Social/Social';
 import Profile from './src/presentation/container/Authorized/Account/Profile/Profile';
-import ItemCenterContent from './src/presentation/container/Authorized/Account/Profile/Component/ItemCenterContent';
-import Editprofile from './src/presentation/container/Authorized/Account/Profile/EditProfile';
 import DetailTour from './src/presentation/container/Authorized/Service/TabBooking/BookTour/DetailTour';
 import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
+import Editprofile from './src/presentation/container/Authorized/Account/EditProfile/EditProfile';
+import RootNavigation from './src/presentation/navigation/RootNavigation';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -50,8 +50,8 @@ function App(): JSX.Element {
     // <OTP/>
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
-    <DetailSocial></DetailSocial>
-
+    // <DetailSocial></DetailSocial>
+    <RootNavigation></RootNavigation>
   ); 
 }
 
