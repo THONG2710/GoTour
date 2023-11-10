@@ -34,7 +34,7 @@ const Login: React.FC<LoginProp> = props => {
   const login = async () => {
     let data = {email, password};
     
-    const fetchData = async (data: {emal: string; password: string}) => {
+    const fetchData = async (data: {email: string; password: string}) => {
       let url = 'http://192.168.1.53:3000/user/login'; //ở trường
       const response = await fetch(url, {
         method: 'POST',
