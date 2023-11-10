@@ -33,21 +33,21 @@ const Login: React.FC<LoginProp> = props => {
   };
   const login = async () => {
     let data = {email, password};
-    
-    const fetchData = async (data: {emal: string; password: string}) => {
-      let url = 'http://192.168.1.53:3000/user/login'; //ở trường
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data),
-      });
-      const res = await response.json();
-      return res;
+    const fetchData = async (data: {email: string; password: string}) => {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data),
+        });
+        const res = await response.json();
+        return res;
+      } catch (error) {
+        console.log('login error: ' + error);
+      }
     };
-    
     const res = await fetchData(data);
     console.log(res);
-    
     if (res.result) {
       navigation.navigate('authorized');
     }
