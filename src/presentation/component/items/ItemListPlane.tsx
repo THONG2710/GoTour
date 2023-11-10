@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet,TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { LINE, VIETJET } from '../../resource/assets/images';
 
@@ -19,12 +19,13 @@ const ItemListPlane: React.FC<Item> = (props: any) => {
 
     return (
         <View style={styles.container}>
+            <TouchableOpacity>
             <View style={styles.item2}>
                 <View>
                     <View style={{ flexDirection: 'row', marginLeft: 20 }}>
                         <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeFrom}</Text>
                         <View style={{ margin: 10 }}>
-                            <Image source={{uri: LINE}} />
+                            <Image source={{uri: LINE}} style={styles.line} />
                             <Text style={{ textAlign: 'center' }}>{timecount}</Text>
                         </View>
                         <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeTo}</Text>
@@ -41,12 +42,13 @@ const ItemListPlane: React.FC<Item> = (props: any) => {
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 15, marginVertical: 5 }}>
                 <View style={{flexDirection:'row'}}>
-                    <Image source={{uri: VIETJET}} />
+                    <Image source={{uri: VIETJET}} style={styles.vietjet} />
                     <Text style={{marginStart:10}}>Vietjet</Text>
                 </View>
 
                 <Text style={{color:'orange'}}>Còn lại {vietJet}</Text>
             </View>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -56,8 +58,8 @@ export default ItemListPlane
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#8F8F8F',
-        marginTop: 20,
+        backgroundColor: 'white',
+        marginTop: 10,
         marginHorizontal: 10,
         height: 'auto',
         borderRadius: 10,
@@ -68,4 +70,12 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    vietjet:{
+        width:22,
+        height:20
+    },
+    line:{
+        width:64,
+        height:5
+    }
 });

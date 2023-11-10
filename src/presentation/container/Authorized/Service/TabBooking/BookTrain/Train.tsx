@@ -52,6 +52,7 @@ const Train: React.FC = () => {
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
                 scrollEnabled={false}
+                style={styles.flatlist}
                  />
             </View>
         </View>
@@ -131,6 +132,9 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5
+    },
+    flatlist:{
+        backgroundColor:'#EBEBEB'
     }
 })
 const DATA = [
