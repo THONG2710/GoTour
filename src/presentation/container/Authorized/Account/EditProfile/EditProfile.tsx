@@ -2,11 +2,11 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'reac
 import React, { useMemo, useState } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { Shadow } from 'react-native-shadow-2'
-import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../EditProfile/Text/TextEditProfileVN'
-import ViewForm from '../../../../component/Input/InputField'
+import InputField from '../../../../component/Input/InputField'
 import { RadioButtonProps, RadioGroup } from 'react-native-radio-buttons-group'
 import Ripple from 'react-native-material-ripple'
-import { TEXT_BUTTON_EDITPROFILE_EG } from '../../../EditProfile/Text/TextEditProfileEG'
+import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../../resource/assets/String/VNString'
+import { ADDRESS, AVT, CHOOSE_AVT, CODE, EDIT_USERNAME, EMAIL } from '../../../../resource/assets/images'
 
 const Editprofile = () => {
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
@@ -29,8 +29,8 @@ const Editprofile = () => {
         <View style={styles.container}>
             <LinearGradient style={styles.header} colors={['#FF380D', '#F9B889', '#FFEBDD']}>
                 <View>
-                    <Image style={styles.imgAvatar} source={require('../../../resource/assets/images/avtUser.png')}></Image>
-                    <Image style={styles.chooseAvatar} source={require('../../../resource/assets/images/chooseAVT.png')}></Image>
+                    <Image style={styles.imgAvatar} source={{uri: AVT}}></Image>
+                    <Image style={styles.chooseAvatar} source={{uri: CHOOSE_AVT}}></Image>
                 </View>
                 <Text style={styles.textHeader}>Nguyễn Trường</Text>
             </LinearGradient>
@@ -38,10 +38,10 @@ const Editprofile = () => {
             {/* FOOTER FORM */}
             <View style={styles.footer}>
                 <Text style={styles.textTitle}>{TEXT_TITLE_EDITPROFILE_VN}</Text>
-                <ViewForm image={require('../../../resource/assets/images/edtUsername.png')} placeholder='Enter Your Name'></ViewForm>
-                <ViewForm image={require('../../../resource/assets/images/email.png')} placeholder='Enter Your Email'></ViewForm>
-                <ViewForm image={require('../../../resource/assets/images/code.png')} placeholder='Enter Your Code'></ViewForm>
-                <ViewForm image={require('../../../resource/assets/images/address.png')} placeholder='Enter Your Address'></ViewForm>
+                <InputField image={EDIT_USERNAME} placeholder='Enter Your Name'></InputField>
+                <InputField image={EMAIL} placeholder='Enter Your Email'></InputField>
+                <InputField image={CODE} placeholder='Enter Your Code'></InputField>
+                <InputField image={ADDRESS} placeholder='Enter Your Address'></InputField>
                 <RadioGroup
                     containerStyle={{ marginLeft: 10, marginTop: 10 }}
                     layout='row'
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 
     footer:
     {
-        flex: 0.65,
+        flex: 0.7,
         marginHorizontal: 25,
         marginTop: -30,
         shadowColor: '#000',

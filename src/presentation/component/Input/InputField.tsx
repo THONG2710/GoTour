@@ -2,14 +2,14 @@ import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 
 interface InputFieldProps{
-  image: any;
+  image: string;
   placeholder: string;
 }
 const InputField: React.FC<InputFieldProps> = (props) => {
   const {image, placeholder} = props;
   return (
     <View style={styles.gr_input}>
-      <Image style={styles.iconIP} source={image}></Image>
+      <Image style={styles.iconIP} source={{uri: image}}></Image>
       <TextInput style={styles.input} placeholder={placeholder} />
     </View>
   )

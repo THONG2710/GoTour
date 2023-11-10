@@ -1,6 +1,7 @@
 import { View, Text, Image, ScrollView } from 'react-native'
 import React from 'react'
 import styles from './styles'
+import { TOURPLACE } from '../../../../resource/assets/images'
 
 
 
@@ -9,7 +10,7 @@ const IntroduceScreen: React.FC = () => {
     return (
         <View style={styles.container}>
             {/* HEADER */}
-            <Image source={require('../../img/tourplace.png')} style={styles.imgBackround} />
+            <Image source={{uri: TOURPLACE}} style={styles.imgBackround} />
             <View style={styles.slogan}>
                 <Text style={styles.text1}>GoTour</Text>
                 <Text style={styles.text2}>Du lịch khắp Việt Nam</Text>

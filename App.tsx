@@ -44,7 +44,6 @@ import ResetPass from './src/presentation/container/StartScreen/Authentication/C
 import SplashOne from './src/presentation/container/StartScreen/SplashScreen/SplashOne/SplashOne';
 import SplashTwo from './src/presentation/container/StartScreen/SplashScreen/SplashTwo/SplashTwo';
 import SplashThree from './src/presentation/container/StartScreen/SplashScreen/SplashThree/SplashThree';
-import MyFavourite from './src/presentation/container/Authorized/Account/MyFavorites/MyFavourite';
 import Hotel from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
 import Plane from './src/presentation/container/Authorized/Service/TabBooking/BookPlane/Plane';
 import Train from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/Hotel';
@@ -52,11 +51,17 @@ import SplashStackNavigation from './src/presentation/navigation/SplashStackNavi
 import AuthenticationNavigation from './src/presentation/navigation/AuthenticationNavigation';
 import Login from './src/presentation/container/StartScreen/Authentication/Login/Login';
 import Register from './src/presentation/container/StartScreen/Authentication/Register/Register';
-import ListShare from './src/presentation/container/Authorized/Social/Social';
 import Booking from './src/presentation/container/Authorized/Service/Booking';
 import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import AuthorizedBottomNavigation from './src/presentation/navigation/AuthorizedBottomNavigation';
+import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
+import Social from './src/presentation/container/Authorized/Social/Social';
+import Profile from './src/presentation/container/Authorized/Account/Profile/Profile';
+import ItemCenterContent from './src/presentation/container/Authorized/Account/Profile/Component/ItemCenterContent';
+import Editprofile from './src/presentation/container/Authorized/Account/Profile/EditProfile';
+import DetailTour from './src/presentation/container/Authorized/Service/TabBooking/BookTour/DetailTour';
+import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -76,12 +81,15 @@ function App(): JSX.Element {
     // <AuthenticationNavigation/>
     // <Login/>
     // <Register/>
-    // <ListShare/>
+    // <Social/>
     // <Booking/>
     // <ChangePassword/>
     // <ResetPassword/>
     // <OTP/>
-    <AuthorizedBottomNavigation/>
+    // <Editprofile></Editprofile>
+    // <DetailTour></DetailTour>
+    <DetailSocial></DetailSocial>
+
   ); 
 }
 

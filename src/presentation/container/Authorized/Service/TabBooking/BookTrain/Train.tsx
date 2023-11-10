@@ -1,4 +1,4 @@
-import { FlatList, Image, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, Touchable, TouchableOpacity, View,ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import ItemListTrain from '../../../../../component/Items/ItemListTrain';
 import TabViewItem from '../../../../components/custom/TabViewItem';
@@ -13,40 +13,50 @@ const Train: React.FC = () => {
     )
 
     return (
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             {/* <Image style={styles.img} source={require('../img/background.png')} /> */} 
+            <Image style={styles.img} source={require('../../../../img/background2.png')} />
             
             <View style={styles.book}>
                 <View style={styles.item}>
-                    <Text style={{ fontSize: 15, color: 'black' }}>Điểm khởi hành</Text>
-                    <Image style={{ marginTop: -10 }} source={{uri: ICON_TRAIN2}} />
-                    <Text style={{ fontSize: 15, color: 'black' }}>Điểm đến</Text>
+                    <TouchableOpacity>
+                    <Text style={styles.txt_location}>Điểm khởi hành</Text>
+                    </TouchableOpacity>              
+                    <Image style={styles.icon_train2} source={{uri: ICON_TRAIN2}} />
+                    <TouchableOpacity>
+                    <Text style={styles.txt_location}>Điểm đến</Text>
+                    </TouchableOpacity>    
                 </View>
                 <View style={styles.item1}>
-                    <Image source={{uri: ICON_CALENDAR}} />
-                    <Text style={{ fontSize: 18, color: 'black', margin: 5 }}>T6,20 thg10</Text>
+                    <Image source={{uri: ICON_CALENDAR}} style={styles.icon_calendar}/>
+                    <TouchableOpacity>
+                    <Text style={styles.date}>T6,20 thg10</Text>
+                    </TouchableOpacity> 
                 </View>
                 <TouchableOpacity style={styles.btn}>
-                    <Text style={{ fontSize: 25, color: 'orange', textAlign: 'center' }}>
+                    <Text style={styles.btn_find}>
                         Tìm
                     </Text>
                 </TouchableOpacity>
 
             </View>
-            <View style={{ flexDirection: 'row', marginHorizontal: 10 }}>
-                <Image source={{uri: ICON_TRAIN2}} />
-                <Text style={{ fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5 }}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
+            <View style={styles.container_title}>
+                <Image source={{uri: ICON_TRAIN2}} style={styles.icon_train}/>
+                <Text style={styles.title}>Hãy lựa chọn chuyến tàu phụ hợp cho bạn</Text>
             </View>
-            <View style={{height:280}}>    
+            <View style={{}}>    
             <FlatList 
                 data={DATA}
                 renderItem={render}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
-                
+                scrollEnabled={false}
+                style={styles.flatlist}
                  />
             </View>
         </View>
+        </ScrollView>
 
     )
 
@@ -56,7 +66,13 @@ export default Train
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor:'white'
+        backgroundColor:'white',
+     
+    },
+    img:{
+        position:'absolute',
+        width:'100%',
+        height:150
     },
     book: {
         backgroundColor: 'white',
@@ -93,6 +109,33 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingRight: 10,
     },
+    txt_location:{
+        fontSize: 15, color: 'black'
+    },
+    icon_train2:{
+        width:35,height:35
+    },
+    icon_calendar:{
+        width:25,height:25
+    },
+    date:{
+        fontSize: 18, color: 'black', margin: 5
+    },
+    btn_find:{
+        fontSize: 25, color: 'orange', textAlign: 'center'
+    },
+    container_title:{
+        flexDirection: 'row', marginHorizontal: 10
+    },
+    icon_train:{
+        width:40,height:40
+    },
+    title:{
+        fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5
+    },
+    flatlist:{
+        backgroundColor:'#EBEBEB'
+    }
 })
 const DATA = [
     { id: '1', nameFrom: "Hồ Chí Minh", timeFrom: "05:35", nameTo: "Hà Nội", timeTo: "12:15", price: "4.462.000", timecount: "6h 40p" },

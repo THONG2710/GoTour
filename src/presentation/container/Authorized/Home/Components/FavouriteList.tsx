@@ -1,7 +1,7 @@
 import { View, Text,FlatList } from 'react-native'
 import React from 'react'
 import styles from './stylesList'
-import ItemFavourite from '../../../component/Items/itemFavourite'
+import ItemFavourite from '../../../../component/Items/itemFavourite'
 
 
 const FavouriteList:React.FC = () => {
