@@ -22,13 +22,13 @@ const ItemListPlane: React.FC<Item> = (props: any) => {
             <TouchableOpacity>
             <View style={styles.item2}>
                 <View>
-                    <View style={{ flexDirection: 'row', marginLeft: 20 }}>
-                        <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeFrom}</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>{timeFrom}</Text>
                         <View style={{ margin: 10 }}>
                             <Image source={{uri: LINE}} style={styles.line} />
                             <Text style={{ textAlign: 'center' }}>{timecount}</Text>
                         </View>
-                        <Text style={{ color: 'black', fontSize: 25, fontWeight: 'bold' }}>{timeTo}</Text>
+                        <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold' }}>{timeTo}</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: -10 }}>
                         <Text style={{ color: 'black', fontSize: 15 }}>{nameFrom}</Text>

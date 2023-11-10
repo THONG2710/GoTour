@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './styles'
 import { Input } from '@rneui/base'
 import FavouriteList from '../Components/FavouriteList'
-import { AVATAR, BUS, HOTEL, ICON_BELL, ICON_CAMPING, ICON_ISLAND, ICON_MARKER, ICON_MENU, ICON_MOUNTAIN, ICON_SEA, ICON_SEARCH, IMAGE1, IMAGE2, IMAGE3, LOGO_GOTOUR, SHIP, TOURPLACE, TRAVELLING, TXTTITLE } from '../../../../resource/assets/images'
+import { AVATAR, AVT, BUS, HOTEL, ICON_BELL, ICON_CAMPING, ICON_ISLAND, ICON_MARKER, ICON_MENU, ICON_MOUNTAIN, ICON_SEA, ICON_SEARCH, IMAGE1, IMAGE2, IMAGE3, LOGO_GOTOUR, SHIP, TOURPLACE, TRAVELLING, TXTTITLE } from '../../../../resource/assets/images'
 import { HomeMainProp } from './type'
 
 const MainHome: React.FC<HomeMainProp> = (props) => {
@@ -33,7 +33,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                             <Image source={{ uri: ICON_BELL }} style={styles.icon_bell} />
                         </TouchableOpacity>
                         <TouchableOpacity>
-                            <Image source={{ uri: AVATAR }} style={styles.avatar} />
+                            <Image source={{ uri: AVT }} style={styles.avatar} />
                         </TouchableOpacity>
                     </View>
                 </View>

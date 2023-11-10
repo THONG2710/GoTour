@@ -130,7 +130,8 @@ const styles = StyleSheet.create({
         marginStart: 5, 
         marginTop: -10, 
         width: 47, 
-        height: 47
+        height: 47,
+        borderRadius:30
     },
     icon_marker:{
         width: 33, height: 52 

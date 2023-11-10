@@ -86,17 +86,20 @@ const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginVertical: 20
+        marginVertical: 10,
+        alignItems:'center'
     },
     item1: {
         flexDirection: 'row',
+        alignItems:'center',
+
     },
     btn: {
         backgroundColor: '#F7DEC6',
         marginTop: 10,
         padding: 10,
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10
+        borderRadius: 10,
+        marginBottom:10
     },
     item2: {
         flexDirection: 'row',
@@ -113,28 +116,35 @@ const styles = StyleSheet.create({
         fontSize: 15, color: 'black'
     },
     icon_train2:{
-        width:35,height:35
-    },
-    icon_calendar:{
         width:25,height:25
     },
+    icon_calendar:{
+        width:20,height:20
+    },
     date:{
-        fontSize: 18, color: 'black', margin: 5
+        fontSize: 14, color: 'black', margin: 5
     },
     btn_find:{
-        fontSize: 25, color: 'orange', textAlign: 'center'
+        fontSize: 20, color: 'orange', textAlign: 'center',
+        fontWeight:'bold',
     },
     container_title:{
-        flexDirection: 'row', marginHorizontal: 10
+        flexDirection: 'row', alignItems:'center',
+        marginBottom:20
     },
     icon_train:{
-        width:40,height:40
+        width:30,height:30,
+        marginLeft:10,
+        marginRight:5
     },
     title:{
-        fontSize: 25, color: 'black', fontWeight: 'bold', marginStart: 5, marginTop: -5
+        fontSize: 20, color: 'black', fontWeight: 'bold',
+        width:'80%',
+        marginHorizontal:5
     },
     flatlist:{
-        backgroundColor:'#EBEBEB'
+        backgroundColor:'#EBEBEB',
+        paddingBottom:20
     }
 })
 const DATA = [

@@ -6,42 +6,44 @@ import Hotel from './TabBooking/BookHotel/Hotel'
 import Train from './TabBooking/BookTrain/Train'
 import { BACKGROUND, ICON_BELL, ICON_SEARCH, LOGO_GOTOUR } from '../../../resource/assets/images'
 import { BookingProp } from './type'
+import { Shadow } from 'react-native-shadow-2'
 
 
 const Booking: React.FC<BookingProp> = () => {
   return (
-    
-      <View style={styles.container}>
-        {/* <Image style={styles.img} source={{uri: BACKGROUND}} /> */}
 
-        <Image style={styles.img} source={require('../../img/background2.png')} />
-        <View style={styles.header}>
-          <Image source={{ uri: LOGO_GOTOUR }} style={styles.logo} />
-          <TouchableOpacity style={styles.click_Bell}>
-            <Image style={styles.icon_bell} source={{ uri: ICON_BELL }} />
-          </TouchableOpacity>
-        </View>
+    <View style={styles.container}>
+      {/* <Image style={styles.img} source={{uri: BACKGROUND}} /> */}
+
+      <Image style={styles.img} source={require('../../img/background2.png')} />
+      <View style={styles.header}>
+        <Image source={{ uri: LOGO_GOTOUR }} style={styles.logo} />
+        <TouchableOpacity style={styles.click_Bell}>
+          <Image style={styles.icon_bell} source={{ uri: ICON_BELL }} />
+        </TouchableOpacity>
+      </View>
+      <Shadow distance={1.5} startColor={'#fff'} endColor={'#ccc'} containerStyle={{marginLeft:20, marginBottom:20}}>
         <View style={styles.search}>
           <TextInput placeholder='Tìm kiếm...' style={styles.textInput} />
           <TouchableOpacity style={styles.click}>
             <Image source={{ uri: ICON_SEARCH }} style={styles.icon_search} />
           </TouchableOpacity>
         </View>
+      </Shadow>
 
 
-        <TabViewItem
-          viewStyle={{ height: 80 }}
-          tabStyle={{ backgroundColor: 'white' }}
-          titleStyle={{ fontSize: 15, color: 'black' }}
-          title1='Khách sạn'
-          title2='Chuyến bay'
-          title3='Tàu lửa'
+      <TabViewItem
+        tabStyle={{ backgroundColor: 'white' }}
+        titleStyle={{ fontSize: 14, color: 'black' }}
+        title1='Khách sạn'
+        title2='Chuyến bay'
+        title3='Tàu lửa'
 
-          screen2={<Plane />}
-          screen1={<Hotel />}
-          screen3={<Train />}
-        />
-      </View>
+        screen2={<Plane />}
+        screen1={<Hotel />}
+        screen3={<Train />}
+      />
+    </View>
 
 
   )
@@ -65,9 +67,7 @@ const styles = StyleSheet.create({
     width: '90%',
     padding: 8,
     borderRadius: 10,
-    marginBottom: 10,
-    marginStart: 20,
-    height: 60
+    height: 50,
   },
   img: {
     position: 'absolute',
@@ -91,12 +91,12 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: '90%',
-
+    height: 37
   },
-  click:{
-    alignSelf:'center'
+  click: {
+    alignSelf: 'center'
   },
-  click_Bell:{
-    alignSelf:'center'
+  click_Bell: {
+    alignSelf: 'center'
   }
 })
