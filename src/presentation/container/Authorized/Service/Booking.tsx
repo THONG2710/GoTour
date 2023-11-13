@@ -15,7 +15,7 @@ const Booking: React.FC<BookingProp> = () => {
     <View style={styles.container}>
       {/* <Image style={styles.img} source={{uri: BACKGROUND}} /> */}
 
-      <Image style={styles.img} source={require('../../img/background2.png')} />
+      {/* <Image style={styles.img} source={require('../../img/background2.png')} /> */}
       <View style={styles.header}>
         <Image source={{ uri: LOGO_GOTOUR }} style={styles.logo} />
         <TouchableOpacity style={styles.click_Bell}>

@@ -16,7 +16,7 @@ const Train: React.FC = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             {/* <Image style={styles.img} source={require('../img/background.png')} /> */} 
-            <Image style={styles.img} source={require('../../../../img/background2.png')} />
+            {/* <Image style={styles.img} source={require('../../../../img/background2.png')} /> */}
             
             <View style={styles.book}>
                 <View style={styles.item}>

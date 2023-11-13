@@ -11,7 +11,7 @@ const Hotel = () => {
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
-                <Image style={styles.img} source={require('../../../../img/background2.png')} />
+                {/* <Image style={styles.img} source={require('../../../../img/background2.png')} /> */}
                 <View style={styles.book}>
                     <View style={styles.item1}>
                         <Image source={{ uri: ICON_MARKER2 }} style={styles.icon_Item} />
