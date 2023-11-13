@@ -7,7 +7,7 @@ import MainHome from './HomeMain/MainHome';
 import ListTour from './ListTour/ListTour';
 import {HomeProp} from './type';
 import AuthorizedBottomNavigation from '../../../navigation/AuthorizedBottomNavigation';
-import Booking from '../Service/Booking';
+import Booking from '../Service/Booking/Booking';
 import DetailTour from './DetailTour/DetailTour';
 
 const StackHome = createStackNavigator<HomeParamlist>();

@@ -9,6 +9,7 @@ import { HomeMainProp } from './type'
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
     const { navigation } = props;
+    
 
     const onMoveToListTour = () => {
         navigation.navigate('s_listTour');

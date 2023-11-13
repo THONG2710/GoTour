@@ -1,11 +1,16 @@
 import { Image, StyleSheet, Text, Touchable, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ItemListHotel from '../../../../../component/Items/ItemListHotel'
 import { ICON_COIN, ICON_HOTEL, ICON_MARKER2, ICON_USER2, ICON_STAR } from '../../../../../resource/assets/images'
 
-const Hotel = () => {
+interface HotelItemProps{
+    navigation: any;
+}
+const Hotel:React.FC<HotelItemProps> = (props) => {
+    const{ navigation} = props
+
     const render = ({ item }: { item: (typeof DATA)[0] }) => (
-        <ItemListHotel {...item} />
+        <ItemListHotel navigation={navigation} {...item} />
 
     )
     return (

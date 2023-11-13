@@ -5,7 +5,7 @@ import {AuthorizedParamList} from '../storyboard/AuthorizedStoryBoard';
 import {NavigationContainer} from '@react-navigation/native';
 import Social from '../container/Authorized/Social/Social';
 import Deals from '../container/Authorized/Sale/Deals';
-import Booking from '../container/Authorized/Service/Booking';
+import Booking from '../container/Authorized/Service/Booking/Booking';
 import Profile from '../container/Authorized/Account/Profile/Profile';
 import ItemBottomHome from '../component/Items/ItemBottomHome';
 import {

@@ -107,3 +107,4 @@ export const ICON_START_HOTEL = "https://firebasestorage.googleapis.com/v0/b/got
 export const IMG_DETAIL_TOUR = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_detail_tour.png?alt=media&token=16bff698-680a-4e47-b54f-1cf57b9614d7"
 export const IMG_HOTEL ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_hotel.png?alt=media&token=27173794-b789-408c-a2b2-173ca9564904"
 export const VEHICLE ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/plane.png?alt=media&token=b5340dd2-1aee-4e40-add3-be88ec8fffd5"
+export const ICON_ANEMITIES = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393"

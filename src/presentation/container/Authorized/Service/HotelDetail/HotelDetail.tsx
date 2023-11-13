@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
-import { ADDRESS, ICON_PHONE, ICON_STAR, ICON_STAR3 } from "../../../../../resource/assets/images";
+import { ADDRESS, AVT, ICON_ANEMITIES, ICON_PHONE, ICON_STAR, ICON_STAR3, ICON_START_HOTEL, IMG_HOTEL } from "../../../../resource/assets/images";
+import { HotelDetailProp } from "./type";
 
-const HotelDetail = () => {
+const HotelDetail:React.FC<HotelDetailProp> = (props) => {
+    const{ navigation} = props;
 
     const [showFullText, setShowFullText] = useState(false);
 
@@ -15,22 +17,22 @@ const HotelDetail = () => {
             {/* //========header====== */}
             <View style={styles.header}>
                 {/* //========imageHotel====== */}
-                <Image style={styles.image} source={dataHotel.image} />
+                <Image style={styles.image} source={{uri: IMG_HOTEL}} />
                 {/* //========BoxHeader====== */}
                 <View style={styles.boxHeader}>
-                    <Text style={styles.txtName}>{dataHotel.nameHotel}</Text>
+                    <Text style={styles.txtName}>Sedona Suites Ho Chi Minh City</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Image source={{uri: ADDRESS}} style={styles.iconAddress} />
-                        <Text style={styles.txtAddress}>{dataHotel.addressHotel}</Text>
+                        <Text style={styles.txtAddress}>67 Le Loi Boulevard, District 1 Hotel Entrance is located along Nam Ky Khoi Nghia Street, Ho Chi Minh City </Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <Image source={{uri: ICON_PHONE}} style={styles.iconPhone} />
-                        <Text style={styles.txtPhone}>{dataHotel.phoneHotel}</Text>
+                        <Text style={styles.txtPhone}>+84 28 3822 9888</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         {
                             Array.from({ length: dataHotel.starHotel }, (_, index) => (
-                                <Image key={index} style={styles.imgStarHotel} source={{uri: ICON_STAR}} />
+                                <Image key={index} style={styles.imgStarHotel} source={{uri: ICON_START_HOTEL}} />
                             ))
 
                         }
@@ -70,9 +72,8 @@ const HotelDetail = () => {
                     style={styles.flatListAmenities}
                     renderItem={({ item }) => {
                         return (
-
                             <View style={styles.itemAmenities}>
-                                <Image style={styles.iconAmenities} source={item.icon} />
+                                <Image style={styles.iconAmenities} source={{uri:ICON_ANEMITIES}} />
                                 <Text style={styles.txtItemAmenities}>{item.name}</Text>
                             </View>
                         )
@@ -87,7 +88,7 @@ const HotelDetail = () => {
                         (
                         {(dataComment.reduce((total, item) => total + item.star, 0) / dataComment.length).toFixed(1)}
                     </Text>
-                    <Image style={[styles.imgStarComment, { width: 20, height: 20 }]} source={require('../resource/images/star.png')} />
+                    <Image style={[styles.imgStarComment, { width: 20, height: 20 }]} source={{uri: ICON_STAR}} />
                     <Text style={styles.txtCommentTittle}>)</Text>
 
                 </View>
@@ -96,14 +97,14 @@ const HotelDetail = () => {
                     return (
                         <View key={item.id}>
                             <View style={{ flexDirection: 'row', marginBottom: 10, marginTop: 10 }}>
-                                <Image style={styles.avatar} source={item.avatar} />
+                                <Image style={styles.avatar} source={{uri: AVT}} />
                                 <View style={styles.boxComment}>
                                     <View style={{ flexDirection: 'row' }}>
                                         <Text style={styles.txtnameComment}>{item.name} </Text>
                                         <Text style={styles.txtStarComment}>
                                             ({item.star}
                                         </Text>
-                                        <Image style={styles.imgStarComment} source={require('../resource/images/star.png')} />
+                                        <Image style={styles.imgStarComment} source={{uri:ICON_START_HOTEL}} />
                                         <Text style={styles.txtStarComment}>)</Text>
                                     </View>
 
@@ -121,7 +122,7 @@ const HotelDetail = () => {
 }
 export default HotelDetail;
 const dataHotel = {
-    image: require("../resource/images/new1.webp"),
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_hotel.png?alt=media&token=27173794-b789-408c-a2b2-173ca9564904',
     nameHotel: `Sedona Suites Ho Chi Minh City`,
     addressHotel: `65 Le Loi, Ben Nghe Ward, District 1, Ho Chi Minh City, Vietnam`,
     phoneHotel: `+84 28 3822 9666`,
@@ -132,12 +133,12 @@ Nằm gần những địa danh yêu thích như Phố đi bộ Nguyễn Huệ (
 Tìm kiếm một khách sạn dành cho gia đình lý tưởng ở Thành phố Hồ Chí Minh không phải là quá khó. Chào đón bạn đến với Sedona Suites Ho Chi Minh City, một lựa chọn đúng đắn cho những du khách như bạn.
 Nằm gần những địa danh yêu thích như Phố đi bộ Nguyễn Huệ (0,3 km) và Chợ Ẩm Thực Đường Phố Bến Thành (0,4 km), du khách tại Sedona Suites Ho Chi Minh City có thể dễ dàng đến thăm những điểm đến nổi tiếng này ở Thành phố Hồ Chí Minh`,
     amenities: [
-        { name: `Bữa sáng`, id: 1, icon: require("../resource/images/star.png") },
-        { name: `Bữa sáng`, id: 2, icon: require("../resource/images/star.png") },
-        { name: `Bữa sáng`, id: 3, icon: require("../resource/images/star.png") },
-        { name: `Bữa sáng`, id: 4, icon: require("../resource/images/star.png") },
-        { name: `Bữa sáng`, id: 5, icon: require("../resource/images/star.png") },
-        { name: `Bữa sáng`, id: 6, icon: require("../resource/images/star.png") },
+        { name: `Bữa sáng`, id: 1, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
+        { name: `Bữa sáng`, id: 2, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
+        { name: `Bữa sáng`, id: 3, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
+        { name: `Bữa sáng`, id: 4, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
+        { name: `Bữa sáng`, id: 5, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
+        { name: `Bữa sáng`, id: 6, icon: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393' },
 
 
     ]
@@ -150,7 +151,7 @@ Nằm gần những địa danh yêu thích như Phố đi bộ Nguyễn Huệ (
 const dataComment = [
     {
         id: 1,
-        avatar: require("../resource/images/avatar.png"),
+        avatar: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743',
         name: `Nguyễn Văn Thông Đít`,
         star: 5,
         comment: `View đẹp ,không gian sang trọng. Nhìn được toàn cảnh thành phố , đa dạng về món ăn như món Singapore, Malaysia , Việt Nam, ... Luôn là sự lựa chọn hàng đầu cho các cuộc gặp gỡ gia đình, bạn bè hoặc đi một mình cũng rất ok.`,
@@ -158,7 +159,8 @@ const dataComment = [
     },
     {
         id: 2,
-        avatar: require("../resource/images/avatar.png"),
+        avatar: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743',
+
         name: `Nguyễn Văn Thông Đít`,
         star: 2,
         comment: `View đẹp ,không gian sang trọng. Nhìn được toàn cảnh thành phố , đa dạng về món ăn như món Singapore, Malaysia , Việt Nam, ... Luôn là sự lựa chọn hàng đầu cho các cuộc gặp gỡ gia đình, bạn bè hoặc đi một mình cũng rất ok.`,
@@ -166,7 +168,7 @@ const dataComment = [
     },
     {
         id: 3,
-        avatar: require("../resource/images/avatar.png"),
+        avatar: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/avt.png?alt=media&token=4d78d6ff-96e0-4c3e-bc8a-1ada70e08743',
         name: `Nguyễn Văn Thông Đít`,
         star: 3,
         comment: `View đẹp ,không gian sang trọng. Nhìn được toàn cảnh thành phố , đa dạng về món ăn như món Singapore, Malaysia , Việt Nam, ... Luôn là sự lựa chọn hàng đầu cho các cuộc gặp gỡ gia đình, bạn bè hoặc đi một mình cũng rất ok.`,
