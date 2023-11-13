@@ -26,11 +26,11 @@ const ItemListHotel: React.FC<Item> = (props: any) => {
                         <Text style={styles.nameHotel}>{nameHotel}</Text>
                         <View style={{ flexDirection: 'row' }}>
                             <Image source={{ uri: RATING }} />
-                            <Text style={{ marginLeft: 60 }}>{countRating} đánh giá</Text>
+                            <Text style={{marginLeft:12, fontWeight:'500'}}>{countRating} đánh giá</Text>
                         </View>
                         <View style={{ flexDirection: 'row' }}>
                             <Image source={{ uri: ICON_MARKER2 }} />
-                            <Text style={{ width: '75%', marginStart: 5 }}>{location}</Text>
+                            <Text style={{marginLeft:12, fontWeight:'500'}}>{location}</Text>
                         </View>
                         <View style={{ justifyContent: 'flex-end' }}>
                             <Text style={styles.price}>{price} đ</Text>
@@ -49,34 +49,39 @@ export default ItemListHotel
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     },
     item: {
         flexDirection: 'row',
         marginTop: 10,
-        marginHorizontal: 10,
         backgroundColor: 'white',
         borderRadius: 10,
         height: 'auto',
+        alignItems:'center',
+        marginHorizontal:10
 
     },
     rightContent: {
-        marginHorizontal: 10,
-        marginRight: 10
+        width:'66%',
     },
     nameHotel: {
-        fontSize: 18,
+        fontSize: 16,
         color: 'black',
         fontWeight: 'bold',
-        width: '80%'
+        textAlign:'center',
     },
     price: {
         fontSize: 18,
         color: 'blue',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginRight:18,
+        fontWeight:'bold'
     },
     img: {
-        width: 116,
-        height: 140
+        width: 120,
+        height: 120,
+        marginLeft:5,
+        borderRadius:10,
+        marginVertical:5
     }
 });

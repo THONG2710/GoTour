@@ -10,63 +10,63 @@ const Hotel = () => {
     )
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-            <Image style={styles.img} source={require('../../../../img/background2.png')} />
-            <View style={styles.book}>
-                <View style={styles.item1}>
-                    <Image source={{ uri: ICON_MARKER2 }} style={styles.icon_Item} />
-                    <TouchableOpacity>
-                        <Text style={styles.btnChoose}>Nhập/Chọn điểm đến</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.item1}>
-                    <Image source={{ uri: ICON_USER2 }} style={styles.icon_Item} />
-                    <TouchableOpacity>
-                        <Text style={styles.txtPerson}>
-                            <Text style={styles.numberPerson}>1 </Text>
-                            phòng
-                            <Text style={styles.numberPerson}> 2 </Text>
-                            người lớn
-                            <Text style={styles.numberPerson}> 0 </Text>
-                            trẻ em
+            <View style={styles.container}>
+                <Image style={styles.img} source={require('../../../../img/background2.png')} />
+                <View style={styles.book}>
+                    <View style={styles.item1}>
+                        <Image source={{ uri: ICON_MARKER2 }} style={styles.icon_Item} />
+                        <TouchableOpacity>
+                            <Text style={styles.btnChoose}>Nhập/Chọn điểm đến</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.item1}>
+                        <Image source={{ uri: ICON_USER2 }} style={styles.icon_Item} />
+                        <TouchableOpacity>
+                            <Text style={styles.txtPerson}>
+                                <Text style={styles.numberPerson}>1 </Text>
+                                phòng
+                                <Text style={styles.numberPerson}> 2 </Text>
+                                người lớn
+                                <Text style={styles.numberPerson}> 0 </Text>
+                                trẻ em
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.item1}>
+                        <Image source={{ uri: ICON_STAR }} style={styles.icon_Item} />
+                        <TouchableOpacity>
+                            <Text style={styles.txtPerson}>0 sao</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.item1}>
+                        <Image source={{ uri: ICON_COIN }} style={styles.icon_Item} />
+                        <TouchableOpacity>
+                            <Text style={styles.txtPerson}>0đ </Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <TouchableOpacity style={styles.btn}>
+                        <Text style={styles.btn_Find}>
+                            Tìm
                         </Text>
                     </TouchableOpacity>
-                </View>
-                <View style={styles.item1}>
-                    <Image source={{ uri: ICON_STAR }} style={styles.icon_Item} />
-                    <TouchableOpacity>
-                        <Text style={styles.txtPerson}> 0 sao</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.item1}>
-                    <Image source={{ uri: ICON_COIN }} style={styles.icon_Item} />
-                    <TouchableOpacity>
-                        <Text style={styles.txtPerson}>0đ </Text>
-                    </TouchableOpacity>
-                </View>
 
-                <TouchableOpacity style={styles.btn}>
-                    <Text style={styles.btn_Find}>
-                        Tìm
-                    </Text>
-                </TouchableOpacity>
-
+                </View>
+                <View style={styles.containerTitle}>
+                    <Image source={{ uri: ICON_HOTEL }} style={styles.icon_hotel} />
+                    <Text style={styles.title}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
+                </View>
+                <View >
+                    <FlatList
+                        data={DATA}
+                        renderItem={render}
+                        keyExtractor={item => item.id}
+                        showsVerticalScrollIndicator={false}
+                        scrollEnabled={false}
+                        style={styles.flatlist}
+                    />
+                </View>
             </View>
-            <View style={styles.containerTitle}>
-                <Image source={{ uri: ICON_HOTEL }} style={styles.icon_hotel} />
-                <Text style={styles.title}>Hãy lựa chọn khách sạn phù hợp cho bạn</Text>
-            </View>
-            <View >
-                <FlatList
-                    data={DATA}
-                    renderItem={render}
-                    keyExtractor={item => item.id}
-                    showsVerticalScrollIndicator={false}
-                    scrollEnabled={false}
-                    style={styles.flatlist}
-                />
-            </View>
-        </View>
         </ScrollView>
     )
 }
@@ -75,7 +75,8 @@ export default Hotel
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        paddingBottom:20
     },
     img: {
         position: 'absolute',
@@ -99,13 +100,14 @@ const styles = StyleSheet.create({
     },
     item1: {
         flexDirection: 'row',
+        alignItems: 'center'
     },
     btn: {
         backgroundColor: '#F7DEC6',
         marginTop: 10,
         padding: 10,
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10
+        borderRadius: 10,
+        height: 50
 
     },
     item3: {
@@ -124,16 +126,16 @@ const styles = StyleSheet.create({
 
     },
     icon_Item: {
-        width: 25,
-        height: 25
+        width: 20,
+        height: 20
     },
     btnChoose: {
-        fontSize: 18,
+        fontSize: 16,
         color: 'black',
         margin: 5
     },
     txtPerson: {
-        fontSize: 18,
+        fontSize: 16,
         color: 'black',
         margin: 5
     },
@@ -142,35 +144,39 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     btn_Find: {
-        fontSize: 25,
+        fontSize: 20,
         color: 'orange',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight:'bold'
     },
     containerTitle: {
         flexDirection: 'row',
         paddingHorizontal: 15,
-      
-        width:'95%'
+
+        width: '95%'
     },
     title: {
-        fontSize: 24,
+        fontSize: 20,
         color: 'black',
         fontWeight: 'bold',
         marginStart: 5,
-        marginTop: -5
+        marginTop: -5,
+        marginHorizontal:20,
+        marginLeft:10,
+        marginBottom:10
     },
     icon_hotel: {
         width: 40,
         height: 40
     },
-    flatlist:{
-        backgroundColor:'#EBEBEB'
+    flatlist: {
+        backgroundColor: '#EBEBEB'
     }
 })
 const DATA = [
-    { id: '1', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 233, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "4.462.000" },
-    { id: '2', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 244, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "5.462.000" },
-    { id: '3', nameHotel: "Seashell Hotel&Spa Phú Quốc", countRating: 255, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "6.462.000" },
+    { id: '1', nameHotel: "Seashell Hotel & Spa Phú Quốc", countRating: 233, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "4.462.000" },
+    { id: '2', nameHotel: "Seashell Hotel & Spa Phú Quốc", countRating: 244, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "5.462.000" },
+    { id: '3', nameHotel: "Seashell Hotel & Spa Phú Quốc", countRating: 255, location: "253 Phạm Văn Thuận, Tân Mai, Thành phố Biên Hòa, Đồng Nai, Việt Nam", price: "6.462.000" },
 
 
 
