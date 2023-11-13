@@ -1,10 +1,38 @@
-import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
-import styles from './styles'
-import { Input } from '@rneui/base'
-import FavouriteList from '../Components/FavouriteList'
-import { AVATAR, AVT, BUS, HOTEL, ICON_BELL, ICON_CAMPING, ICON_ISLAND, ICON_MARKER, ICON_MENU, ICON_MOUNTAIN, ICON_SEA, ICON_SEARCH, IMAGE1, IMAGE2, IMAGE3, LOGO_GOTOUR, SHIP, TOURPLACE, TRAVELLING, TXTTITLE } from '../../../../resource/assets/images'
-import { HomeMainProp } from './type'
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useEffect} from 'react';
+import styles from './styles';
+import {Input} from '@rneui/base';
+import FavouriteList from '../Components/FavouriteList';
+import {
+  AVATAR,
+  AVT,
+  BUS,
+  HOTEL,
+  ICON_BELL,
+  ICON_CAMPING,
+  ICON_ISLAND,
+  ICON_MARKER,
+  ICON_MENU,
+  ICON_MOUNTAIN,
+  ICON_SEA,
+  ICON_SEARCH,
+  IMAGE1,
+  IMAGE2,
+  IMAGE3,
+  LOGO_GOTOUR,
+  SHIP,
+  TOURPLACE,
+  TRAVELLING,
+  TXTTITLE,
+} from '../../../../resource/assets/images';
+import {HomeMainProp} from './type';
 
 const MainHome: React.FC<HomeMainProp> = props => {
   const [text, onChangeText] = React.useState('');
