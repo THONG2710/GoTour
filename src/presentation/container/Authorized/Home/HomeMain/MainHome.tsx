@@ -6,7 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './styles';
 import {Input} from '@rneui/base';
 import FavouriteList from '../Components/FavouriteList';
@@ -36,6 +36,7 @@ import {HomeMainProp} from './type';
 
 const MainHome: React.FC<HomeMainProp> = props => {
   const [text, onChangeText] = React.useState('');
+  const [listTour, setListTour] = useState([]);
   const {navigation} = props;
 
   const onMoveToListTour = () => {
@@ -47,12 +48,22 @@ const MainHome: React.FC<HomeMainProp> = props => {
   };
 
   useEffect(() => {
-    let url = 'http://192.168.1.12:3000/api/tour/getAllTours';
-    fetch(url)
-      .then(response => response.json())
-    //   .then(response => setData(response.products))
-    //   .catch(err => alert(err));
-  }, []);
+    const fetchData = async () => {
+      try {
+        let url = 'http://192.168.1.13:3000/api/tour/getAllTours';
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: {'Content-Type': 'application/json'},
+        });
+        const res = await response.json();
+        setListTour(res.tours)
+        // return res;
+      } catch (error) {
+        console.log('login error: ' + error);
+      }
+    };
+    fetchData();
+  }, [listTour]);
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -128,7 +139,7 @@ const MainHome: React.FC<HomeMainProp> = props => {
             <Text style={styles.seeAll}>See All</Text>
           </TouchableOpacity>
         </View>
-        <FavouriteList />
+        <FavouriteList listTour={listTour} navigation={navigation} />
         {/* SERVICE */}
         <Text style={styles.titleTop}>Dịch vụ</Text>
         <View style={styles.service}>

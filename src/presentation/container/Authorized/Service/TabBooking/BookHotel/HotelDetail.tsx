@@ -87,7 +87,7 @@ const HotelDetail = () => {
                         (
                         {(dataComment.reduce((total, item) => total + item.star, 0) / dataComment.length).toFixed(1)}
                     </Text>
-                    <Image style={[styles.imgStarComment, { width: 20, height: 20 }]} source={require('../resource/images/star.png')} />
+                    {/* <Image style={[styles.imgStarComment, { width: 20, height: 20 }]} source={require('../resource/images/star.png')} /> */}
                     <Text style={styles.txtCommentTittle}>)</Text>
 
                 </View>

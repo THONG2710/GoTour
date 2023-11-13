@@ -52,8 +52,8 @@ function App(): JSX.Element {
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
     // <DetailSocial></DetailSocial>
-    // <RootNavigation></RootNavigation>
-    <HotelDetail></HotelDetail>
+    <RootNavigation></RootNavigation>
+    // <HotelDetail></HotelDetail>
   ); 
 }
 
