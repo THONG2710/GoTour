@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ADDRESS, ICON_PHONE, ICON_STAR, ICON_STAR3 } from "../../../../../resource/assets/images";
 
 const HotelDetail = () => {
 
@@ -19,23 +20,23 @@ const HotelDetail = () => {
                 <View style={styles.boxHeader}>
                     <Text style={styles.txtName}>{dataHotel.nameHotel}</Text>
                     <View style={{ flexDirection: 'row' }}>
-                        <Image source={require("../resource/images/address.png")} style={styles.iconAddress} />
+                        <Image source={{uri: ADDRESS}} style={styles.iconAddress} />
                         <Text style={styles.txtAddress}>{dataHotel.addressHotel}</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
-                        <Image source={require("../resource/images/phonewhite.png")} style={styles.iconPhone} />
+                        <Image source={{uri: ICON_PHONE}} style={styles.iconPhone} />
                         <Text style={styles.txtPhone}>{dataHotel.phoneHotel}</Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         {
                             Array.from({ length: dataHotel.starHotel }, (_, index) => (
-                                <Image key={index} style={styles.imgStarHotel} source={require('../resource/images/star.png')} />
+                                <Image key={index} style={styles.imgStarHotel} source={{uri: ICON_STAR}} />
                             ))
 
                         }
                         {
                             Array.from({ length: 5 - dataHotel.starHotel }, (_, index) => (
-                                <Image key={index} style={styles.imgStarHotel} source={require('../resource/images/starwhite.png')} />
+                                <Image key={index} style={styles.imgStarHotel} source={{uri:ICON_STAR3}} />
                             ))
                         }
                     </View>

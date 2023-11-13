@@ -6,11 +6,10 @@ import { DetailTourProp } from './type';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const DetailTour: React.FC<DetailTourProp> = (props) => {
+const DetailTour: React.FC<DetailTourProp> = () => {
     interface Props {
         item: { textTitle: string, textContentDetail: string }
     }
-    const {navigation} = props;
     return (
 
         // CONTAINER
@@ -101,7 +100,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
 
                         <Text style={styles.textScheduleDetail}>Nhận xét</Text>
 
-                        <View style={{backgroundColor:'red', height:10000}}>
+                        <View style={{ height:10000}}>
                             {dataFeedBack.map((item) => (
                                 <View key={item._id}>
                                     <View style={styles.feedBack}>
@@ -126,9 +125,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                 </View>
 
                 <View style={styles.footer}>
-                    <TouchableOpacity style={styles.btnBuyTickets}>
-                        <Text style={styles.textBuyTicket}>Mua Vé Nào</Text>
-                    </TouchableOpacity>
+                 
                 </View>
             </ScrollView>
         </View >
@@ -460,7 +457,7 @@ const styles = StyleSheet.create({
 // FOOTER
     footer:
     {
-        paddingBottom:120,
+        paddingBottom:100,
         alignItems:'center',
         backgroundColor:'#fff'
     },
