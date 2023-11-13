@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ICON_HEART4, ICON_MARKER4, ICON_STAR2, NUIBADEN } from '../../resource/assets/images';
-import { TourModel } from '../../../data/Entities/TourModel';
+import { TourModel } from '../../../domain/Entities/TourModel';
 
 
 interface Item {

@@ -21,8 +21,14 @@ import {
   LOGO_GOTOUR,
 } from '../../../../resource/assets/images';
 import {LoginProp} from './type';
-import { useAppDispatch, useAppSelector } from '../../../../shared-state/Hook/Hook';
-import { SET_ISLOGGED } from '../../../../shared-state/Action/Authentications';
+import {
+  useAppDispatch,
+  useAppSelector,
+} from '../../../../shared-state/Hook/Hook';
+import {
+  SAVE_USER,
+  SET_ISLOGGED,
+} from '../../../../shared-state/Action/Authentications';
 
 const Login: React.FC<LoginProp> = props => {
   const [password, setPassword] = useState('');
@@ -30,13 +36,6 @@ const Login: React.FC<LoginProp> = props => {
   const [showPassword, setShowPassword] = useState(false);
   const {navigation} = props;
   const dispatch = useAppDispatch();
-  const islogged = useAppSelector(state => state.Authentication.isLogged)
-
-  // useEffect(() => {
-  //   console.log(islogged);
-    
-  // }, [islogged])
-  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -58,9 +57,9 @@ const Login: React.FC<LoginProp> = props => {
       }
     };
     const res = await fetchData(data);
-    console.log(res);
+    dispatch(SAVE_USER(res.user));
     if (res.result) {
-      dispatch(SET_ISLOGGED(true))
+      dispatch(SET_ISLOGGED(true));
       navigation.navigate('authorized');
     }
   };

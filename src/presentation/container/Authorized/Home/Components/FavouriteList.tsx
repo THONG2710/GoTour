@@ -2,7 +2,7 @@ import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import styles from './stylesList';
 import ItemFavourite from '../../../../component/Items/itemFavourite';
-import { TourModel } from '../../../../../data/Entities/TourModel';
+import { TourModel } from '../../../../../domain/Entities/TourModel';
 interface FavouriteListItemProps {
   navigation: any;
   listTour: TourModel[];

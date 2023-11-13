@@ -23,9 +23,11 @@ import {
 import { ProfileProp } from './type';
 import ItemCenter from '../../../../component/Items/ItemCenterTitle';
 import ItemCenterContent from '../../../../component/Items/ItemCenterContent';
+import { useAppSelector } from '../../../../shared-state/Hook/Hook';
 
 const Profile: React.FC<ProfileProp> = (props) => {
   const {navigation} = props;
+  const user = useAppSelector(state => state.Authentication.myAccount);
 
   const onMoveToHistory = () => {
     navigation.navigate('history');
@@ -54,9 +56,9 @@ const Profile: React.FC<ProfileProp> = (props) => {
         <View style={styles.row}>
           <View style={styles.avtHeader}>
             <View style={styles.headerTitle}>
-              <Image style={styles.imgAvatar} source={{ uri: AVT }}></Image>
+              <Image style={styles.imgAvatar} source={{ uri: user.avatar }}></Image>
               <View style={styles.grPoint}>
-                <Text style={styles.textPoint}>102 Điểm</Text>
+                <Text style={styles.textPoint}>{user.score.toString()} Điểm</Text>
                 <Image style={styles.imgPoint} source={{ uri: MEDAL_S }}></Image>
               </View>
             </View>
@@ -67,7 +69,7 @@ const Profile: React.FC<ProfileProp> = (props) => {
         </View>
         <View style={styles.grText}>
           <Text style={styles.text}>Xin Chào </Text>
-          <Text style={styles.textName}>Nguyễn Văn Thông</Text>
+          <Text style={styles.textName}>{user.userName}</Text>
         </View>
         <Pressable style={styles.grProfile} onPress={onMoveToEditProfile}>
           <Text style={styles.text}>Thông tin cá nhân</Text>
@@ -174,6 +176,7 @@ const styles = StyleSheet.create({
     marginLeft: -30,
     width: 70,
     height: 70,
+    borderRadius: 50
   },
 
   headerTitle:

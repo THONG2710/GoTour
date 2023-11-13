@@ -33,11 +33,18 @@ import {
   TXTTITLE,
 } from '../../../../resource/assets/images';
 import {HomeMainProp} from './type';
+import { useAppSelector } from '../../../../shared-state/Hook/Hook';
 
 const MainHome: React.FC<HomeMainProp> = props => {
   const [text, onChangeText] = React.useState('');
   const [listTour, setListTour] = useState([]);
   const {navigation} = props;
+  const user = useAppSelector(state => state.Authentication.myAccount)
+
+  useEffect(() => {
+    console.log(user);
+    
+  }, [user])
 
   const onMoveToListTour = () => {
     navigation.navigate('s_listTour');
@@ -80,7 +87,7 @@ const MainHome: React.FC<HomeMainProp> = props => {
               <Image source={{uri: ICON_BELL}} style={styles.icon_bell} />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image source={{uri: AVT}} style={styles.avatar} />
+              <Image source={{uri: user.avatar}} style={styles.avatar} />
             </TouchableOpacity>
           </View>
         </View>

@@ -1,4 +1,4 @@
-import { TourModel } from "../../data/Entities/TourModel";
+import { TourModel } from "../../domain/Entities/TourModel";
 
 export type HomeParamlist = {
     s_home: undefined,

@@ -4,13 +4,14 @@ import React from 'react'
 interface InputFieldProps{
   image: string;
   placeholder: string;
+  value?: string;
 }
 const InputField: React.FC<InputFieldProps> = (props) => {
-  const {image, placeholder} = props;
+  const {image, placeholder, value} = props;
   return (
     <View style={styles.gr_input}>
       <Image style={styles.iconIP} source={{uri: image}}></Image>
-      <TextInput style={styles.input} placeholder={placeholder} />
+      <TextInput style={styles.input} placeholder={placeholder} value={value}></TextInput>
     </View>
   )
 }
