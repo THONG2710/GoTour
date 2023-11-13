@@ -2,11 +2,14 @@ import { View, Text,FlatList } from 'react-native'
 import React from 'react'
 import styles from './stylesList'
 import ItemFavourite from '../../../../component/Items/itemFavourite'
+interface FavouriteListItemProps {
+  navigation: any;
+}
 
-
-const FavouriteList:React.FC = () => {
+const FavouriteList:React.FC<FavouriteListItemProps> = (props) => {
+  const{navigation} = props
   const render = ({ item }: { item: (typeof DATA)[0] }) => (
-    <ItemFavourite {...item} />
+    <ItemFavourite navigation={navigation} {...item} />
 
 )
   return (

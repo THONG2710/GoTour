@@ -101,9 +101,9 @@ export const BACKGROUND_RATING = 'https://firebasestorage.googleapis.com/v0/b/go
 export const NHATRANG = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/nhatrang.png?alt=media&token=03ea3eb5-9d1f-4826-879c-d052509591a0&_gl=1*7vv4r*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDMyMjAuNDIuMC4w';
 export const ICON_STAR4 ='https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star4.png?alt=media&token=5e39d340-c45f-4b84-9877-b05eedadc647&_gl=1*5knbpb*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDMzNDUuNDAuMC4w';
 export const ICON_STAR3 = 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_start3.png?alt=media&token=0a4ab561-851b-4386-acd2-7e70d8a18985&_gl=1*1fdomax*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODk0MTAyOC45Ni4xLjE2OTg5NDM1MDkuMjAuMC4w';
-
-
-
-
-
-
+export const BAR_SCHEDULE = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/barSchedule.png?alt=media&token=6e394bf8-f2aa-4681-b979-055dace53611"
+export const ICON_ADDRESS = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/address.png?alt=media&token=7c09bcc4-00ca-4236-a300-96b9d9a0a6cc"
+export const ICON_START_HOTEL = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_star_hotel.png?alt=media&token=e60d0b70-14ae-4d8d-a59d-ac9fd1ab57cc"
+export const IMG_DETAIL_TOUR = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_detail_tour.png?alt=media&token=16bff698-680a-4e47-b54f-1cf57b9614d7"
+export const IMG_HOTEL ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_hotel.png?alt=media&token=27173794-b789-408c-a2b2-173ca9564904"
+export const VEHICLE ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/plane.png?alt=media&token=b5340dd2-1aee-4e40-add3-be88ec8fffd5"

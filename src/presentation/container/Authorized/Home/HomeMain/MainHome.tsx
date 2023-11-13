@@ -8,7 +8,7 @@ import { HomeMainProp } from './type'
 
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
-    const {navigation} = props;
+    const { navigation } = props;
 
     const onMoveToListTour = () => {
         navigation.navigate('s_listTour');
@@ -17,6 +17,8 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
     const onMoveToService = () => {
         navigation.navigate('Service');
     };
+
+
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -92,10 +94,10 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                 <View style={styles.title}>
                     <Text style={styles.favourite}>Yêu thích</Text>
                     <TouchableOpacity>
-                    <Text style={styles.seeAll}>See All</Text>
+                        <Text style={styles.seeAll}>See All</Text>
                     </TouchableOpacity>
                 </View>
-                <FavouriteList />
+                <FavouriteList navigation={navigation} />
                 {/* SERVICE */}
                 <Text style={styles.titleTop}>Dịch vụ</Text>
                 <View style={styles.service}>

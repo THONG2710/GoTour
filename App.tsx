@@ -24,6 +24,7 @@ import DetailTour from './src/presentation/container/Authorized/Home/DetailTour/
 import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
 import Editprofile from './src/presentation/container/Authorized/Account/EditProfile/EditProfile';
 import RootNavigation from './src/presentation/navigation/RootNavigation';
+import HotelDetail from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/HotelDetail';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -51,7 +52,8 @@ function App(): JSX.Element {
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
     // <DetailSocial></DetailSocial>
-    <RootNavigation></RootNavigation>
+    // <RootNavigation></RootNavigation>
+    <HotelDetail></HotelDetail>
   ); 
 }
 
