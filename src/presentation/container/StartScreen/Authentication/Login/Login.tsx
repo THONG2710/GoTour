@@ -36,6 +36,8 @@ const Login: React.FC<LoginProp> = props => {
   const [showPassword, setShowPassword] = useState(false);
   const {navigation} = props;
   const dispatch = useAppDispatch();
+  const account = useAppSelector(state => state.Authentication.myAccount)
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -44,7 +46,9 @@ const Login: React.FC<LoginProp> = props => {
     let data = {email, password};
     const fetchData = async (data: {email: string; password: string}) => {
       try {
-        let url = 'http://192.168.1.13:3000/api/user/login';
+        // let url = 'http://192.168.1.13:3000/api/user/login';
+        let url = 'http://192.168.1.10:3000/api/user/login';
+
         const response = await fetch(url, {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -61,6 +65,7 @@ const Login: React.FC<LoginProp> = props => {
     if (res.result) {
       dispatch(SET_ISLOGGED(true));
       navigation.navigate('authorized');
+      
     }
   };
   const register = () => {
