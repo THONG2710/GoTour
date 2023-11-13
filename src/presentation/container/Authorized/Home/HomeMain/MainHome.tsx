@@ -1,5 +1,5 @@
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './styles'
 import { Input } from '@rneui/base'
 import FavouriteList from '../Components/FavouriteList'
@@ -9,7 +9,8 @@ import { HomeMainProp } from './type'
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
     const { navigation } = props;
-    
+
+    const [listTour, setListTour] = useState([])
 
     const onMoveToListTour = () => {
         navigation.navigate('s_listTour');
@@ -18,6 +19,25 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
     const onMoveToService = () => {
         navigation.navigate('Service');
     };
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let url = 'http://192.168.1.10:3000/api/tour/getAllTours';
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                const res = await response.json();
+                setListTour(res.tours)
+                // return res;
+            } catch (error) {
+                console.log('login error: ' + error);
+            }
+        };
+        fetchData();
+    }, [listTour]);
 
 
 

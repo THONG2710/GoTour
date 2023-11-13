@@ -10,7 +10,7 @@ const FavouriteList:React.FC<FavouriteListItemProps> = (props) => {
   const{navigation} = props
   
   const render = ({ item }: { item: (typeof DATA)[0] }) => (
-    <ItemFavourite navigation={navigation} {...item} />
+    <ItemFavourite data={} navigation={navigation} {...item} />
 
 )
   return (
