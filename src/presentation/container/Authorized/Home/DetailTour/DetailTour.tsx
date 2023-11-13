@@ -19,7 +19,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {/* HEADER */}
                 <View style={styles.header}>
-                    <Image source={{ uri: IMG_DETAIL_TOUR }} style={styles.imgHeader}></Image>
+                    <Image source={{ uri: data.images }} style={styles.imgHeader}></Image>
                 </View>
 
                 <View style={styles.center}>
