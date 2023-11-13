@@ -1,5 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
+import { UserModel } from "../../../domain/Entities/UserModel";
 
 const SET_ISLOGGED = createAction<boolean, 'Authentication/isLogged'>('Authentication/isLogged');
 
-export {SET_ISLOGGED}
+const SAVE_USER = createAction<UserModel, 'Authentication/saveUser'>('Authentication/saveUser');
+export {SET_ISLOGGED, SAVE_USER}

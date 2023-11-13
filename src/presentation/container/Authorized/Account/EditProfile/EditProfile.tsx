@@ -7,8 +7,10 @@ import { RadioButtonProps, RadioGroup } from 'react-native-radio-buttons-group'
 import Ripple from 'react-native-material-ripple'
 import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../../resource/assets/String/VNString'
 import { ADDRESS, AVT, CHOOSE_AVT, CODE, EDIT_USERNAME, EMAIL } from '../../../../resource/assets/images'
+import { useAppSelector } from '../../../../shared-state/Hook/Hook'
 
 const Editprofile = () => {
+    const user = useAppSelector(state => state.Authentication.myAccount);
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
         {
             id: '1', // acts as primary key, should be unique and non-empty string
@@ -29,19 +31,19 @@ const Editprofile = () => {
         <View style={styles.container}>
             <LinearGradient style={styles.header} colors={['#FF380D', '#F9B889', '#FFEBDD']}>
                 <View>
-                    <Image style={styles.imgAvatar} source={{uri: AVT}}></Image>
+                    <Image style={styles.imgAvatar} source={{uri: user.avatar}}></Image>
                     <Image style={styles.chooseAvatar} source={{uri: CHOOSE_AVT}}></Image>
                 </View>
-                <Text style={styles.textHeader}>Nguyễn Trường</Text>
+                <Text style={styles.textHeader}>{user.userName}</Text>
             </LinearGradient>
 
             {/* FOOTER FORM */}
             <View style={styles.footer}>
                 <Text style={styles.textTitle}>{TEXT_TITLE_EDITPROFILE_VN}</Text>
-                <InputField image={EDIT_USERNAME} placeholder='Enter Your Name'></InputField>
-                <InputField image={EMAIL} placeholder='Enter Your Email'></InputField>
-                <InputField image={CODE} placeholder='Enter Your Code'></InputField>
-                <InputField image={ADDRESS} placeholder='Enter Your Address'></InputField>
+                <InputField image={EDIT_USERNAME} placeholder='Enter Your Name' value={user.userName}></InputField>
+                <InputField image={EMAIL} placeholder='Enter Your Email' value={user.email}></InputField>
+                <InputField image={CODE} placeholder='Enter Your Code' value={user.cccd}></InputField>
+                <InputField image={ADDRESS} placeholder='Enter Your Address' value={user.address}></InputField>
                 <RadioGroup
                     containerStyle={{ marginLeft: 10, marginTop: 10 }}
                     layout='row'
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         position: 'relative',
+        borderRadius: 50,
     },
 
     chooseAvatar:

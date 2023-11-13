@@ -6,10 +6,11 @@ import { DetailTourProp } from './type';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const DetailTour: React.FC<DetailTourProp> = () => {
+const DetailTour: React.FC<DetailTourProp> = (props) => {
     interface Props {
         item: { textTitle: string, textContentDetail: string }
     }
+    const data = props.route.params.data;
     return (
 
         // CONTAINER
@@ -18,23 +19,23 @@ const DetailTour: React.FC<DetailTourProp> = () => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {/* HEADER */}
                 <View style={styles.header}>
-                    <Image source={{ uri: IMG_DETAIL_TOUR }} style={styles.imgHeader}></Image>
+                    <Image source={{ uri: data.images }} style={styles.imgHeader}></Image>
                 </View>
 
                 <View style={styles.center}>
                     <View style={styles.centerTitle}>
                         {/* GRROUP CENTER LEFT */}
                         <View style={styles.grCenterLeft}>
-                            <Text style={styles.textName}>Hà Nội - Không phải bây giờ{`\n`}thì bao giờ</Text>
+                            <Text style={styles.textName}>{data.tourName}</Text>
                             <View style={styles.overallSchedule}>
                                 <View style={styles.grSchedule}>
                                     <Image style={styles.imgIconCenter} source={{ uri: ICON_CALENDAR }}></Image>
                                     <View style={styles.grTextSchedule}>
                                         <View style={styles.grDaySchedule}>
-                                            <Text style={styles.textSchedule}>4/11/2023 - </Text>
-                                            <Text style={styles.textSchedule}>4/14/2023</Text>
+                                            <Text style={styles.textSchedule}>{data.departureDay} - </Text>
+                                            <Text style={styles.textSchedule}>{data.endDate}</Text>
                                         </View>
-                                        <Text style={styles.textSchedule}>Thời gian 3 ngày</Text>
+                                        <Text style={styles.textSchedule}>Thời gian {data.numberOfDays.toString()} ngày {data.numberOfNights.toString()} đêm</Text>
                                     </View>
                                 </View>
 
@@ -43,9 +44,9 @@ const DetailTour: React.FC<DetailTourProp> = () => {
                                     <View style={styles.grTextSchedule}>
                                         <View style={styles.grDaySchedule}>
                                             <Text style={styles.textSchedule}>Khởi hành:</Text>
-                                            <Text style={styles.textSchedule}>TP:HCM</Text>
+                                            <Text style={styles.textSchedule}>{data.departureLocation}</Text>
                                         </View>
-                                        <Text style={styles.textSchedule}>Tập trung 15h, 4/11/2023</Text>
+                                        <Text style={styles.textSchedule}>Tập trung {data.departureDay}</Text>
                                     </View>
                                 </View>
                             </View>
@@ -53,8 +54,8 @@ const DetailTour: React.FC<DetailTourProp> = () => {
 
                         {/* // GROUP CENTER RIGHT */}
                         <View style={styles.grCenterRight}>
-                            <Text style={styles.price}>1.700.000VNĐ</Text>
-                            <Text style={styles.remainingTickets}>Số vé còn{`\n`}lại : 10</Text>
+                            <Text style={styles.price}>{data.price.toString()}VNĐ</Text>
+                            <Text style={styles.remainingTickets}>Số vé còn{`\n`}lại : {data.numberOfReservations.toString()}</Text>
                         </View>
                     </View>
 
