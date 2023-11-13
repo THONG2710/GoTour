@@ -20,7 +20,7 @@ import AuthorizedBottomNavigation from './src/presentation/navigation/Authorized
 import ItemBottomHome from './src/presentation/component/Items/ItemBottomHome';
 import Social from './src/presentation/container/Authorized/Social/Social';
 import Profile from './src/presentation/container/Authorized/Account/Profile/Profile';
-import DetailTour from './src/presentation/container/Authorized/Service/TabBooking/BookTour/DetailTour';
+import DetailTour from './src/presentation/container/Authorized/Home/DetailTour/DetailTour';
 import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
 import Editprofile from './src/presentation/container/Authorized/Account/EditProfile/EditProfile';
 import RootNavigation from './src/presentation/navigation/RootNavigation';

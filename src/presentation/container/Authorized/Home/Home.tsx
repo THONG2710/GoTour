@@ -8,6 +8,7 @@ import ListTour from './ListTour/ListTour';
 import {HomeProp} from './type';
 import AuthorizedBottomNavigation from '../../../navigation/AuthorizedBottomNavigation';
 import Booking from '../Service/Booking';
+import DetailTour from './DetailTour/DetailTour';
 
 const StackHome = createStackNavigator<HomeParamlist>();
 
@@ -16,6 +17,7 @@ const Home: React.FC<HomeProp> = () => {
     <StackHome.Navigator screenOptions={{headerShown: false}}>
       <StackHome.Screen name="s_home" component={MainHome} />
       <StackHome.Screen name="s_listTour" component={ListTour} />
+      <StackHome.Screen name='s_detailtour' component={DetailTour}/>
       {/* <StackHome.Screen name='s_booking' component={Booking}/> */}
     </StackHome.Navigator>
   );

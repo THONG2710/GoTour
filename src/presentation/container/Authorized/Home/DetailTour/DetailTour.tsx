@@ -1,14 +1,16 @@
 import { StyleSheet, Text, View, Image, FlatList, ScrollView, VirtualizedList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Dimensions } from 'react-native'
-import { AVT, BAR_SCHEDULE, ICON_ADDRESS, ICON_CALENDAR, ICON_START_HOTEL, IMG_DETAIL_TOUR, IMG_HOTEL, VEHICLE } from '../../../../../resource/assets/images';
+import { AVT, BAR_SCHEDULE, ICON_ADDRESS, ICON_CALENDAR, ICON_START_HOTEL, IMG_DETAIL_TOUR, IMG_HOTEL, VEHICLE } from '../../../../resource/assets/images';
+import { DetailTourProp } from './type';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const DetailTour = () => {
+const DetailTour: React.FC<DetailTourProp> = (props) => {
     interface Props {
         item: { textTitle: string, textContentDetail: string }
     }
+    const {navigation} = props;
     return (
 
         // CONTAINER
