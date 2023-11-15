@@ -5,10 +5,12 @@ import { Input } from '@rneui/base'
 import FavouriteList from '../Components/FavouriteList'
 import { AVATAR, AVT, BUS, HOTEL, ICON_BELL, ICON_CAMPING, ICON_ISLAND, ICON_MARKER, ICON_MENU, ICON_MOUNTAIN, ICON_SEA, ICON_SEARCH, IMAGE1, IMAGE2, IMAGE3, LOGO_GOTOUR, SHIP, TOURPLACE, TRAVELLING, TXTTITLE } from '../../../../resource/assets/images'
 import { HomeMainProp } from './type'
+import { useAppSelector } from '../../../../shared-state/Hook/Hook'
 
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
     const { navigation } = props;
+    const user = useAppSelector(state => state.Authentication.myAccount)
 
     const [listTour, setListTour] = useState([])
 
@@ -24,7 +26,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let url = 'http://192.168.1.10:3000/api/tour/getAllTours';
+                let url = 'http://192.168.1.32:3000/api/tour/getAllTours';
                 const response = await fetch(url, {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
@@ -56,7 +58,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                             <Image source={{ uri: ICON_BELL }} style={styles.icon_bell} />
                         </TouchableOpacity>
                         <TouchableOpacity>
-                            <Image source={{ uri: AVT }} style={styles.avatar} />
+                            <Image source={{ uri: user.avatar  }} style={styles.avatar} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -118,7 +120,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
                         <Text style={styles.seeAll}>See All</Text>
                     </TouchableOpacity>
                 </View>
-                <FavouriteList navigation={navigation} />
+                <FavouriteList listTour={listTour} navigation={navigation} />
                 {/* SERVICE */}
                 <Text style={styles.titleTop}>Dịch vụ</Text>
                 <View style={styles.service}>

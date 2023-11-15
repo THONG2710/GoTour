@@ -2,23 +2,25 @@ import { View, Text,FlatList } from 'react-native'
 import React from 'react'
 import styles from './stylesList'
 import ItemFavourite from '../../../../component/Items/itemFavourite'
+import { TourModel } from '../../../../../domain/Entities/TourModel';
 interface FavouriteListItemProps {
   navigation: any;
+  listTour: TourModel[];
 }
 
 const FavouriteList:React.FC<FavouriteListItemProps> = (props) => {
-  const{navigation} = props
+  const{navigation, listTour} = props
   
-  const render = ({ item }: { item: (typeof DATA)[0] }) => (
-    <ItemFavourite data={} navigation={navigation} {...item} />
+  const render = ({ item }: { item: TourModel}) => (
+    <ItemFavourite data={item} navigation={navigation} {...item} />
 
 )
   return (
     <View style={styles.container}>
       <FlatList
-        data={DATA}
+        data={listTour}
         renderItem={render}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item._id}
         showsHorizontalScrollIndicator={false}
         horizontal={true}
       />

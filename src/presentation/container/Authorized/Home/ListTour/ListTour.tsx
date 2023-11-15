@@ -8,27 +8,31 @@ import {
   FlatList,
   Dimensions,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
-import React, {useState, useRef} from 'react';
+import React, { useState, useRef } from 'react';
 import Ripple from 'react-native-material-ripple';
-import {Shadow} from 'react-native-shadow-2';
-import ItemMyFavourite from '../../../../component/Items/ItemTypeOfTravelMyFavourite';
+import { Shadow } from 'react-native-shadow-2';
+import ItemMyFavourite from '../../../../component/Items/ItemMyFavourite';
 import Carousel from 'react-native-snap-carousel';
 import ItemExploreMyFavourite from '../../../../component/Items/ItemExploreMyFavourite';
-import {ListTourProp, Props} from './type';
+import { ListTourProp, Props } from './type';
 import {
-    ANOTHER,
-    CAMP,
+  ANOTHER,
+  CAMP,
   ICON_BACK,
   ICON_BELL,
   ICON_CAMPING,
+  ICON_CART,
   ICON_EXPLORE,
   ICON_FIRE,
   ICON_HEART,
   ICON_ISLAND,
   ICON_MOUNTAIN,
+  ICON_NOHEART,
   ICON_SEA,
   ICON_SEARCH_BLACK,
+  IMG_FAVOURITE,
   IMG_FVR,
   ISLAND,
   MENU_MYFVR,
@@ -41,17 +45,18 @@ const SLIDE_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = SLIDE_WIDTH * 0.6;
 
 const ListTour: React.FC<ListTourProp> = () => {
-  function carouselCardItem({item, index}: Props) {
+  function carouselCardItem({ item, index }: Props) {
     return (
+
       <View style={styles.cardCarousel} key={index}>
-        <Image source={{uri: item.image}} style={styles.imageSlide}></Image>
+        <Image source={{ uri: item.image }} style={styles.imageSlide}></Image>
         <View style={styles.groupSlide}>
           <View>
             <View style={styles.groupHeader}>
               <Text style={styles.textAddress}>{item.name}</Text>
               <Image
-                style={{width: 24, height: 24}}
-                source={{uri: ICON_HEART}}></Image>
+                style={{ width: 24, height: 24 }}
+                source={{ uri: ICON_HEART }}></Image>
             </View>
             <Text style={styles.textTurn}>{item.turn}</Text>
           </View>
@@ -66,71 +71,103 @@ const ListTour: React.FC<ListTourProp> = () => {
     );
   }
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Image style={styles.imgHeader} source={{uri: IMG_FVR}}></Image>
-        <View style={styles.iconHeader}>
-          <Ripple>
-            <Image source={{uri: ICON_BACK}}></Image>
-          </Ripple>
-          <Ripple>
-            <Image source={{uri: ICON_BELL}}></Image>
-          </Ripple>
-        </View>
-        <Text style={styles.textHeader}>
-          Lựa chọn chuyến đi phù hợp {`\n`}cho bạn nào !!!
-        </Text>
-        <View style={styles.menuMyFVT}>
-          <Shadow
-            distance={1}
-            endColor={'#ff00ff10'}
-            offset={[20, 1]}
-            style={styles.findMyFavourite}>
-            <TextInput placeholder="Tìm kiếm ..."></TextInput>
-          </Shadow>
-          <Image style={styles.find} source={{uri: ICON_SEARCH_BLACK}}></Image>
-          <Image style={styles.imgMenu} source={{uri: MENU_MYFVR}}></Image>
-        </View>
-        <FlatList
-          style={{marginTop: 180, marginRight: 15}}
-          data={data}
-          renderItem={({item}) => <ItemMyFavourite item={item} />}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={item => item._id}
-          horizontal
-        />
-      </View>
+    <ScrollView>
 
-      <View style={styles.center}>
-        <View style={styles.titleCenter}>
-          <Text style={styles.textTitle}>Điểm đến yêu thích</Text>
-          <Image source={{uri: ICON_FIRE}}></Image>
-        </View>
-        <Carousel
-          data={dataSlide}
-          renderItem={carouselCardItem}
-          sliderWidth={SLIDE_WIDTH}
-          itemWidth={ITEM_WIDTH}
-          useScrollView={true}>
-          <Text style={{color: 'green', backgroundColor: 'red'}}>
-            Trường đẹp trai
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Image style={styles.imgHeader} source={{ uri: IMG_FAVOURITE }}></Image>
+          <View style={styles.iconHeader}>
+            <Ripple>
+              <Image style={{ width: 24, height: 24 }} source={{ uri: ICON_BACK }}></Image>
+            </Ripple>
+            <Ripple>
+              <Image style={{ width: 24, height: 24 }} source={{ uri: ICON_BELL }}></Image>
+            </Ripple>
+          </View>
+          <Text style={styles.textHeader}>
+            Lựa chọn chuyến đi phù hợp {`\n`}cho bạn nào !!!
           </Text>
-        </Carousel>
-      </View>
-
-      <View style={styles.footer}>
-        <View style={styles.titleCenter}>
-          <Text style={styles.textTitle}>Khám phá thêm</Text>
-          <Image source={{uri: ICON_EXPLORE}}></Image>
+          <View style={styles.menuMyFVT}>
+            <Shadow
+              distance={1}
+              endColor={'#ff00ff10'}
+              offset={[20, 1]}
+              style={styles.findMyFavourite}>
+              <TextInput placeholder="Tìm kiếm ..."></TextInput>
+            </Shadow>
+            <Image style={styles.find} source={{ uri: ICON_SEARCH_BLACK }}></Image>
+            <Image style={styles.imgMenu} source={{ uri: MENU_MYFVR }}></Image>
+          </View>
+          <FlatList
+            style={{ marginTop: 200}}
+            data={data}
+            renderItem={({ item }) => <ItemMyFavourite item={item} />}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={item => item._id}
+            horizontal
+          />
         </View>
-        <FlatList
-          data={dataExplore}
-          renderItem={({item}) => <ItemExploreMyFavourite item={item} />}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={item => item._id}
-        />
+
+        <View style={styles.center}>
+          <View style={styles.titleCenter}>
+            <Text style={styles.textTitle}>Điểm đến yêu thích</Text>
+            <Image style={{width:30, height:30, marginLeft:10}} source={{ uri: ICON_FIRE }}></Image>
+          </View>
+          <Carousel
+            data={dataSlide}
+            renderItem={carouselCardItem}
+            sliderWidth={SLIDE_WIDTH}
+            itemWidth={ITEM_WIDTH}
+            useScrollView={true}>
+            {/* <Text style={{ color: '#fff', backgroundColor: 'red' }}>
+              Trường đẹp trai
+            </Text> */}
+          </Carousel>
+        </View>
+
+        <View style={styles.footer}>
+          <View style={styles.titleCenter}>
+            <Text style={styles.textTitle}>Khám phá thêm</Text>
+            <Image source={{ uri: ICON_EXPLORE }}></Image>
+          </View>
+         
+          <View>
+            {dataExplore.map((item) => (
+              <View key={item._id}>
+                <View style={styles.discover}>
+                  <View>
+                    <Image style={styles.imageAddress} source={{ uri: SLIDE4 }}></Image>
+                  </View>
+                  <View>
+                    <View style={styles.groupHeader}>
+                      <Text style={styles.titleExplore}>{item.title}</Text>
+                      <TouchableOpacity>
+
+                        <Image style={styles.iconNoHeart} source={{ uri: ICON_NOHEART }}></Image>
+                      </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginLeft: 10 }}>
+                      <View>
+                        <Text style={{ color: 'red', fontWeight: '400', fontSize: 15 }}>{item.price}</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '500' }}>{item.turn}</Text>
+                      </View>
+                      <Text>{item.time}</Text>
+                    </View>
+
+                    <TouchableOpacity>
+                      <View style={{ flexDirection: 'row', borderRadius: 5, backgroundColor: '#ff7a00', alignItems: 'center', justifyContent: 'center', marginHorizontal: 25, marginTop: 10, paddingLeft: 10, padding: 3 }}>
+                        <Text style={{ color: '#fff', marginBottom: 3 }}>Đặt ngay</Text>
+                        <Image style={{ marginLeft: 5 }} source={{ uri: ICON_CART }}></Image>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -151,6 +188,7 @@ const styles = StyleSheet.create({
     width: '95%',
     borderRadius: 20,
     position: 'absolute',
+    height: 200
   },
 
   iconHeader: {
@@ -174,8 +212,8 @@ const styles = StyleSheet.create({
   menuMyFVT: {
     width: '90%',
     position: 'absolute',
-    bottom: 70,
     flexDirection: 'row',
+    bottom:70,
     justifyContent: 'space-around',
     alignItems: 'center',
   },
@@ -191,14 +229,19 @@ const styles = StyleSheet.create({
 
   imgMenu: {
     marginRight: 10,
+    width:50,
+    height:50
   },
 
   find: {
     marginRight: 35,
+    width: 20,
+    height: 20,
   },
 
   center: {
     flex: 0.3,
+    marginTop:20
   },
 
   titleCenter: {
@@ -225,7 +268,14 @@ const styles = StyleSheet.create({
   },
 
   textAddress: {
-    color: 'white',
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 15,
+  },
+
+  titleExplore:
+  {
+    color: '#000',
     fontWeight: 'bold',
     fontSize: 15,
   },
@@ -271,35 +321,70 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 0.3,
+    marginTop:10,
+    paddingBottom:30
   },
+
+  discover:
+  {
+    width: '95%',
+    height: 140,
+    marginLeft: 10,
+    marginTop: 15,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    elevation:10,
+    shadowColor:'#000'
+
+  },
+  imageAddress:
+  {
+    marginTop: 20,
+    marginLeft: 15,
+    width: 150,
+    height: 100,
+    borderRadius: 15
+  },
+
+  iconNoHeart:
+  {
+    marginLeft: 20,
+    marginTop: 5,
+    width:30,
+    height:30
+  }
 });
 
 const data = [
   {
     _id: '1',
     title: 'Núi',
-    image: MOUNTAIN,
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_moutain.png?alt=media&token=a816c546-71eb-4ca0-8531-a114a2e16cc9&_gl=1*8x8bub*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzQxNjguNDYuMC4w',
   },
 
   {
     _id: '2',
     title: 'Biển',
-    image: SEA,
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_sea.png?alt=media&token=a81fb8a3-33df-4b4e-8c25-d605fd8ac855&_gl=1*yglvo*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzQxOTEuMjMuMC4w',
   },
   {
     _id: '3',
     title: 'Đảo',
-    image: ISLAND,
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_sea.png?alt=media&token=a81fb8a3-33df-4b4e-8c25-d605fd8ac855&_gl=1*yglvo*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzQxOTEuMjMuMC4w',
+
   },
   {
     _id: '4',
     title: 'Cắm trại',
-    image: CAMP,
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_sea.png?alt=media&token=a81fb8a3-33df-4b4e-8c25-d605fd8ac855&_gl=1*yglvo*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzQxOTEuMjMuMC4w',
+
   },
   {
     _id: '5',
     title: 'Khác',
-    image: ANOTHER
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/icon_sea.png?alt=media&token=a81fb8a3-33df-4b4e-8c25-d605fd8ac855&_gl=1*yglvo*_ga*NzI0MjkxNDY1LjE2OTE0NjY1MTQ.*_ga_CW55HF8NVT*MTY5ODMzMjI0OS44My4xLjE2OTgzMzQxOTEuMjMuMC4w',
+
   },
 ];
 
@@ -307,8 +392,7 @@ const dataSlide = [
   {
     id: 1,
     name: 'Sapa - Fansipan',
-    image:
-      'https://scontent.xx.fbcdn.net/v/t1.15752-9/382311689_307788621862004_556719088667644762_n.png?_nc_cat=106&ccb=1-7&_nc_sid=aee45a&_nc_ohc=rXzX-1ml0UkAX9G5efA&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_e2o=f&oh=03_AdT8Gd7KFkwsZMwBqangHLaCITZIOh4mYjBqVDnDx41ZOA&oe=653F14D6',
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/exploremore.png?alt=media&token=5d2388a4-6b66-4826-9c8e-8327a970ab62',
     turn: '419 lượt đi',
     price: '12.190.000đ',
     time: '7N6Đ',
@@ -317,8 +401,7 @@ const dataSlide = [
   {
     id: 2,
     name: 'Sapa - Fansipan',
-    image:
-      'https://scontent.xx.fbcdn.net/v/t1.15752-9/379651312_913087497102379_9131171402212862606_n.png?_nc_cat=106&ccb=1-7&_nc_sid=aee45a&_nc_ohc=UVwPqeKFuI4AX_RAsQ8&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_e2o=f&oh=03_AdSjualEmNagrDHk3EIZqgzQ0YnvbJ4p3ZnZdmC8yJnmZA&oe=653F10B0',
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/exploremore.png?alt=media&token=5d2388a4-6b66-4826-9c8e-8327a970ab62',
     turn: '523 lượt đi',
     price: '14.190.000đ',
     time: '9N6Đ',
@@ -327,8 +410,7 @@ const dataSlide = [
   {
     id: 3,
     name: 'Sapa - Fansipan',
-    image:
-      'https://scontent.xx.fbcdn.net/v/t1.15752-9/384832603_3429519510630991_3804720237746780536_n.png?_nc_cat=107&ccb=1-7&_nc_sid=aee45a&_nc_ohc=qCODopoP_MsAX_a9XtT&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_e2o=f&oh=03_AdQydmL6mp6rIl1fPEGl3JW3ImGI1cf51VCZYnN9YK2YRA&oe=653F2427',
+    image: 'https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/exploremore.png?alt=media&token=5d2388a4-6b66-4826-9c8e-8327a970ab62',
     turn: '680 lượt đi',
     price: '2.190.000đ',
     time: '3N2Đ',

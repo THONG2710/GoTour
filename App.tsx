@@ -25,6 +25,7 @@ import DetailSocial from './src/presentation/container/Authorized/Social/DetailS
 import Editprofile from './src/presentation/container/Authorized/Account/EditProfile/EditProfile';
 import RootNavigation from './src/presentation/navigation/RootNavigation';
 import HotelDetail from './src/presentation/container/Authorized/Service/HotelDetail/HotelDetail';
+import ItemMyFavourite from './src/presentation/component/Items/ItemMyFavourite';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -54,6 +55,7 @@ function App(): JSX.Element {
     // <DetailSocial></DetailSocial>
     <RootNavigation></RootNavigation>
     // <Hotel></Hotel>
+    // <ItemMyFavourite></ItemMyFavourite>
   ); 
 }
 
