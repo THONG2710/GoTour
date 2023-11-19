@@ -27,6 +27,7 @@ import RootNavigation from './src/presentation/navigation/RootNavigation';
 import HotelDetail from './src/presentation/container/Authorized/Service/HotelDetail/HotelDetail';
 import ItemMyFavourite from './src/presentation/component/Items/ItemMyFavourite';
 import BookTour from './src/presentation/container/Authorized/Service/BookTour/BookTour';
+import BookHotel from './src/presentation/container/Authorized/Service/BookHotel/BookHotel';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -57,7 +58,8 @@ function App(): JSX.Element {
     // <RootNavigation></RootNavigation>
     // <Hotel></Hotel>
     // <ItemMyFavourite></ItemMyFavourite>
-    <BookTour></BookTour>
+    <BookHotel></BookHotel>
+  
   ); 
 }
 

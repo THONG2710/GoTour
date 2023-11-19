@@ -110,3 +110,5 @@ export const VEHICLE ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.
 export const ICON_ANEMITIES = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/breakfast.png?alt=media&token=430a3a7e-8a1c-4339-b481-fea9db8dd393"
 export const IMG_FAVOURITE = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_favourite.png?alt=media&token=f362a938-d981-4902-b927-1b1339b9bd5c"
 export const IMG_HOTEL2 = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/img_hotel2.png?alt=media&token=df1aaec6-7d29-4729-b7c8-44c3b2ffddb0"
+export const NOSMOKING = "https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/no-smoking.png?alt=media&token=c60e537d-2345-42d3-aede-63b9e2f61398"
+export const MADATORY ="https://firebasestorage.googleapis.com/v0/b/gotour-72bca.appspot.com/o/mandatory.png?alt=media&token=281f6d47-d19f-47cf-a6fc-b714ebfa91ba"
