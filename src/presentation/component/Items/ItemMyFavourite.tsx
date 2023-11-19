@@ -10,7 +10,7 @@ const ItemMyFavourite: React.FC<ItemMyFavouriteProps> = (props) => {
     return (
         <View style={styles.itemListMyFVR}>
             <Ripple>
-                <Image source={item.image} style={styles.imgItem} ></Image>
+                <Image source={{uri: item.image}} style={styles.imgItem} ></Image>
             </Ripple>
             <Text style={styles.textItem}>{item.title}</Text>
         </View>
@@ -25,18 +25,22 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 20,
-
+        marginHorizontal: 7,
+        backgroundColor:'#fff',
+        width:60,
+        height:60,
+        borderRadius:10
     },
 
     imgItem:
     {
-
+        width:40,
+        height:40,
+        borderRadius:20,
     },
 
     textItem:
     {
         textAlign: 'center',
-        marginTop: 3
     }
 })

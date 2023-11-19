@@ -26,7 +26,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                     <View style={styles.centerTitle}>
                         {/* GRROUP CENTER LEFT */}
                         <View style={styles.grCenterLeft}>
-                            <Text style={styles.textName}>{data.tourName}</Text>
+                            <Text numberOfLines={2} style={styles.textName}>{data.tourName}</Text>
                             <View style={styles.overallSchedule}>
                                 <View style={styles.grSchedule}>
                                     <Image style={styles.imgIconCenter} source={{ uri: ICON_CALENDAR }}></Image>
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
 
     center:
     {
-        paddingBottom: 100,
+        paddingBottom: 50,
         backgroundColor:'#fff'
 
     },
@@ -187,7 +187,8 @@ const styles = StyleSheet.create({
     {
         fontSize: 18,
         fontWeight: 'bold',
-        color: '#000'
+        color: '#000',
+        width:'50%',
     },
 
     overallSchedule:
@@ -242,11 +243,11 @@ const styles = StyleSheet.create({
     {
         width: 110,
         height: 80,
-        backgroundColor: '#F6E5E5',
+        backgroundColor: '#000',
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight: 5
+
     },
 
     price:

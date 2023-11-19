@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FRAME_HOTEL, ICON_MARKER2, RATING } from '../../resource/assets/images';
 import { Shadow } from 'react-native-shadow-2';
 
@@ -8,18 +8,24 @@ interface Item {
     countRating: number,
     location: string,
     price: string,
+    navigation: any
 
 }
 
 
-const ItemListHotel: React.FC<Item> = (props: any) => {
+const ItemListHotel: React.FC<Item> = (props) => {
 
-    const { nameHotel, countRating, location, price } = props;
+    const { nameHotel, countRating, location, price, navigation } = props;
+   
+    const onMoveToHotelDetail = () => {
+        navigation.navigate('s_detailhotel'); 
+               
+    };
 
     return (
 
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onMoveToHotelDetail}>
                 <View style={styles.item}>
                     <Image source={{ uri: FRAME_HOTEL }} style={styles.img} />
                     <View style={styles.rightContent}>

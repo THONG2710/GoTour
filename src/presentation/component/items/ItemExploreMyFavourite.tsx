@@ -11,7 +11,7 @@ const ItemExploreMyFavourite: React.FC<ItemExploreMyFavouriteProps> = (props) =>
     const { item } = props
     return (
 
-        <View style={styles.container}>
+        <View style={styles.discover}>
             <View>
                 <Image style={styles.imageAddress} source={{uri: SLIDE4}}></Image>
             </View>
@@ -47,7 +47,7 @@ export default ItemExploreMyFavourite
 
 const styles = StyleSheet.create({
 
-    container:
+    discover:
     {
         width: '95%',
         height: 140,

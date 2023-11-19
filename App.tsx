@@ -13,7 +13,7 @@ import SplashStackNavigation from './src/presentation/navigation/SplashStackNavi
 import AuthenticationNavigation from './src/presentation/navigation/AuthenticationNavigation';
 import Login from './src/presentation/container/StartScreen/Authentication/Login/Login';
 import Register from './src/presentation/container/StartScreen/Authentication/Register/Register';
-import Booking from './src/presentation/container/Authorized/Service/Booking';
+import Booking from './src/presentation/container/Authorized/Service/Booking/Booking';
 import ChangePassword from './src/presentation/container/StartScreen/Authentication/ChangePassword/ChangePassword';
 import ResetPassword from './src/presentation/container/StartScreen/Authentication/ResetPassword/ResetPassword';
 import AuthorizedBottomNavigation from './src/presentation/navigation/AuthorizedBottomNavigation';
@@ -24,7 +24,9 @@ import DetailTour from './src/presentation/container/Authorized/Home/DetailTour/
 import DetailSocial from './src/presentation/container/Authorized/Social/DetailSocial';
 import Editprofile from './src/presentation/container/Authorized/Account/EditProfile/EditProfile';
 import RootNavigation from './src/presentation/navigation/RootNavigation';
-import HotelDetail from './src/presentation/container/Authorized/Service/TabBooking/BookHotel/HotelDetail';
+import HotelDetail from './src/presentation/container/Authorized/Service/HotelDetail/HotelDetail';
+import ItemMyFavourite from './src/presentation/component/Items/ItemMyFavourite';
+import BookTour from './src/presentation/container/Authorized/Service/BookTour/BookTour';
 function App(): JSX.Element {
   return (
     // <OTP/>
@@ -52,8 +54,10 @@ function App(): JSX.Element {
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
     // <DetailSocial></DetailSocial>
-    <RootNavigation></RootNavigation>
-    // <HotelDetail></HotelDetail>
+    // <RootNavigation></RootNavigation>
+    // <Hotel></Hotel>
+    // <ItemMyFavourite></ItemMyFavourite>
+    <BookTour></BookTour>
   ); 
 }
 

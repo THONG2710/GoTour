@@ -2,11 +2,11 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RouteProp } from "@react-navigation/native";
 import { AuthorizedParamList } from "../../../storyboard/AuthorizedStoryBoard";
 
-export type BookingNavigationProp = NativeStackNavigationProp<AuthorizedParamList, 'Service'>;
+export type ServiceNavigationProp = NativeStackNavigationProp<AuthorizedParamList, 'Service'>;
 
-export type BookingRouteProp = RouteProp<AuthorizedParamList, 'Service'>;
+export type ServiceRouteProp = RouteProp<AuthorizedParamList, 'Service'>;
 
-export type BookingProp = {
-    navigation: BookingNavigationProp,
-    route: BookingRouteProp,
+export type ServiceProp = {
+    navigation: ServiceNavigationProp,
+    route: ServiceRouteProp,
 }

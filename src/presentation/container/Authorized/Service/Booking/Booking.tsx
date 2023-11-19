@@ -1,21 +1,22 @@
 import { StyleSheet, Text, View, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
-import TabViewItem from '../../components/custom/TabViewItem'
-import Plane from './TabBooking/BookPlane/Plane'
-import Hotel from './TabBooking/BookHotel/Hotel'
-import Train from './TabBooking/BookTrain/Train'
-import { BACKGROUND, ICON_BELL, ICON_SEARCH, LOGO_GOTOUR } from '../../../resource/assets/images'
-import { BookingProp } from './type'
+import React, { useEffect } from 'react'
+import TabViewItem from '../../../components/custom/TabViewItem'
+import Plane from '../TabBooking/BookPlane/Plane'
+import Hotel from '../TabBooking/BookHotel/Hotel'
+import Train from '../TabBooking/BookTrain/Train'
+import { BACKGROUND, ICON_BELL, ICON_SEARCH, LOGO_GOTOUR } from '../../../../resource/assets/images'
 import { Shadow } from 'react-native-shadow-2'
+import { BookingProp } from './type'
 
 
-const Booking: React.FC<BookingProp> = () => {
+const Booking: React.FC<BookingProp> = (props) => {
+  const {navigation} = props
+
   return (
 
     <View style={styles.container}>
-      {/* <Image style={styles.img} source={{uri: BACKGROUND}} /> */}
+      <Image style={styles.img} source={{uri: BACKGROUND}} />
 
-      {/* <Image style={styles.img} source={require('../../img/background2.png')} /> */}
       <View style={styles.header}>
         <Image source={{ uri: LOGO_GOTOUR }} style={styles.logo} />
         <TouchableOpacity style={styles.click_Bell}>
@@ -40,7 +41,7 @@ const Booking: React.FC<BookingProp> = () => {
         title3='Tàu lửa'
 
         screen2={<Plane />}
-        screen1={<Hotel />}
+        screen1={<Hotel navigation={navigation} />}
         screen3={<Train />}
       />
     </View>

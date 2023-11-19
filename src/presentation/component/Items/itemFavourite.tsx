@@ -19,7 +19,7 @@ const ItemFavourite: React.FC<Item> = (props) => {
       <View style={styles.container}>
 
         {/* IMAGE BACKFROUND */}
-        <Image source={{ uri: data.images }} style={{ borderRadius: 10, width: 212, height: 183, position: 'absolute' }} />
+        <Image source={{ uri: data.images.toString()}} style={{ borderRadius: 10, width: 212, height: 183, position: 'absolute' }} />
         {/* RATING & FAVOURITE */}
         <View style={styles.head}>
           <View style={{ flexDirection: 'row' }}>
