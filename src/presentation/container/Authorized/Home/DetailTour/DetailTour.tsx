@@ -15,7 +15,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
 
     const getSchedule = async (id: string) => {
         try {
-            let url = 'http://192.168.1.12:3000/api/tour/getSchedule?id=' + id;
+            let url = 'http://192.168.1.27:3000/api/tour/getSchedule?id=' + id;
             const response = await fetch(url, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
@@ -31,7 +31,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let url = 'http://192.168.1.12:3000/api/tour/getDetailTourById?id=' + data._id;
+                let url = 'http://192.168.1.27:3000/api/tour/getDetailTourById?id=' + data._id;
                 const response = await fetch(url, {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
@@ -39,7 +39,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                 const res = await response.json();
                 setDetailTour(res.tour);
                 // console.log(res.detail[0]._id);
-                
+
                 getSchedule(res.detail[0]._id)
             } catch (error) {
                 console.log('get detai tour error: ' + error);
@@ -51,10 +51,10 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
     return (
         // CONTAINER
         <View style={styles.container}>
-            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+            <ScrollView>
                 {/* HEADER */}
                 <View style={styles.header}>
-                    <Image source={{ uri:  data.images}} style={styles.imgHeader}></Image>
+                    <Image source={{ uri: data.images.toString() }} style={styles.imgHeader}></Image>
                 </View>
 
                 <View style={styles.center}>
@@ -118,9 +118,8 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                             <Image style={styles.imgVehicle} source={{ uri: VEHICLE }}></Image>
                         </View>
 
-                        <Text style={styles.textScheduleDetail}>Lịch Trình</Text>
-
                         <View>
+                            <Text style={styles.textScheduleDetail}>Lịch Trình</Text>
                             {schedule.map((item) => (
                                 <View key={item._id}>
                                     <View style={styles.scheduleDetail}>
@@ -133,35 +132,33 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                                 </View>
                             ))}
                         </View>
-
-                        <Text style={styles.textScheduleDetail}>Nhận xét</Text>
-
-                        <View style={{ height:10000}}>
-                            {dataFeedBack.map((item) => (
-                                <View key={item._id}>
-                                    <View style={styles.feedBack}>
-                                        <View style={styles.reviewer}>
-                                            <Image style={styles.avtFeedBack} source={{ uri: item.imageAVT }}></Image>
-                                            <View style={styles.backgroundFeedBack}>
-                                                <View style={styles.grHeaderReviewer}>
-                                                    <Text style={styles.nameReviewer}>{item.name}</Text>
-                                                    <View style={styles.star}>
-                                                        <Text style={styles.textStar}>5</Text>
-                                                        <Image style={styles.starEvaluate} source={{ uri: ICON_START_HOTEL }}></Image>
-                                                    </View>
-                                                </View>
-                                                <Text numberOfLines={3} style={styles.textReviewer}>{item.textFeedBack}</Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            ))}
-                        </View>
                     </View>
                 </View>
 
                 <View style={styles.footer}>
-                 
+                    <Text style={styles.textScheduleDetail}>Nhận xét</Text>
+
+                    <View style={{ height: windowHeight - (windowHeight * 60) / 100 }}>
+                        {dataFeedBack.map((item) => (
+                            <View key={item._id}>
+                                <View style={styles.feedBack}>
+                                    <View style={styles.reviewer}>
+                                        <Image style={styles.avtFeedBack} source={{ uri: item.imageAVT }}></Image>
+                                        <View style={styles.backgroundFeedBack}>
+                                            <View style={styles.grHeaderReviewer}>
+                                                <Text style={styles.nameReviewer}>{item.name}</Text>
+                                                <View style={styles.star}>
+                                                    <Text style={styles.textStar}>5</Text>
+                                                    <Image style={styles.starEvaluate} source={{ uri: ICON_START_HOTEL }}></Image>
+                                                </View>
+                                            </View>
+                                            <Text numberOfLines={3} style={styles.textReviewer}>{item.textFeedBack}</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        ))}
+                    </View>
                 </View>
             </ScrollView>
         </View >
@@ -196,8 +193,8 @@ const styles = StyleSheet.create({
 
     center:
     {
-        paddingBottom: 50,
-        backgroundColor:'#fff',
+        flex:1,
+        backgroundColor: '#fff',
     },
 
     centerTitle:
@@ -223,7 +220,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#000',
-        width:'100%',
+        width: '100%',
     },
 
     overallSchedule:
@@ -274,12 +271,13 @@ const styles = StyleSheet.create({
 
     grCenterRight:
     {
-        width: 110,
+        width: 100,
         height: 80,
-        backgroundColor: '#000',
+        backgroundColor: '#F6E5E5',
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
+        marginLeft: 10
     },
 
     price:
@@ -304,10 +302,9 @@ const styles = StyleSheet.create({
     {
         backgroundColor: '#fff',
         width: windowWidth - 10,
-        height: windowHeight,
         marginLeft: 5,
         borderRadius: 10,
-        marginTop: 10
+        marginTop: 10,
     },
 
     textHotel:
@@ -386,7 +383,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         flexDirection: 'row',
         marginTop: 10,
-        marginBottom:20
+        marginBottom: 20,
     },
 
     textTitleDetail:
@@ -405,7 +402,7 @@ const styles = StyleSheet.create({
 
     feedBack:
     {
-        width:windowWidth,
+        width: windowWidth,
     },
 
     textFeedBack:
@@ -421,7 +418,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 10,
         marginLeft: 20,
-        marginRight:20
+        marginRight: 20
     },
 
     avtFeedBack:
@@ -488,29 +485,27 @@ const styles = StyleSheet.create({
         color: '#000',
         fontWeight: 'bold'
     },
-// FOOTER
+    // FOOTER
     footer:
     {
-        paddingBottom:100,
-        alignItems:'center',
-        backgroundColor:'#fff'
+        backgroundColor: '#fff'
     },
 
     btnBuyTickets:
     {
-        backgroundColor:'orange',
-        justifyContent:'center',
-        alignItems:'center',
-        width:windowWidth-150,
-        height:50,
-        borderRadius:30
+        backgroundColor: 'orange',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: windowWidth - 150,
+        height: 50,
+        borderRadius: 30
     },
 
     textBuyTicket:
     {
-        color:'#fff',
-        fontSize:20,
-        fontWeight:'bold'
+        color: '#fff',
+        fontSize: 20,
+        fontWeight: 'bold'
     }
 
 

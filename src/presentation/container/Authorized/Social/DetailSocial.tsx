@@ -70,7 +70,7 @@ const DetailSocial = () => {
                 </View>
             </View>
             <Text style={styles.textComment}>Bình luận</Text>
-            <View style={{paddingBottom:100}}>
+            <View style={{ paddingBottom: 100 }}>
                 {dataFeedBack.map((item) => (
                     <View key={item._id}>
                         <View style={styles.feedBack}>
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderBottomWidth: 1,
         borderColor: '#ccc',
-        height:windowHeight - (windowHeight *25) / 100,
+        height: windowHeight - (windowHeight * 25) / 100,
     },
 
     // {/* HEADER */}
@@ -183,18 +183,18 @@ const styles = StyleSheet.create({
 
     textComment:
     {
-        fontSize:20,
-        fontWeight:'bold',
-        color:'#000',
-        marginLeft:10
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#000',
+        marginLeft: 10
     },
 
     feedBack:
     {
-        marginTop:10
+        marginTop: 10
     },
 
-  
+
     reviewer:
     {
         flexDirection: 'row',
@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         borderRadius: 20,
         width: windowWidth - (windowWidth * 20) / 100,
-        padding:12
+        padding: 12
     },
 
     grHeaderReviewer:
