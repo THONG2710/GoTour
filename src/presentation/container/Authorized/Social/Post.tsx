@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, TextInput, View, VirtualizedList } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { postModel } from '../../../../domain/Entities/postModel';
+import { useAppSelector } from '../../../shared-state/Hook/Hook';
 
 const Post: React.FC = () => {
-    const [searchText, setsearchText] = useState('')
+    const [searchText, setsearchText] = useState('');
+    const curUser = useAppSelector(state => state.Authentication.myAccount);
 
     const back = () => {
         console.log('back')
@@ -18,6 +21,7 @@ const Post: React.FC = () => {
     const edit = (id:any) => {
         console.log('edit',id)
     }
+
     //============HeaderComponent================
     const HeaderComponent = () => {
         return (

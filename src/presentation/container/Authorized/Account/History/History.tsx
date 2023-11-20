@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FlatList, Image, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { HEART, ICON_BACK, ICON_HOME, ICON_SEARCH, NEW1, SHOPPING } from "../../../../resource/assets/images";
 import { HistoryProp } from "./type";
+import { useAppSelector } from "../../../../shared-state/Hook/Hook";
+import { TourModel } from "../../../../../domain/Entities/TourModel";
 
 const History: React.FC<HistoryProp> = (props) => {
-    const [searchText, setsearchText] = useState('')
+    const [searchText, setsearchText] = useState('');
+    const [history, setHistory] = useState<TourModel[]>();
+    const user = useAppSelector(state => state.Authentication.myAccount);
     const {navigation} = props;
 
     const back = () => {
@@ -17,6 +21,25 @@ const History: React.FC<HistoryProp> = (props) => {
     const search = () => {
         console.log(searchText)
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const url = 'http://192.168.1.53:3000/api/user/getTourByIdUser?id=' + user._id;
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                const res = await response.json();
+                console.log(user._id);
+                setHistory(res.tours)
+                // return res;
+            } catch (error) {
+                console.log('login error: ' + error);
+            }
+        };
+        fetchData();
+    }, []);
 
     const HeaderComponent = () => {
         return (
@@ -50,47 +73,47 @@ const History: React.FC<HistoryProp> = (props) => {
         )
 
     }
-    return (
-        <FlatList
-            data={data}
-            keyExtractor={(item) => item.id.toString()}
-            showsVerticalScrollIndicator={false}
-            horizontal={false}
-            style={{}}
-            //=============Header================
-            ListHeaderComponent={HeaderComponent}
-            //=============Item================
-            renderItem={({ item }) => (
-                <View style={styles.boxHistory}>
+    // return (
+        // <FlatList
+        //     data={history}
+        //     keyExtractor={(item) => item._id}
+        //     showsVerticalScrollIndicator={false}
+        //     horizontal={false}
+        //     style={{}}
+        //     //=============Header================
+        //     ListHeaderComponent={HeaderComponent}
+        //     //=============Item================
+        //     renderItem={({ item }) => (
+        //         <View style={styles.boxHistory}>
 
-                    <Image style={styles.img} source={{uri: item.img}} />
+        //             <Image style={styles.img} source={{uri: item.images}} />
 
-                    <View style={styles.boxMain}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={styles.txtName}>{item.name}</Text>
-                            <Image style={styles.imgHeart} source={{uri: HEART}} />
-                        </View>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={styles.txtPrice}>{item.price.toLocaleString('vi-VN')} VND</Text>
-                            <Text style={styles.txtTime}>{item.time}</Text>
-                        </View>
-                        <Text style={styles.txtTurn}>{item.turn} lượt đi</Text>
-                        <Pressable style={styles.btnEdit}>
-                            <Text style={styles.txtButtonEdit}>Đặt ngay</Text>
-                            <Image style={styles.imgShopping} source={{uri: SHOPPING}} />
-                        </Pressable>
+        //             <View style={styles.boxMain}>
+        //                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        //                     <Text style={styles.txtName}>{item.tourName}</Text>
+        //                     <Image style={styles.imgHeart} source={{uri: HEART}} />
+        //                 </View>
+        //                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        //                     <Text style={styles.txtPrice}>{item.price.toString()} VND</Text>
+        //                     <Text style={styles.txtTime}>{item.numberOfDays.toString()}N{item.numberOfNights.toString()}Đ</Text>
+        //                 </View>
+        //                 <Text style={styles.txtTurn}>{item.favorites.toString()} lượt đi</Text>
+        //                 <Pressable style={styles.btnEdit}>
+        //                     <Text style={styles.txtButtonEdit}>Đặt ngay</Text>
+        //                     <Image style={styles.imgShopping} source={{uri: SHOPPING}} />
+        //                 </Pressable>
 
-                    </View>
-
-
+        //             </View>
 
 
 
-                </View>
-            )} />
 
 
-    )
+        //         </View>
+        //     )} />
+
+
+    // )
 };
 export default History;
 const data = [
