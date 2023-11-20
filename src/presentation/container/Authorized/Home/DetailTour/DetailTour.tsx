@@ -28,8 +28,6 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
         }
     };
 
-    
-
     useEffect(() => {
         const fetchData = async () => {
             try {
