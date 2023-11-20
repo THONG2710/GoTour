@@ -1,16 +1,55 @@
 import { StyleSheet, Text, View, Image, FlatList, ScrollView, VirtualizedList, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Dimensions } from 'react-native'
 import { AVT, BAR_SCHEDULE, ICON_ADDRESS, ICON_CALENDAR, ICON_START_HOTEL, IMG_DETAIL_TOUR, IMG_HOTEL, VEHICLE } from '../../../../resource/assets/images';
 import { DetailTourProp } from './type';
+import { TourModel } from '../../../../../domain/Entities/TourModel';
+import { Schedule } from '../../../../../domain/Entities/ScheduleModel';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const DetailTour: React.FC<DetailTourProp> = (props) => {
-    interface Props {
-        item: { textTitle: string, textContentDetail: string }
-    }
     const data = props.route.params.data;
+    const [detailTour, setDetailTour] = useState<TourModel>();
+    const [schedule, setSchedule] = useState<Schedule[]>([]);
+
+    const getSchedule = async (id: string) => {
+        try {
+            let url = 'http://192.168.1.12:3000/api/tour/getSchedule?id=' + id;
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            });
+            const res = await response.json();
+            console.log(res.schedule);
+            setSchedule(res.schedule);
+        } catch (error) {
+            console.log('get schedule error: ' + error);
+        }
+    };
+
+    
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let url = 'http://192.168.1.12:3000/api/tour/getDetailTourById?id=' + data._id;
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                const res = await response.json();
+                setDetailTour(res.tour);
+                // console.log(res.detail[0]._id);
+                
+                getSchedule(res.detail[0]._id)
+            } catch (error) {
+                console.log('get detai tour error: ' + error);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
 
         // CONTAINER
@@ -19,7 +58,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {/* HEADER */}
                 <View style={styles.header}>
-                    <Image source={{ uri: data.images }} style={styles.imgHeader}></Image>
+                    <Image source={{ uri:  data.images}} style={styles.imgHeader}></Image>
                 </View>
 
                 <View style={styles.center}>
@@ -86,13 +125,13 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
                         <Text style={styles.textScheduleDetail}>Lịch Trình</Text>
 
                         <View>
-                            {dataSchedule.map((item) => (
-                                <View key={item.id}>
+                            {schedule.map((item) => (
+                                <View key={item._id}>
                                     <View style={styles.scheduleDetail}>
                                         <Image style={{ width: 3, height: '100%', marginRight: 10 }} source={{ uri: BAR_SCHEDULE }}></Image>
                                         <View style={{ marginRight: 40 }}>
-                                            <Text style={styles.textTitleDetail}>{item.textTitleDetail}</Text>
-                                            <Text style={styles.textContentDeatail}>{item.textContentDetail}</Text>
+                                            <Text style={styles.textTitleDetail}>{item.title}</Text>
+                                            <Text style={styles.textContentDeatail}>{item.content}</Text>
                                         </View>
                                     </View>
                                 </View>
@@ -162,8 +201,7 @@ const styles = StyleSheet.create({
     center:
     {
         paddingBottom: 50,
-        backgroundColor:'#fff'
-
+        backgroundColor:'#fff',
     },
 
     centerTitle:
@@ -180,7 +218,8 @@ const styles = StyleSheet.create({
     grCenterLeft:
     {
         marginRight: 2,
-        marginLeft: 10
+        marginLeft: 10,
+        width: '60%',
     },
 
     textName:
@@ -188,7 +227,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         color: '#000',
-        width:'50%',
+        width:'100%',
     },
 
     overallSchedule:
@@ -232,10 +271,8 @@ const styles = StyleSheet.create({
     grDepature:
     {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
-
-
 
     // GROUP CENTER RIGHT
 
@@ -247,7 +284,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-
     },
 
     price:

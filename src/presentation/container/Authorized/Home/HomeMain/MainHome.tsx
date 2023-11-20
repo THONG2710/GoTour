@@ -26,7 +26,7 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let url = 'http://192.168.1.32:3000/api/tour/getAllTours';
+                let url = 'http://192.168.1.12:3000/api/tour/getAllTours';
                 const response = await fetch(url, {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
