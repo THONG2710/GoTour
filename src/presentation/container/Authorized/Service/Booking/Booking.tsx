@@ -11,6 +11,7 @@ import { BookingProp } from './type'
 
 const Booking: React.FC<BookingProp> = (props) => {
   const {navigation} = props
+ 
 
   return (
 

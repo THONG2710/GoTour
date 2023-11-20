@@ -55,10 +55,10 @@ function App(): JSX.Element {
     // <Editprofile></Editprofile>
     // <DetailTour></DetailTour>
     // <DetailSocial></DetailSocial>
-    // <RootNavigation></RootNavigation>
+    <RootNavigation></RootNavigation>
     // <Hotel></Hotel>
     // <ItemMyFavourite></ItemMyFavourite>
-    <BookHotel></BookHotel>
+    // <BookHotel></BookHotel>
   
   ); 
 }

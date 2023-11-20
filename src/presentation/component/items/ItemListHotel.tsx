@@ -16,10 +16,10 @@ interface Item {
 const ItemListHotel: React.FC<Item> = (props) => {
 
     const { nameHotel, countRating, location, price, navigation } = props;
-   
+  
     const onMoveToHotelDetail = () => {
-        navigation.navigate('s_detailhotel'); 
-               
+       navigation.navigate('s_detailhotel');
+    
     };
 
     return (

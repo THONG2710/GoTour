@@ -7,6 +7,8 @@ import { ServiceParamlist } from '../../../storyboard/ServiceStoryBoard';
 import Booking from './Booking/Booking';
 import { ServiceProp } from './type';
 import HotelDetail from './HotelDetail/HotelDetail';
+import BookHotel from './BookHotel/BookHotel';
+import BookTour from './BookTour/BookTour';
 
 const StackService = createStackNavigator<ServiceParamlist>();
 
@@ -15,7 +17,8 @@ const Service: React.FC<ServiceProp> = () => {
         <StackService.Navigator screenOptions={{ headerShown: false }}>
             <StackService.Screen name="s_booking" component={Booking} />
             <StackService.Screen name="s_detailhotel" component={HotelDetail} />
-
+            <StackService.Screen name="s_bookhotel" component={BookHotel} />
+            <StackService.Screen name="s_booktour" component={BookTour} />
         </StackService.Navigator>
     );
 };

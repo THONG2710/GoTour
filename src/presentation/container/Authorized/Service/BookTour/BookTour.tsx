@@ -3,10 +3,11 @@ import React from 'react'
 import { Dimensions } from 'react-native';
 import { IMG_HOTEL, IMG_HOTEL2 } from '../../../../resource/assets/images';
 import { Shadow } from 'react-native-shadow-2';
+import { BookTourProp } from './type';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const BookTour = () => {
+const BookTour:React.FC<BookTourProp> = (props) => {
     return (
         <ScrollView style={styles.container}>
             {/* HEADER */}
