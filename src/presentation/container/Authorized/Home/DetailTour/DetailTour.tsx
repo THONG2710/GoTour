@@ -49,9 +49,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
     }, []);
 
     return (
-
         // CONTAINER
-
         <View style={styles.container}>
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {/* HEADER */}
