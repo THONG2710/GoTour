@@ -23,11 +23,13 @@ import {
 import { ProfileProp } from './type';
 import ItemCenter from '../../../../component/Items/ItemCenterTitle';
 import ItemCenterContent from '../../../../component/Items/ItemCenterContent';
-import { useAppSelector } from '../../../../shared-state/Hook/Hook';
+import { useAppDispatch, useAppSelector } from '../../../../shared-state/Hook/Hook';
+import { SET_ISLOGGED } from '../../../../shared-state/Action/Authentications';
 
 const Profile: React.FC<ProfileProp> = (props) => {
   const {navigation} = props;
   const user = useAppSelector(state => state.Authentication.myAccount);
+  const dispatch = useAppDispatch();
 
   const onMoveToHistory = () => {
     navigation.navigate('history');
@@ -52,6 +54,12 @@ const Profile: React.FC<ProfileProp> = (props) => {
   const onMoveToMyPost = () => {
     navigation.navigate('post');
   };
+
+  const onLogOut = () => {
+    dispatch(SET_ISLOGGED(false));
+    navigation.navigate('Authentication');
+  };
+ 
 
   return (
     // HEADER
@@ -124,7 +132,7 @@ const Profile: React.FC<ProfileProp> = (props) => {
           <Image style={styles.logo} source={{ uri: LOGO_GOTOUR }}></Image>
           <Text style={styles.textFooter}>Dịch vụ mà bạn có thể tin cậy</Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onLogOut}>
           <View style={styles.grButtonFooter}>
             <Text style={styles.textLogout}>Đăng xuất</Text>
           </View>

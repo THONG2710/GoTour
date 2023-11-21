@@ -29,8 +29,9 @@ import {
   SAVE_USER,
   SET_ISLOGGED,
 } from '../../../../shared-state/Action/Authentications';
-import { postData } from '../../../../../core/RequestMethod';
-import { ID_HOME_A } from '../../../../../core';
+import {postData} from '../../../../../core/RequestMethod';
+import {ID_HOME_A} from '../../../../../core';
+import {useNavigation} from '@react-navigation/native';
 
 const Login: React.FC<LoginProp> = props => {
   const [password, setPassword] = useState('');
@@ -38,13 +39,17 @@ const Login: React.FC<LoginProp> = props => {
   const [showPassword, setShowPassword] = useState(false);
   const {navigation} = props;
   const dispatch = useAppDispatch();
+  const cannotGoBack = useNavigation();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
   const login = async () => {
     const data = {email: email, password: password};
-    const res = await postData('http://'+ID_HOME_A+':3000/api/user/login', data);
+    const res = await postData(
+      'http://' + ID_HOME_A + ':3000/api/user/login',
+      data,
+    );
     dispatch(SAVE_USER(res.user));
     if (res.result) {
       dispatch(SET_ISLOGGED(true));
@@ -63,6 +68,13 @@ const Login: React.FC<LoginProp> = props => {
   const loginWithFacebook = () => {
     console.log('loginWithFacebook');
   };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('beforeRemove', e => {
+      e.preventDefault();
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <View>
