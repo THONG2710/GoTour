@@ -5,6 +5,8 @@ import { AVT, BAR_SCHEDULE, ICON_ADDRESS, ICON_CALENDAR, ICON_START_HOTEL, IMG_D
 import { DetailTourProp } from './type';
 import { TourModel } from '../../../../../domain/Entities/TourModel';
 import { Schedule } from '../../../../../domain/Entities/ScheduleModel';
+import { getData } from '../../../../../core/RequestMethod';
+import { ID_HOME_A } from '../../../../../core';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
@@ -15,37 +17,25 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
 
     const getSchedule = async (id: string) => {
         try {
-            let url = 'http://192.168.1.12:3000/api/tour/getSchedule?id=' + id;
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' },
-            });
-            const res = await response.json();
-            console.log(res.schedule);
+            const res = await getData('http://'+ID_HOME_A+':3000/api/tour/getSchedule?id=' + id);
             setSchedule(res.schedule);
         } catch (error) {
             console.log('get schedule error: ' + error);
         }
     };
 
+    const getTour = async () => {
+        try {
+            const res = await getData('http://'+ID_HOME_A+':3000/api/tour/getDetailTourById?id=' + data._id);
+            setDetailTour(res.tour);
+            getSchedule(res.detail[0]._id)
+        } catch (error) {
+            console.log('get detai tour error: ' + error);
+        }
+    };
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                let url = 'http://192.168.1.12:3000/api/tour/getDetailTourById?id=' + data._id;
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: { 'Content-Type': 'application/json' },
-                });
-                const res = await response.json();
-                setDetailTour(res.tour);
-                // console.log(res.detail[0]._id);
-                
-                getSchedule(res.detail[0]._id)
-            } catch (error) {
-                console.log('get detai tour error: ' + error);
-            }
-        };
-        fetchData();
+        getTour();
     }, []);
 
     return (
@@ -54,7 +44,7 @@ const DetailTour: React.FC<DetailTourProp> = (props) => {
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 {/* HEADER */}
                 <View style={styles.header}>
-                    <Image source={{ uri:  data.images}} style={styles.imgHeader}></Image>
+                    <Image source={{ uri:  data.images.toString()}} style={styles.imgHeader}></Image>
                 </View>
 
                 <View style={styles.center}>

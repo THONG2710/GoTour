@@ -17,6 +17,7 @@ import {
 } from '../resource/assets/images';
 import Home from '../container/Authorized/Home/Home';
 import Account from '../container/Authorized/Account/Account';
+import Service from '../container/Authorized/Service/Service';
 
 const AuthorizedBottomTab = createBottomTabNavigator<AuthorizedParamList>();
 
@@ -43,7 +44,7 @@ const AuthorizedBottomNavigation = () => {
         />
         <AuthorizedBottomTab.Screen
           name="Service"
-          component={Booking}
+          component={Service}
           options={{
             tabBarLabel: ({focused}) => {
               return <ItemBottomHome isFocused={focused} icon={B_SERVICE} label="Dịch vụ" />;

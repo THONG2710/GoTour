@@ -8,8 +8,9 @@ import Ripple from 'react-native-material-ripple'
 import { TEXT_BUTTON_EDITPROFILE_VN, TEXT_TITLE_EDITPROFILE_VN } from '../../../../resource/assets/String/VNString'
 import { ADDRESS, AVT, CHOOSE_AVT, CODE, EDIT_USERNAME, EMAIL } from '../../../../resource/assets/images'
 import { useAppSelector } from '../../../../shared-state/Hook/Hook'
+import { EditProfileProp } from './type'
 
-const Editprofile = () => {
+const Editprofile:React.FC<EditProfileProp> = () => {
     const user = useAppSelector(state => state.Authentication.myAccount);
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
         {

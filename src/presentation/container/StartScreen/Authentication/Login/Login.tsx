@@ -29,6 +29,8 @@ import {
   SAVE_USER,
   SET_ISLOGGED,
 } from '../../../../shared-state/Action/Authentications';
+import { postData } from '../../../../../core/RequestMethod';
+import { ID_HOME_A } from '../../../../../core';
 
 const Login: React.FC<LoginProp> = props => {
   const [password, setPassword] = useState('');
@@ -41,22 +43,8 @@ const Login: React.FC<LoginProp> = props => {
     setShowPassword(!showPassword);
   };
   const login = async () => {
-    let data = {email, password};
-    const fetchData = async (data: {email: string; password: string}) => {
-      try {
-        let url = 'http://192.168.1.12:3000/api/user/login';
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(data),
-        });
-        const res = await response.json();
-        return res;
-      } catch (error) {
-        console.log('login error: ' + error);
-      }
-    };
-    const res = await fetchData(data);
+    const data = {email: email, password: password};
+    const res = await postData('http://'+ID_HOME_A+':3000/api/user/login', data);
     dispatch(SAVE_USER(res.user));
     if (res.result) {
       dispatch(SET_ISLOGGED(true));

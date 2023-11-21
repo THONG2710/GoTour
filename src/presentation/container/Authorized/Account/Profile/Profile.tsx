@@ -49,6 +49,10 @@ const Profile: React.FC<ProfileProp> = (props) => {
     navigation.navigate('introduction');
   };
 
+  const onMoveToMyPost = () => {
+    navigation.navigate('post');
+  };
+
   return (
     // HEADER
     <View style={styles.container}>
@@ -100,7 +104,7 @@ const Profile: React.FC<ProfileProp> = (props) => {
         <View style={styles.grCenterTitle}>
           <ItemCenter image={HISTORY} text='Lịch sử' onPress={onMoveToHistory}></ItemCenter>
           <ItemCenter image={FAVORITES} text='Yêu thích' onPress={onMoveToMyFavorite}></ItemCenter>
-          <ItemCenter image={POST} text='Bài đăng'></ItemCenter>
+          <ItemCenter image={POST} text='Bài đăng' onPress={onMoveToMyPost}></ItemCenter>
         </View>
 
         {/* LIST EVALUTE, INTRODUCE, CONTACT */}

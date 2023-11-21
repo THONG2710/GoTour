@@ -34,7 +34,7 @@ const Social: React.FC<SocialProp> = props => {
     const get = async () => {
       const list = await getData('http://' + ID_HOME_A + ':3000/api/post/getAllPost');
       console.log(list);
-      setListPost(list.posts); //
+      setListPost(list.posts);
     };
     get();
   }, []);

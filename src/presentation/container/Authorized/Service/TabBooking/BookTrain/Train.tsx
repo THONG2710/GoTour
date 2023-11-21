@@ -1,23 +1,32 @@
 import { FlatList, Image, StyleSheet, Text, Touchable, TouchableOpacity, View,ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemListTrain from '../../../../../component/Items/ItemListTrain';
 import TabViewItem from '../../../../components/custom/TabViewItem';
 import Plane from '../BookPlane/Plane';
 import Hotel from '../BookHotel/Hotel';
 import { ICON_CALENDAR, ICON_TRAIN2 } from '../../../../../resource/assets/images';
+import { getData } from '../../../../../../core/RequestMethod';
+import { ID_HOME_A } from '../../../../../../core';
+import TrainModel from '../../../../../../domain/Entities/TrainModel';
 
 const Train: React.FC = () => {
-    const render = ({ item }: { item: (typeof DATA)[0] }) => (
-        <ItemListTrain {...item} />
-
+    const [listTicket, setListTicket] = useState<TrainModel[]>([]);
+    const render = ({ item }: { item: TrainModel }) => (
+        <ItemListTrain data={item} />
     )
 
+    const getTrainTicket = async () => {
+        const res = await getData('http://'+ID_HOME_A+':3000/api/train/getAllTrainTicket');
+        setListTicket(res.tickets);
+    };
+
+    useEffect(() => {
+      getTrainTicket();
+    }, [])
+    
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-            {/* <Image style={styles.img} source={require('../img/background.png')} /> */} 
-            {/* <Image style={styles.img} source={require('../../../../img/background2.png')} /> */}
-            
             <View style={styles.book}>
                 <View style={styles.item}>
                     <TouchableOpacity>
@@ -47,9 +56,9 @@ const Train: React.FC = () => {
             </View>
             <View style={{}}>    
             <FlatList 
-                data={DATA}
+                data={listTicket}
                 renderItem={render}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item._id}
                 showsVerticalScrollIndicator={false}
                 scrollEnabled={false}
                 style={styles.flatlist}

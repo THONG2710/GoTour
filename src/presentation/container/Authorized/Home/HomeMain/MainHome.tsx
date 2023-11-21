@@ -6,6 +6,8 @@ import FavouriteList from '../Components/FavouriteList'
 import { AVATAR, AVT, BUS, HOTEL, ICON_BELL, ICON_CAMPING, ICON_ISLAND, ICON_MARKER, ICON_MENU, ICON_MOUNTAIN, ICON_SEA, ICON_SEARCH, IMAGE1, IMAGE2, IMAGE3, LOGO_GOTOUR, SHIP, TOURPLACE, TRAVELLING, TXTTITLE } from '../../../../resource/assets/images'
 import { HomeMainProp } from './type'
 import { useAppSelector } from '../../../../shared-state/Hook/Hook'
+import { getData } from '../../../../../core/RequestMethod'
+import { ID_HOME_A } from '../../../../../core'
 
 const MainHome: React.FC<HomeMainProp> = (props) => {
     const [text, onChangeText] = React.useState('');
@@ -22,23 +24,16 @@ const MainHome: React.FC<HomeMainProp> = (props) => {
         navigation.navigate('Service');
     };
 
+    // handle get tour
+    const handleGetTour = async () => {
+        const res = await getData('http://'+ID_HOME_A+':3000/api/tour/getAllTours');
+        if (res.tours.length > 0) {
+            setListTour(res.tours);
+        }
+    } 
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                let url = 'http://192.168.1.12:3000/api/tour/getAllTours';
-                const response = await fetch(url, {
-                    method: 'GET',
-                    headers: { 'Content-Type': 'application/json' },
-                });
-                const res = await response.json();
-                setListTour(res.tours)
-                // return res;
-            } catch (error) {
-                console.log('login error: ' + error);
-            }
-        };
-        fetchData();
+        handleGetTour();
     }, [listTour]);
 
 

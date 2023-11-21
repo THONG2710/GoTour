@@ -10,6 +10,7 @@ import MyFavourites from './MyFavorites/MyFavourites';
 import Editprofile from './EditProfile/EditProfile';
 import MyRating from './Rating/MyRating';
 import IntroduceScreen from './IntroduceScreen/IntroduceScreen';
+import Post from './MyPost/Post';
 
 const StackAccount = createStackNavigator<AccountParamlist>();
 
@@ -22,6 +23,7 @@ const Account: React.FC<AccountProp> = () => {
       <StackAccount.Screen name='editProfile'  component={Editprofile}/>
       <StackAccount.Screen name='rating' component={MyRating}/>
       <StackAccount.Screen name='introduction' component={IntroduceScreen}/>
+      <StackAccount.Screen name='post' component={Post}/>
     </StackAccount.Navigator>
   );
 };

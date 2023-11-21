@@ -5,4 +5,5 @@ export type AccountParamlist = {
     editProfile: undefined,
     rating: undefined,
     introduction: undefined,
+    post: undefined,
 }

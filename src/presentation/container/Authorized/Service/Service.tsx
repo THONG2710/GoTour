@@ -15,7 +15,6 @@ const Service: React.FC<ServiceProp> = () => {
         <StackService.Navigator screenOptions={{ headerShown: false }}>
             <StackService.Screen name="s_booking" component={Booking} />
             <StackService.Screen name="s_detailhotel" component={HotelDetail} />
-
         </StackService.Navigator>
     );
 };

@@ -1,25 +1,33 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View, FlatList, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CheckBox from '@react-native-community/checkbox'
 import ItemListPlane from '../../../../../component/Items/ItemListPlane'
 import { ICON_CALENDAR, ICON_TRAIN, ICON_TRAIN2 } from '../../../../../resource/assets/images'
-
-
-
+import { getData } from '../../../../../../core/RequestMethod'
+import { ID_HOME_A } from '../../../../../../core'
+import AirlineModel from '../../../../../../domain/Entities/AirLineModel'
 
 const Plane: React.FC = () => {
-    const render = ({ item }: { item: (typeof DATA)[0] }) => (
-        <ItemListPlane {...item} />
+    const [listTicket, setListTicket] = useState<AirlineModel[]>([]);
+
+    const render = ({ item }: { item: AirlineModel }) => (
+        <ItemListPlane data={item} />
     )
     const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
+    const getAirlineTicket = async () => {
+        const res = await getData('http://'+ID_HOME_A+':3000/api/airline/getAllAirlineTicket');
+        setListTicket(res.tickets);
+    };
+
+    useEffect(() => {
+      getAirlineTicket()
+    }, [])
+    
 
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.container}>
-                {/* <Image style={styles.img} source={require('../img/background.png')} /> */}
-                {/* <Image style={styles.img} source={require('../../../../img/background2.png')} /> */}
-
                 <View style={styles.book}>
                     <View style={styles.item}>
                         <TouchableOpacity>
@@ -58,9 +66,9 @@ const Plane: React.FC = () => {
                 </View>
                 <View style={{}}>
                     <FlatList
-                        data={DATA}
+                        data={listTicket}
                         renderItem={render}
-                        keyExtractor={item => item.id}
+                        keyExtractor={item => item._id}
                         showsVerticalScrollIndicator={false}
                         scrollEnabled={false}
                         style={styles.flatlist}
